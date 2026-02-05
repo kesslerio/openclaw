@@ -7,12 +7,16 @@ import path from "node:path";
 import type { ResolvedMemorySearchConfig } from "../agents/memory-search.js";
 import type { OpenClawConfig } from "../config/config.js";
 import type {
+  MemoryChunkDetail,
   MemoryEmbeddingProbeResult,
+  MemoryIndexResult,
   MemoryProviderStatus,
   MemorySearchManager,
+  MemorySearchMode,
   MemorySearchResult,
   MemorySource,
   MemorySyncProgressUpdate,
+  MemoryTimelineEntry,
 } from "./types.js";
 import { resolveAgentDir, resolveAgentWorkspaceDir } from "../agents/agent-scope.js";
 import { resolveMemorySearchConfig } from "../agents/memory-search.js";
@@ -264,6 +268,7 @@ export class MemoryIndexManager implements MemorySearchManager {
       maxResults?: number;
       minScore?: number;
       sessionKey?: string;
+      mode?: MemorySearchMode;
     },
   ): Promise<MemorySearchResult[]> {
     void this.warmSession(opts?.sessionKey);
@@ -306,6 +311,128 @@ export class MemoryIndexManager implements MemorySearchManager {
     });
 
     return merged.filter((entry) => entry.score >= minScore).slice(0, maxResults);
+  }
+
+  async searchIndex(
+    query: string,
+    opts?: { maxResults?: number; minScore?: number; sessionKey?: string },
+  ): Promise<MemoryIndexResult[]> {
+    const results = await this.search(query, opts);
+    return results.map((r) => ({
+      id: r.id,
+      path: r.path,
+      startLine: r.startLine,
+      endLine: r.endLine,
+      score: r.score,
+      preview: r.snippet.slice(0, 100).trim() + (r.snippet.length > 100 ? "…" : ""),
+      source: r.source,
+      tokens: Math.ceil(r.snippet.length / 4), // rough estimate
+    }));
+  }
+
+  async getChunks(ids: string[]): Promise<MemoryChunkDetail[]> {
+    if (ids.length === 0) {
+      return [];
+    }
+    const placeholders = ids.map(() => "?").join(",");
+    const rows = this.db
+      .prepare(
+        `SELECT id, path, start_line, end_line, text, source
+         FROM chunks
+         WHERE id IN (${placeholders})`,
+      )
+      .all(...ids) as Array<{
+      id: string;
+      path: string;
+      start_line: number;
+      end_line: number;
+      text: string;
+      source: MemorySource;
+    }>;
+
+    return rows.map((row) => ({
+      id: row.id,
+      path: row.path,
+      startLine: row.start_line,
+      endLine: row.end_line,
+      text: row.text,
+      source: row.source,
+      citation: `${row.path}#L${row.start_line}${row.start_line !== row.end_line ? `-L${row.end_line}` : ""}`,
+    }));
+  }
+
+  async getTimeline(params: {
+    id?: string;
+    path?: string;
+    line?: number;
+    context?: number;
+  }): Promise<MemoryTimelineEntry[]> {
+    const contextLines = params.context ?? 3;
+    let targetPath: string;
+    let targetLine: number;
+
+    if (params.id) {
+      const chunk = this.db
+        .prepare(`SELECT path, start_line, end_line FROM chunks WHERE id = ?`)
+        .get(params.id) as { path: string; start_line: number; end_line: number } | undefined;
+      if (!chunk) {
+        return [];
+      }
+      targetPath = chunk.path;
+      targetLine = Math.floor((chunk.start_line + chunk.end_line) / 2);
+    } else if (params.path && params.line) {
+      targetPath = params.path;
+      targetLine = params.line;
+    } else {
+      return [];
+    }
+
+    const rows = this.db
+      .prepare(
+        `SELECT id, path, start_line, end_line, text, source
+         FROM chunks
+         WHERE path = ?
+         ORDER BY start_line ASC`,
+      )
+      .all(targetPath) as Array<{
+      id: string;
+      path: string;
+      start_line: number;
+      end_line: number;
+      text: string;
+      source: MemorySource;
+    }>;
+
+    const results: MemoryTimelineEntry[] = [];
+    for (const row of rows) {
+      const chunkMid = Math.floor((row.start_line + row.end_line) / 2);
+      const distance = Math.abs(chunkMid - targetLine);
+
+      let position: "before" | "current" | "after";
+      if (row.start_line <= targetLine && row.end_line >= targetLine) {
+        position = "current";
+      } else if (row.end_line < targetLine) {
+        position = "before";
+      } else {
+        position = "after";
+      }
+
+      // Include current chunk and nearby chunks within context window
+      if (position === "current" || distance <= contextLines * 20) {
+        results.push({
+          id: row.id,
+          path: row.path,
+          startLine: row.start_line,
+          endLine: row.end_line,
+          preview: row.text.slice(0, 100).trim() + (row.text.length > 100 ? "…" : ""),
+          source: row.source,
+          position,
+          distance: position === "current" ? 0 : distance,
+        });
+      }
+    }
+
+    return results.toSorted((a, b) => a.startLine - b.startLine);
   }
 
   private async searchVector(

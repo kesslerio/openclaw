@@ -82,8 +82,12 @@ type IsVoiceCompatibleAudio = typeof import("../../media/audio.js").isVoiceCompa
 type GetImageMetadata = typeof import("../../media/image-ops.js").getImageMetadata;
 type ResizeToJpeg = typeof import("../../media/image-ops.js").resizeToJpeg;
 type CreateMemoryGetTool = typeof import("../../agents/tools/memory-tool.js").createMemoryGetTool;
+type CreateMemoryGetChunksTool =
+  typeof import("../../agents/tools/memory-tool.js").createMemoryGetChunksTool;
 type CreateMemorySearchTool =
   typeof import("../../agents/tools/memory-tool.js").createMemorySearchTool;
+type CreateMemoryTimelineTool =
+  typeof import("../../agents/tools/memory-tool.js").createMemoryTimelineTool;
 type RegisterMemoryCli = typeof import("../../cli/memory-cli.js").registerMemoryCli;
 type DiscordMessageActions =
   typeof import("../../channels/plugins/actions/discord.js").discordMessageActions;
@@ -199,7 +203,9 @@ export type PluginRuntime = {
   };
   tools: {
     createMemoryGetTool: CreateMemoryGetTool;
+    createMemoryGetChunksTool: CreateMemoryGetChunksTool;
     createMemorySearchTool: CreateMemorySearchTool;
+    createMemoryTimelineTool: CreateMemoryTimelineTool;
     registerMemoryCli: RegisterMemoryCli;
   };
   channel: {

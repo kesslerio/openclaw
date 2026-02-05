@@ -4,12 +4,15 @@ import os from "node:os";
 import path from "node:path";
 import type { OpenClawConfig } from "../config/config.js";
 import type {
+  MemoryChunkDetail,
   MemoryEmbeddingProbeResult,
+  MemoryIndexResult,
   MemoryProviderStatus,
   MemorySearchManager,
   MemorySearchResult,
   MemorySource,
   MemorySyncProgressUpdate,
+  MemoryTimelineEntry,
 } from "./types.js";
 import { resolveAgentWorkspaceDir } from "../agents/agent-scope.js";
 import { resolveStateDir } from "../config/paths.js";
@@ -265,6 +268,7 @@ export class QmdMemoryManager implements MemorySearchManager {
         continue;
       }
       results.push({
+        id: entry.docid ?? `${doc.rel}:${lines.startLine}`,
         path: doc.rel,
         startLine: lines.startLine,
         endLine: lines.endLine,
@@ -274,6 +278,38 @@ export class QmdMemoryManager implements MemorySearchManager {
       });
     }
     return this.clampResultsByInjectedChars(results.slice(0, limit));
+  }
+
+  async searchIndex(
+    query: string,
+    opts?: { maxResults?: number; minScore?: number; sessionKey?: string },
+  ): Promise<MemoryIndexResult[]> {
+    const results = await this.search(query, opts);
+    return results.map((r) => ({
+      id: r.id,
+      path: r.path,
+      startLine: r.startLine,
+      endLine: r.endLine,
+      score: r.score,
+      preview: r.snippet.slice(0, 100).trim() + (r.snippet.length > 100 ? "…" : ""),
+      source: r.source,
+      tokens: Math.ceil(r.snippet.length / 4),
+    }));
+  }
+
+  async getChunks(_ids: string[]): Promise<MemoryChunkDetail[]> {
+    // QMD backend doesn't support chunk retrieval by ID; return empty
+    return [];
+  }
+
+  async getTimeline(_params: {
+    id?: string;
+    path?: string;
+    line?: number;
+    context?: number;
+  }): Promise<MemoryTimelineEntry[]> {
+    // QMD backend doesn't support timeline queries; return empty
+    return [];
   }
 
   async sync(params?: {

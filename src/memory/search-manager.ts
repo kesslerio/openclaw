@@ -1,9 +1,12 @@
 import type { OpenClawConfig } from "../config/config.js";
 import type { ResolvedQmdConfig } from "./backend-config.js";
 import type {
+  MemoryChunkDetail,
   MemoryEmbeddingProbeResult,
+  MemoryIndexResult,
   MemorySearchManager,
   MemorySyncProgressUpdate,
+  MemoryTimelineEntry,
 } from "./types.js";
 import { createSubsystemLogger } from "../logging/subsystem.js";
 import { resolveMemoryBackendConfig } from "./backend-config.js";
@@ -96,6 +99,68 @@ class FallbackMemoryManager implements MemorySearchManager {
       return await fallback.search(query, opts);
     }
     throw new Error(this.lastError ?? "memory search unavailable");
+  }
+
+  async searchIndex(
+    query: string,
+    opts?: { maxResults?: number; minScore?: number; sessionKey?: string },
+  ): Promise<MemoryIndexResult[]> {
+    if (!this.primaryFailed) {
+      try {
+        return await this.deps.primary.searchIndex(query, opts);
+      } catch (err) {
+        this.primaryFailed = true;
+        this.lastError = err instanceof Error ? err.message : String(err);
+        log.warn(`qmd memory failed; switching to builtin index: ${this.lastError}`);
+        await this.deps.primary.close?.().catch(() => {});
+      }
+    }
+    const fallback = await this.ensureFallback();
+    if (fallback) {
+      return await fallback.searchIndex(query, opts);
+    }
+    throw new Error(this.lastError ?? "memory search index unavailable");
+  }
+
+  async getChunks(ids: string[]): Promise<MemoryChunkDetail[]> {
+    if (!this.primaryFailed) {
+      try {
+        return await this.deps.primary.getChunks(ids);
+      } catch (err) {
+        this.primaryFailed = true;
+        this.lastError = err instanceof Error ? err.message : String(err);
+        log.warn(`qmd memory failed; switching to builtin index: ${this.lastError}`);
+        await this.deps.primary.close?.().catch(() => {});
+      }
+    }
+    const fallback = await this.ensureFallback();
+    if (fallback) {
+      return await fallback.getChunks(ids);
+    }
+    throw new Error(this.lastError ?? "memory get chunks unavailable");
+  }
+
+  async getTimeline(params: {
+    id?: string;
+    path?: string;
+    line?: number;
+    context?: number;
+  }): Promise<MemoryTimelineEntry[]> {
+    if (!this.primaryFailed) {
+      try {
+        return await this.deps.primary.getTimeline(params);
+      } catch (err) {
+        this.primaryFailed = true;
+        this.lastError = err instanceof Error ? err.message : String(err);
+        log.warn(`qmd memory failed; switching to builtin index: ${this.lastError}`);
+        await this.deps.primary.close?.().catch(() => {});
+      }
+    }
+    const fallback = await this.ensureFallback();
+    if (fallback) {
+      return await fallback.getTimeline(params);
+    }
+    throw new Error(this.lastError ?? "memory timeline unavailable");
   }
 
   async readFile(params: { relPath: string; from?: number; lines?: number }) {

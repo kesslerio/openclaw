@@ -1,6 +1,9 @@
 export type MemorySource = "memory" | "sessions";
 
+export type MemorySearchMode = "index" | "full";
+
 export type MemorySearchResult = {
+  id: string;
   path: string;
   startLine: number;
   endLine: number;
@@ -8,6 +11,38 @@ export type MemorySearchResult = {
   snippet: string;
   source: MemorySource;
   citation?: string;
+};
+
+export type MemoryIndexResult = {
+  id: string;
+  path: string;
+  startLine: number;
+  endLine: number;
+  score: number;
+  preview: string; // ~100 char preview
+  source: MemorySource;
+  tokens?: number; // estimated tokens if fetched in full
+};
+
+export type MemoryChunkDetail = {
+  id: string;
+  path: string;
+  startLine: number;
+  endLine: number;
+  text: string;
+  source: MemorySource;
+  citation?: string;
+};
+
+export type MemoryTimelineEntry = {
+  id: string;
+  path: string;
+  startLine: number;
+  endLine: number;
+  preview: string;
+  source: MemorySource;
+  position: "before" | "current" | "after";
+  distance: number; // lines from target
 };
 
 export type MemoryEmbeddingProbeResult = {
@@ -61,8 +96,24 @@ export type MemoryProviderStatus = {
 export interface MemorySearchManager {
   search(
     query: string,
-    opts?: { maxResults?: number; minScore?: number; sessionKey?: string },
+    opts?: {
+      maxResults?: number;
+      minScore?: number;
+      sessionKey?: string;
+      mode?: MemorySearchMode;
+    },
   ): Promise<MemorySearchResult[]>;
+  searchIndex(
+    query: string,
+    opts?: { maxResults?: number; minScore?: number; sessionKey?: string },
+  ): Promise<MemoryIndexResult[]>;
+  getChunks(ids: string[]): Promise<MemoryChunkDetail[]>;
+  getTimeline(params: {
+    id?: string;
+    path?: string;
+    line?: number;
+    context?: number;
+  }): Promise<MemoryTimelineEntry[]>;
   readFile(params: {
     relPath: string;
     from?: number;
