@@ -1,0 +1,12 @@
+#!/bin/bash
+# Universal Briefing wrapper script
+# Activates virtual environment and runs the briefing
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR"
+
+# Activate virtual environment
+source venv/bin/activate
+
+# Run the briefing
+python -m scripts.cli "$@"

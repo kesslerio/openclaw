@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --priority-high: #ef4444;
+  --priority-medium: #f59e0b;
+  --priority-low: #22c55e;
+}
+
+body {
+  @apply bg-gray-900 text-gray-100;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-700 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-600;
+}
+
+/* Priority badges */
+.priority-high {
+  @apply bg-red-500/20 text-red-400 border-red-500/30;
+}
+
+.priority-medium {
+  @apply bg-amber-500/20 text-amber-400 border-amber-500/30;
+}
+
+.priority-low {
+  @apply bg-green-500/20 text-green-400 border-green-500/30;
+}
+
+/* Task card drag styles — compact Jira-style */
+.task-card-dragging {
+  @apply shadow-lg shadow-blue-500/10 rotate-1;
+  transform: rotate(1deg) scale(1.02);
+}
+
+/* Status indicators */
+.status-alive {
+  @apply text-green-400;
+  animation: pulse 2s infinite;
+}
+
+.status-dead {
+  @apply text-red-400;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Tag styles */
+.tag {
+  @apply px-1.5 py-0.5 rounded text-[10px] font-medium;
+}
+
+/* Category colors */
+.category-work {
+  @apply bg-blue-500/20 text-blue-400;
+}
+
+.category-personal {
+  @apply bg-purple-500/20 text-purple-400;
+}
+
+.category-copperai {
+  @apply bg-orange-500/20 text-orange-400;
+}
+
+.category-general {
+  @apply bg-gray-500/20 text-gray-400;
+}
+
+/* Due date styles */
+.due-overdue {
+  @apply text-red-400 font-semibold;
+}
+
+.due-today {
+  @apply text-amber-400;
+}
+
+.due-upcoming {
+  @apply text-gray-400;
+}

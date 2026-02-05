@@ -71,3 +71,12 @@ USER.md
 
 # local tooling
 .serena/
+
+# Clawd Kanban
+clawd/frontend/node_modules/
+clawd/server/node_modules/
+clawd/logs/
+
+# Skills
+skills/*/venv/
+skills/*/.env

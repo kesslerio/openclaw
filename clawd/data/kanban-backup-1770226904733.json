@@ -1,0 +1,57 @@
+{
+  "columns": {
+    "backlog": {
+      "id": "backlog",
+      "title": "BACKLOG",
+      "tasks": [],
+      "color": "#6B7280"
+    },
+    "todo": {
+      "id": "todo",
+      "title": "TODO",
+      "tasks": [],
+      "color": "#3B82F6"
+    },
+    "doing": {
+      "id": "doing",
+      "title": "DOING",
+      "tasks": [],
+      "color": "#F59E0B"
+    },
+    "done": {
+      "id": "done",
+      "title": "DONE",
+      "tasks": [],
+      "color": "#10B981"
+    }
+  },
+  "tasks": [],
+  "columnOrder": ["backlog", "todo", "doing", "done"],
+  "meta": {
+    "version": "2.0",
+    "migratedAt": "2026-02-04T17:32:34.048Z",
+    "sourceFiles": [],
+    "schema": {
+      "fields": [
+        "id",
+        "title",
+        "description",
+        "status",
+        "priority",
+        "dueDate",
+        "tags",
+        "category",
+        "createdAt",
+        "updatedAt",
+        "completedAt",
+        "assignee",
+        "estimate",
+        "timeSpent"
+      ],
+      "priorities": ["high", "medium", "low"],
+      "categories": ["Work", "Personal", "CopperAI", "General"],
+      "statuses": ["backlog", "todo", "doing", "done"]
+    },
+    "lastMigration": "2026-02-04T17:32:34.682Z"
+  }
+}
