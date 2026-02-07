@@ -4,10 +4,14 @@ Classifies messages into Urgent, FYI, or Noise using LLM
 """
 import json
 from typing import List, Tuple
-import anthropic
 
 from ..models import UnifiedMessage, Classification
 from ..config import config
+from ..api_client import AnthropicClient
+from ..constants import ANTHROPIC_MODEL
+from ..logging_config import get_logger
+
+logger = get_logger("classifier")
 
 CLASSIFICATION_PROMPT = """Classify this message into exactly one category.
 
@@ -51,7 +55,7 @@ Output JSON only:
 
 class MessageClassifier:
     def __init__(self):
-        self.client = anthropic.Anthropic(api_key=config.ANTHROPIC_API_KEY) if config.ANTHROPIC_API_KEY else None
+        self.client = AnthropicClient(api_key=config.ANTHROPIC_API_KEY)
 
     def classify_messages(
         self,
@@ -67,6 +71,7 @@ class MessageClassifier:
                 msg.classification_confidence = confidence
                 msg.classification_reason = reason
             except Exception as e:
+                logger.error("Classification error for %s: %s", msg.id, e)
                 msg.classification = Classification.AMBIGUOUS
                 msg.classification_confidence = 0.0
                 msg.classification_reason = f"Classification error: {str(e)}"
@@ -82,7 +87,7 @@ class MessageClassifier:
             return quick_result
 
         # Use LLM for complex cases
-        if not self.client:
+        if not self.client.available:
             return Classification.AMBIGUOUS, 0.5, "No API key configured"
 
         prompt = CLASSIFICATION_PROMPT.format(
@@ -94,8 +99,8 @@ class MessageClassifier:
             is_direct=msg.message_type.value == "direct"
         )
 
-        response = self.client.messages.create(
-            model="claude-sonnet-4-20250514",
+        response = self.client.create_message(
+            model=ANTHROPIC_MODEL,
             max_tokens=200,
             messages=[{"role": "user", "content": prompt}]
         )

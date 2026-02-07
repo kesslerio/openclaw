@@ -5,10 +5,14 @@ Groups related messages by topic, thread, and sender
 import json
 from typing import List, Dict
 from collections import defaultdict
-import anthropic
 
 from ..models import UnifiedMessage, MessageGroup, Classification, Platform
 from ..config import config
+from ..api_client import AnthropicClient
+from ..constants import ANTHROPIC_MODEL
+from ..logging_config import get_logger
+
+logger = get_logger("grouper")
 
 GROUPING_PROMPT = """Group these messages by topic/theme.
 
@@ -36,7 +40,7 @@ Return ONLY valid JSON."""
 
 class SemanticGrouper:
     def __init__(self):
-        self.client = anthropic.Anthropic(api_key=config.ANTHROPIC_API_KEY) if config.ANTHROPIC_API_KEY else None
+        self.client = AnthropicClient(api_key=config.ANTHROPIC_API_KEY)
 
     def group_messages(
         self,
@@ -88,7 +92,7 @@ class SemanticGrouper:
     def _semantic_group(self, messages: List[UnifiedMessage]) -> List[MessageGroup]:
         """Use LLM to create semantic topic groups"""
 
-        if not self.client:
+        if not self.client.available:
             return self._simple_groups(messages)
 
         # Format messages for prompt
@@ -100,8 +104,8 @@ class SemanticGrouper:
         prompt = GROUPING_PROMPT.format(messages=msg_text)
 
         try:
-            response = self.client.messages.create(
-                model="claude-sonnet-4-20250514",
+            response = self.client.create_message(
+                model=ANTHROPIC_MODEL,
                 max_tokens=1000,
                 messages=[{"role": "user", "content": prompt}]
             )
@@ -142,7 +146,8 @@ class SemanticGrouper:
 
             return groups
 
-        except (json.JSONDecodeError, KeyError):
+        except (json.JSONDecodeError, KeyError) as e:
+            logger.warning("Semantic grouping failed, falling back to simple: %s", e)
             return self._simple_groups(messages)
 
     def _create_noise_summary(self, messages: List[UnifiedMessage]) -> MessageGroup:

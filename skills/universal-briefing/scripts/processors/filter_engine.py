@@ -2,6 +2,7 @@
 Message Filter Engine
 Applies exclusion rules to remove system messages, bots, duplicates, and own messages
 """
+import hashlib
 import re
 from typing import List, Set
 from ..models import UnifiedMessage, Platform
@@ -137,11 +138,11 @@ class FilterEngine:
         return False
 
     def _content_hash(self, msg: UnifiedMessage) -> str:
-        """Generate hash for deduplication"""
-        # Hash based on normalized content and sender within short time window
+        """Generate deterministic hash for deduplication (survives process restarts)."""
         normalized = re.sub(r'\s+', ' ', msg.content.lower().strip())
         time_bucket = msg.timestamp.strftime("%Y%m%d%H")  # Hour bucket
-        return f"{msg.sender_id}:{time_bucket}:{hash(normalized)}"
+        raw = f"{msg.sender_id}:{time_bucket}:{normalized}"
+        return hashlib.sha256(raw.encode("utf-8")).hexdigest()
 
     def is_noise_only(self, content: str) -> bool:
         """Check if content is pure noise (reactions, acknowledgments)"""

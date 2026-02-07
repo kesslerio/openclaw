@@ -4,10 +4,14 @@ Generates context-aware draft replies matching platform norms
 """
 import json
 from typing import Optional, List
-import anthropic
 
 from ..models import UnifiedMessage, Platform
 from ..config import config
+from ..api_client import AnthropicClient
+from ..constants import ANTHROPIC_MODEL
+from ..logging_config import get_logger
+
+logger = get_logger("reply_generator")
 
 # Platform-specific reply norms
 PLATFORM_NORMS = {
@@ -72,7 +76,7 @@ Output JSON only:
 
 class ReplyGenerator:
     def __init__(self):
-        self.client = anthropic.Anthropic(api_key=config.ANTHROPIC_API_KEY) if config.ANTHROPIC_API_KEY else None
+        self.client = AnthropicClient(api_key=config.ANTHROPIC_API_KEY)
 
     def generate_replies(self, messages: List[UnifiedMessage]) -> List[UnifiedMessage]:
         """Generate draft replies for urgent messages"""
@@ -87,6 +91,7 @@ class ReplyGenerator:
                 reply = self._generate_reply(msg)
                 msg.suggested_reply = reply
             except Exception as e:
+                logger.error("Reply generation error for %s: %s", msg.id, e)
                 msg.suggested_reply = None
 
         return messages
@@ -94,7 +99,7 @@ class ReplyGenerator:
     def _generate_reply(self, msg: UnifiedMessage) -> Optional[str]:
         """Generate a single reply"""
 
-        if not self.client:
+        if not self.client.available:
             return None
 
         norms = PLATFORM_NORMS.get(msg.platform, PLATFORM_NORMS[Platform.EMAIL])
@@ -111,8 +116,8 @@ class ReplyGenerator:
             example=norms["example"]
         )
 
-        response = self.client.messages.create(
-            model="claude-sonnet-4-20250514",
+        response = self.client.create_message(
+            model=ANTHROPIC_MODEL,
             max_tokens=300,
             messages=[{"role": "user", "content": prompt}]
         )

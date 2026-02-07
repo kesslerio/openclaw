@@ -6,7 +6,6 @@ import json
 import re
 from typing import List, Optional
 from datetime import datetime
-import anthropic
 
 try:
     import dateparser
@@ -16,6 +15,11 @@ except ImportError:
 
 from ..models import UnifiedMessage
 from ..config import config
+from ..api_client import AnthropicClient
+from ..constants import ANTHROPIC_MODEL
+from ..logging_config import get_logger
+
+logger = get_logger("commitment_detector")
 
 # High-signal commitment patterns
 COMMITMENT_PATTERNS = [
@@ -59,7 +63,7 @@ Return ONLY valid JSON."""
 
 class CommitmentDetector:
     def __init__(self):
-        self.client = anthropic.Anthropic(api_key=config.ANTHROPIC_API_KEY) if config.ANTHROPIC_API_KEY else None
+        self.client = AnthropicClient(api_key=config.ANTHROPIC_API_KEY)
 
     def detect_commitments(self, messages: List[UnifiedMessage]) -> List[UnifiedMessage]:
         """Detect commitments in messages"""
@@ -73,6 +77,7 @@ class CommitmentDetector:
             try:
                 self._extract_commitment(msg)
             except Exception as e:
+                logger.error("Commitment detection error for %s: %s", msg.id, e)
                 msg.has_commitment = False
 
         return messages
@@ -88,7 +93,7 @@ class CommitmentDetector:
     def _extract_commitment(self, msg: UnifiedMessage):
         """Use LLM to extract commitment details"""
 
-        if not self.client:
+        if not self.client.available:
             msg.has_commitment = False
             return
 
@@ -97,8 +102,8 @@ class CommitmentDetector:
             content=msg.content[:1000]
         )
 
-        response = self.client.messages.create(
-            model="claude-sonnet-4-20250514",
+        response = self.client.create_message(
+            model=ANTHROPIC_MODEL,
             max_tokens=300,
             messages=[{"role": "user", "content": prompt}]
         )
