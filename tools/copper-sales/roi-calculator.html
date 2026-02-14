@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Copper AI ROI Calculator - See Your Savings</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+          sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        padding: 20px;
+        color: #333;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+      }
+
+      .header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 40px;
+        text-align: center;
+      }
+
+      .header h1 {
+        font-size: 32px;
+        margin-bottom: 10px;
+      }
+
+      .header p {
+        font-size: 18px;
+        opacity: 0.9;
+      }
+
+      .content {
+        padding: 40px;
+      }
+
+      .section {
+        margin-bottom: 40px;
+      }
+
+      .section h2 {
+        font-size: 24px;
+        color: #667eea;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .input-group {
+        margin-bottom: 24px;
+      }
+
+      .input-group label {
+        display: block;
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: #555;
+      }
+
+      .input-group input {
+        width: 100%;
+        padding: 12px 16px;
+        font-size: 18px;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        transition: border-color 0.3s;
+      }
+
+      .input-group input:focus {
+        outline: none;
+        border-color: #667eea;
+      }
+
+      .input-group .helper {
+        font-size: 14px;
+        color: #888;
+        margin-top: 4px;
+      }
+
+      .results {
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        border-radius: 12px;
+        padding: 30px;
+        margin-top: 30px;
+      }
+
+      .results h3 {
+        font-size: 22px;
+        color: #667eea;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .metric {
+        background: white;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .metric-label {
+        font-size: 16px;
+        color: #555;
+        font-weight: 500;
+      }
+
+      .metric-value {
+        font-size: 28px;
+        font-weight: 700;
+        color: #667eea;
+      }
+
+      .metric-value.highlight {
+        color: #10b981;
+      }
+
+      .metric-value.negative {
+        color: #ef4444;
+      }
+
+      .breakdown {
+        background: white;
+        border-radius: 8px;
+        padding: 20px;
+        margin-top: 20px;
+      }
+
+      .breakdown h4 {
+        font-size: 18px;
+        margin-bottom: 12px;
+        color: #667eea;
+      }
+
+      .breakdown-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 0;
+        border-bottom: 1px solid #f0f0f0;
+      }
+
+      .breakdown-item:last-child {
+        border-bottom: none;
+      }
+
+      .breakdown-item .label {
+        color: #666;
+      }
+
+      .breakdown-item .value {
+        font-weight: 600;
+        color: #333;
+      }
+
+      .cta {
+        background: #667eea;
+        color: white;
+        padding: 30px;
+        text-align: center;
+        margin-top: 40px;
+        border-radius: 12px;
+      }
+
+      .cta h3 {
+        font-size: 24px;
+        margin-bottom: 16px;
+      }
+
+      .cta p {
+        font-size: 16px;
+        margin-bottom: 20px;
+        opacity: 0.9;
+      }
+
+      .cta button {
+        background: white;
+        color: #667eea;
+        border: none;
+        padding: 16px 40px;
+        font-size: 18px;
+        font-weight: 600;
+        border-radius: 8px;
+        cursor: pointer;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+      }
+
+      .cta button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+
+      .footer {
+        background: #f9fafb;
+        padding: 20px;
+        text-align: center;
+        color: #666;
+        font-size: 14px;
+      }
+
+      @media (max-width: 600px) {
+        .header h1 {
+          font-size: 24px;
+        }
+
+        .content {
+          padding: 20px;
+        }
+
+        .metric {
+          flex-direction: column;
+          text-align: center;
+          gap: 8px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>🏥 Copper AI ROI Calculator</h1>
+        <p>See how much you could save with AI voice agents</p>
+      </div>
+
+      <div class="content">
+        <div class="section">
+          <h2>📊 Your Agency Info</h2>
+
+          <div class="input-group">
+            <label for="caregivers">Number of Active Caregivers</label>
+            <input type="number" id="caregivers" value="50" min="1" max="500" />
+            <div class="helper">How many caregivers do you schedule each month?</div>
+          </div>
+
+          <div class="input-group">
+            <label for="visitsPerCaregiver">Average Visits per Caregiver (per month)</label>
+            <input type="number" id="visitsPerCaregiver" value="20" min="1" max="100" />
+            <div class="helper">Typical: 15-25 visits per caregiver per month</div>
+          </div>
+
+          <div class="input-group">
+            <label for="noshowRate">Current No-Show Rate (%)</label>
+            <input type="number" id="noshowRate" value="22" min="0" max="100" step="1" />
+            <div class="helper">Industry average: 22% | Good agencies: 12-15%</div>
+          </div>
+
+          <div class="input-group">
+            <label for="avgRevenue">Average Revenue per Visit ($)</label>
+            <input type="number" id="avgRevenue" value="200" min="50" max="500" />
+            <div class="helper">Typical: $150-300 depending on service type</div>
+          </div>
+
+          <div class="input-group">
+            <label for="adminHourly">Admin Hourly Rate ($)</label>
+            <input type="number" id="adminHourly" value="25" min="15" max="60" />
+            <div class="helper">How much does admin time cost per hour?</div>
+          </div>
+        </div>
+
+        <div class="results" id="results">
+          <h3>💰 Your Potential Savings with Copper AI</h3>
+
+          <div class="metric">
+            <span class="metric-label">Monthly Savings</span>
+            <span class="metric-value highlight" id="monthlySavings">$0</span>
+          </div>
+
+          <div class="metric">
+            <span class="metric-label">Annual Savings</span>
+            <span class="metric-value highlight" id="annualSavings">$0</span>
+          </div>
+
+          <div class="metric">
+            <span class="metric-label">ROI (Return on Investment)</span>
+            <span class="metric-value" id="roi">0:1</span>
+          </div>
+
+          <div class="metric">
+            <span class="metric-label">Payback Period</span>
+            <span class="metric-value" id="payback">0 days</span>
+          </div>
+
+          <div class="breakdown">
+            <h4>📈 Detailed Breakdown</h4>
+
+            <div class="breakdown-item">
+              <span class="label">Total Monthly Visits</span>
+              <span class="value" id="totalVisits">0</span>
+            </div>
+
+            <div class="breakdown-item">
+              <span class="label">Current No-Shows (per month)</span>
+              <span class="value negative" id="currentNoShows">0</span>
+            </div>
+
+            <div class="breakdown-item">
+              <span class="label">Expected No-Shows with Copper AI</span>
+              <span class="value" id="futureNoShows">0</span>
+            </div>
+
+            <div class="breakdown-item">
+              <span class="label">No-Shows Prevented</span>
+              <span class="value highlight" id="noshowsPrevented">0</span>
+            </div>
+
+            <div class="breakdown-item">
+              <span class="label">Revenue Saved (no-shows prevented)</span>
+              <span class="value highlight" id="revenueSaved">$0</span>
+            </div>
+
+            <div class="breakdown-item">
+              <span class="label">Admin Time Saved (hours/month)</span>
+              <span class="value highlight" id="timeSaved">0</span>
+            </div>
+
+            <div class="breakdown-item">
+              <span class="label">Admin Cost Savings</span>
+              <span class="value highlight" id="adminSavings">$0</span>
+            </div>
+
+            <div class="breakdown-item">
+              <span class="label">Copper AI Cost (Pro Plan)</span>
+              <span class="value negative" id="copperCost">-$800</span>
+            </div>
+
+            <div
+              class="breakdown-item"
+              style="border-top: 2px solid #667eea; padding-top: 12px; margin-top: 8px"
+            >
+              <span class="label" style="font-weight: 700">NET MONTHLY SAVINGS</span>
+              <span class="value highlight" style="font-size: 24px" id="netSavings">$0</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cta">
+          <h3>Ready to Start Saving?</h3>
+          <p>Book a 15-minute demo to see Copper AI in action with your specific numbers.</p>
+          <button
+            onclick="window.open('https://calendly.com/arvindsarin/copper-ai-demo', '_blank')"
+          >
+            📅 Schedule Your Demo
+          </button>
+        </div>
+      </div>
+
+      <div class="footer">
+        <p>Copper AI - Voice Intelligence for Home Health</p>
+        <p>Questions? Email arvind@copperdigital.com or text +1 469-742-1095</p>
+      </div>
+    </div>
+
+    <script>
+      // Calculator logic
+      function calculate() {
+        // Get input values
+        const caregivers = parseInt(document.getElementById("caregivers").value) || 0;
+        const visitsPerCaregiver =
+          parseInt(document.getElementById("visitsPerCaregiver").value) || 0;
+        const noshowRate = parseFloat(document.getElementById("noshowRate").value) || 0;
+        const avgRevenue = parseFloat(document.getElementById("avgRevenue").value) || 0;
+        const adminHourly = parseFloat(document.getElementById("adminHourly").value) || 0;
+
+        // Calculate totals
+        const totalVisits = caregivers * visitsPerCaregiver;
+        const currentNoShows = Math.round(totalVisits * (noshowRate / 100));
+
+        // Copper AI reduces no-shows by 45% on average
+        const reductionRate = 0.45;
+        const noshowsPrevented = Math.round(currentNoShows * reductionRate);
+        const futureNoShows = currentNoShows - noshowsPrevented;
+
+        // Revenue saved from prevented no-shows
+        const revenueSaved = noshowsPrevented * avgRevenue;
+
+        // Admin time saved
+        // Current: Manual calls = 5 min per visit, 2x per visit (pre-call + confirmation)
+        // With Copper AI: Automated, only admin time is reviewing alerts (1 min per visit)
+        const currentAdminMinutes = totalVisits * 10; // 10 min per visit (2 calls × 5 min)
+        const futureAdminMinutes = totalVisits * 1; // 1 min per visit (just review)
+        const timeSavedHours = (currentAdminMinutes - futureAdminMinutes) / 60;
+        const adminSavings = timeSavedHours * adminHourly;
+
+        // Total savings
+        const copperCost = 800; // Pro plan
+        const totalMonthlySavings = revenueSaved + adminSavings;
+        const netMonthlySavings = totalMonthlySavings - copperCost;
+        const annualSavings = netMonthlySavings * 12;
+
+        // ROI calculation
+        const roi = (netMonthlySavings / copperCost).toFixed(1);
+        const paybackDays = Math.round((copperCost / totalMonthlySavings) * 30);
+
+        // Update display
+        document.getElementById("monthlySavings").textContent = formatCurrency(netMonthlySavings);
+        document.getElementById("annualSavings").textContent = formatCurrency(annualSavings);
+        document.getElementById("roi").textContent = `${roi}:1`;
+        document.getElementById("payback").textContent = `${paybackDays} days`;
+
+        document.getElementById("totalVisits").textContent = totalVisits.toLocaleString();
+        document.getElementById("currentNoShows").textContent = currentNoShows.toLocaleString();
+        document.getElementById("futureNoShows").textContent = futureNoShows.toLocaleString();
+        document.getElementById("noshowsPrevented").textContent = noshowsPrevented.toLocaleString();
+        document.getElementById("revenueSaved").textContent = formatCurrency(revenueSaved);
+        document.getElementById("timeSaved").textContent =
+          Math.round(timeSavedHours).toLocaleString();
+        document.getElementById("adminSavings").textContent = formatCurrency(adminSavings);
+        document.getElementById("copperCost").textContent = `-${formatCurrency(copperCost)}`;
+        document.getElementById("netSavings").textContent = formatCurrency(netMonthlySavings);
+      }
+
+      function formatCurrency(amount) {
+        return `$${Math.round(amount).toLocaleString()}`;
+      }
+
+      // Add event listeners to all inputs
+      const inputs = [
+        "caregivers",
+        "visitsPerCaregiver",
+        "noshowRate",
+        "avgRevenue",
+        "adminHourly",
+      ];
+      inputs.forEach((id) => {
+        document.getElementById(id).addEventListener("input", calculate);
+      });
+
+      // Calculate on load
+      calculate();
+    </script>
+  </body>
+</html>

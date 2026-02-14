@@ -1,0 +1,69 @@
+{
+  "meta": {
+    "created": "2026-02-07",
+    "updated": "2026-02-07",
+    "target_pilots": 5,
+    "phase": "recruitment"
+  },
+  "stages": {
+    "prospect": "Identified, not yet contacted",
+    "outreach": "Initial contact sent",
+    "responded": "Got a reply",
+    "discovery": "Discovery call scheduled/completed",
+    "demo": "Demo scheduled/completed",
+    "pilot_active": "In 30-day pilot",
+    "pilot_complete": "Pilot finished",
+    "converted": "Paying customer",
+    "lost": "Not proceeding"
+  },
+  "agencies": [
+    {
+      "id": 1,
+      "name": "Ben Jie (TBD Agency)",
+      "contact": "Ben Jie",
+      "email": "",
+      "phone": "",
+      "source": "Calendly inbound",
+      "emr": "Unknown",
+      "visits_per_month": null,
+      "noshow_rate": null,
+      "stage": "discovery",
+      "notes": "Quick Discussion scheduled Mon Feb 9, 2pm CST",
+      "next_action": "Discovery call",
+      "next_action_date": "2026-02-09",
+      "created": "2026-02-07",
+      "updated": "2026-02-07"
+    },
+    {
+      "id": 2,
+      "name": "Vivin Ramamoorthy (TBD Agency)",
+      "contact": "Vivin Ramamoorthy",
+      "email": "",
+      "phone": "",
+      "source": "Email inbound - 'I spoke with you today_Copper AI'",
+      "emr": "Unknown",
+      "visits_per_month": null,
+      "noshow_rate": null,
+      "stage": "responded",
+      "notes": "Email received Feb 6, needs follow-up",
+      "next_action": "Read email and respond",
+      "next_action_date": "2026-02-08",
+      "created": "2026-02-07",
+      "updated": "2026-02-07"
+    }
+  ],
+  "summary": {
+    "total": 2,
+    "by_stage": {
+      "prospect": 0,
+      "outreach": 0,
+      "responded": 1,
+      "discovery": 1,
+      "demo": 0,
+      "pilot_active": 0,
+      "pilot_complete": 0,
+      "converted": 0,
+      "lost": 0
+    }
+  }
+}

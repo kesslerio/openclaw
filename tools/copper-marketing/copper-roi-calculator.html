@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Copper AI ROI Calculator - See Your Savings</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+          sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+      }
+
+      header {
+        background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        color: white;
+        padding: 40px;
+        text-align: center;
+      }
+
+      header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+      }
+
+      header p {
+        font-size: 1.2rem;
+        opacity: 0.9;
+      }
+
+      .calculator {
+        padding: 40px;
+      }
+
+      .input-section {
+        background: #f8fafc;
+        border-radius: 12px;
+        padding: 30px;
+        margin-bottom: 30px;
+      }
+
+      .input-section h2 {
+        color: #1e3a8a;
+        margin-bottom: 20px;
+        font-size: 1.5rem;
+      }
+
+      .input-group {
+        margin-bottom: 25px;
+      }
+
+      .input-group label {
+        display: block;
+        font-weight: 600;
+        color: #334155;
+        margin-bottom: 8px;
+        font-size: 1rem;
+      }
+
+      .input-group input,
+      .input-group select {
+        width: 100%;
+        padding: 12px 16px;
+        border: 2px solid #e2e8f0;
+        border-radius: 8px;
+        font-size: 1rem;
+        transition: border-color 0.3s;
+      }
+
+      .input-group input:focus,
+      .input-group select:focus {
+        outline: none;
+        border-color: #3b82f6;
+      }
+
+      .input-group small {
+        display: block;
+        color: #64748b;
+        margin-top: 5px;
+      }
+
+      .results {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        margin-top: 30px;
+      }
+
+      .result-card {
+        background: white;
+        border: 2px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 25px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .result-card.copper {
+        border-color: #10b981;
+        background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+      }
+
+      .result-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+        color: #1e293b;
+      }
+
+      .result-card .price {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #1e3a8a;
+        margin-bottom: 10px;
+      }
+
+      .result-card.copper .price {
+        color: #059669;
+      }
+
+      .result-card .savings {
+        background: #fef3c7;
+        color: #92400e;
+        padding: 10px;
+        border-radius: 8px;
+        font-weight: 600;
+        margin-top: 15px;
+      }
+
+      .result-card .breakdown {
+        margin-top: 15px;
+        padding-top: 15px;
+        border-top: 1px solid #e2e8f0;
+      }
+
+      .breakdown-item {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 8px;
+        font-size: 0.9rem;
+        color: #475569;
+      }
+
+      .breakdown-item strong {
+        color: #1e293b;
+      }
+
+      .highlight-box {
+        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        color: white;
+        padding: 30px;
+        border-radius: 12px;
+        text-align: center;
+        margin-top: 30px;
+      }
+
+      .highlight-box h2 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+      }
+
+      .highlight-box .amount {
+        font-size: 3rem;
+        font-weight: bold;
+        margin: 20px 0;
+      }
+
+      .highlight-box p {
+        font-size: 1.1rem;
+        opacity: 0.95;
+      }
+
+      .cta-button {
+        display: inline-block;
+        background: white;
+        color: #059669;
+        padding: 15px 40px;
+        border-radius: 8px;
+        font-weight: 600;
+        text-decoration: none;
+        margin-top: 20px;
+        transition: transform 0.2s;
+      }
+
+      .cta-button:hover {
+        transform: translateY(-2px);
+      }
+
+      @media (max-width: 768px) {
+        header h1 {
+          font-size: 1.8rem;
+        }
+
+        .calculator {
+          padding: 20px;
+        }
+
+        .results {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>💰 Copper AI ROI Calculator</h1>
+        <p>See how much you'll save compared to other voice AI platforms</p>
+      </header>
+
+      <div class="calculator">
+        <div class="input-section">
+          <h2>📊 Your Usage</h2>
+
+          <div class="input-group">
+            <label for="callVolume">Monthly Call Volume</label>
+            <input type="number" id="callVolume" value="1000" min="100" step="100" />
+            <small>How many calls per month do you handle?</small>
+          </div>
+
+          <div class="input-group">
+            <label for="avgDuration">Average Call Duration (minutes)</label>
+            <input type="number" id="avgDuration" value="3" min="1" step="0.5" />
+            <small>Typical call length (patient check-ins, shift confirmations, etc.)</small>
+          </div>
+
+          <div class="input-group">
+            <label for="competitor">Compare Against</label>
+            <select id="competitor">
+              <option value="vapi">Vapi AI</option>
+              <option value="retell">Retell AI</option>
+              <option value="dialora">Dialora AI</option>
+              <option value="bland">Bland AI</option>
+              <option value="aircall">Aircall AI</option>
+              <option value="synthflow">Synthflow AI</option>
+            </select>
+            <small>Select your current or alternative platform</small>
+          </div>
+        </div>
+
+        <div class="results" id="results">
+          <!-- Results will be inserted here -->
+        </div>
+
+        <div class="highlight-box" id="savingsHighlight">
+          <!-- Savings highlight will be inserted here -->
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const competitorPricing = {
+        vapi: {
+          name: "Vapi AI",
+          perMinute: 0.25, // Average actual cost
+          monthlyFee: 0,
+          description: "Actual cost including STT, LLM, TTS, Telephony",
+          breakdown: {
+            "Vapi Platform": 0.05,
+            "STT (Deepgram)": 0.01,
+            "LLM (GPT-4)": 0.12,
+            "TTS (ElevenLabs)": 0.06,
+            Telephony: 0.01,
+          },
+        },
+        retell: {
+          name: "Retell AI",
+          perMinute: 0.2,
+          monthlyFee: 0,
+          description: "Base + LLM pass-through costs",
+          breakdown: {
+            "Retell Platform": 0.07,
+            "LLM (GPT-4)": 0.1,
+            TTS: 0.02,
+            Telephony: 0.01,
+          },
+        },
+        dialora: {
+          name: "Dialora AI",
+          perMinute: 0,
+          monthlyFee: 97,
+          description: "Flat monthly rate (limited calls)",
+          breakdown: {
+            "Monthly Subscription": 97,
+          },
+          callLimit: 200, // Estimated for their $97 plan
+        },
+        bland: {
+          name: "Bland AI",
+          perMinute: 0.18,
+          monthlyFee: 299,
+          description: "Per-minute + subscription",
+          breakdown: {
+            "Per-minute fee": 0.09,
+            "LLM costs": 0.07,
+            Telephony: 0.02,
+            Subscription: 299,
+          },
+        },
+        aircall: {
+          name: "Aircall AI",
+          perMinute: 0.49,
+          monthlyFee: 120, // 3-user minimum at $40/user
+          description: "Premium per-minute + phone system",
+          breakdown: {
+            "AI Voice Agent": 0.49,
+            "Phone System (3 users)": 120,
+          },
+        },
+        synthflow: {
+          name: "Synthflow AI",
+          perMinute: 0.13,
+          monthlyFee: 375,
+          description: "Agency-focused platform",
+          breakdown: {
+            Subscription: 375,
+            Overage: 0.13,
+          },
+          includedMinutes: 2000,
+        },
+      };
+
+      const copperPricing = {
+        tiers: [
+          { name: "Starter", calls: 500, price: 297 },
+          { name: "Growth", calls: 1000, price: 497 },
+          { name: "Pro", calls: 2500, price: 797 },
+        ],
+      };
+
+      function calculateCopperCost(totalCalls) {
+        // Find the best tier
+        for (let tier of copperPricing.tiers) {
+          if (totalCalls <= tier.calls) {
+            return {
+              monthly: tier.price,
+              perCall: tier.price / totalCalls,
+              tierName: tier.name,
+              included: tier.calls,
+            };
+          }
+        }
+        // If over Pro tier, estimate based on Pro pricing
+        const proPerCall = copperPricing.tiers[2].price / copperPricing.tiers[2].calls;
+        return {
+          monthly: Math.round(totalCalls * proPerCall),
+          perCall: proPerCall,
+          tierName: "Enterprise",
+          included: totalCalls,
+        };
+      }
+
+      function calculateCompetitorCost(competitor, totalCalls, totalMinutes) {
+        const pricing = competitorPricing[competitor];
+        let monthlyCost = pricing.monthlyFee;
+
+        if (pricing.callLimit && totalCalls > pricing.callLimit) {
+          // For platforms with call limits, estimate overage
+          const overage = totalCalls - pricing.callLimit;
+          monthlyCost += overage * 0.5; // Estimate overage cost per call
+        }
+
+        if (pricing.includedMinutes && totalMinutes > pricing.includedMinutes) {
+          // Synthflow model - base fee + overage
+          const overageMinutes = totalMinutes - pricing.includedMinutes;
+          monthlyCost += overageMinutes * pricing.perMinute;
+        } else if (pricing.perMinute > 0) {
+          // Standard per-minute pricing
+          monthlyCost += totalMinutes * pricing.perMinute;
+        }
+
+        return {
+          monthly: Math.round(monthlyCost),
+          perCall: monthlyCost / totalCalls,
+          breakdown: pricing.breakdown,
+        };
+      }
+
+      function updateResults() {
+        const callVolume = parseInt(document.getElementById("callVolume").value);
+        const avgDuration = parseFloat(document.getElementById("avgDuration").value);
+        const competitorKey = document.getElementById("competitor").value;
+
+        const totalMinutes = callVolume * avgDuration;
+
+        const copperCost = calculateCopperCost(callVolume);
+        const competitorCost = calculateCompetitorCost(competitorKey, callVolume, totalMinutes);
+        const competitorInfo = competitorPricing[competitorKey];
+
+        const monthlySavings = competitorCost.monthly - copperCost.monthly;
+        const annualSavings = monthlySavings * 12;
+        const savingsPercent = Math.round((monthlySavings / competitorCost.monthly) * 100);
+
+        // Update results
+        const resultsHTML = `
+                <div class="result-card copper">
+                    <h3>🎯 Copper AI</h3>
+                    <div class="price">$${copperCost.monthly.toLocaleString()}<span style="font-size: 1rem;">/mo</span></div>
+                    <div class="breakdown">
+                        <div class="breakdown-item">
+                            <span>Plan:</span>
+                            <strong>${copperCost.tierName}</strong>
+                        </div>
+                        <div class="breakdown-item">
+                            <span>Calls included:</span>
+                            <strong>${copperCost.included.toLocaleString()}</strong>
+                        </div>
+                        <div class="breakdown-item">
+                            <span>Cost per call:</span>
+                            <strong>$${copperCost.perCall.toFixed(2)}</strong>
+                        </div>
+                        <div class="breakdown-item">
+                            <span>Hidden fees:</span>
+                            <strong style="color: #059669;">ZERO</strong>
+                        </div>
+                    </div>
+                    <div class="savings">
+                        ✅ All-inclusive pricing<br>
+                        ✅ No developer required<br>
+                        ✅ Home health workflows
+                    </div>
+                </div>
+                
+                <div class="result-card">
+                    <h3>${competitorInfo.name}</h3>
+                    <div class="price">$${competitorCost.monthly.toLocaleString()}<span style="font-size: 1rem;">/mo</span></div>
+                    <div class="breakdown">
+                        ${Object.entries(competitorCost.breakdown)
+                          .map(
+                            ([key, value]) => `
+                            <div class="breakdown-item">
+                                <span>${key}:</span>
+                                <strong>${typeof value === "number" && value < 1 ? "$" + value.toFixed(2) + "/min" : "$" + value}</strong>
+                            </div>
+                        `,
+                          )
+                          .join("")}
+                        <div class="breakdown-item" style="margin-top: 10px; padding-top: 10px; border-top: 1px solid #e2e8f0;">
+                            <span>Cost per call:</span>
+                            <strong>$${competitorCost.perCall.toFixed(2)}</strong>
+                        </div>
+                    </div>
+                    <div style="margin-top: 15px; font-size: 0.9rem; color: #64748b;">
+                        ${competitorInfo.description}
+                    </div>
+                </div>
+            `;
+
+        document.getElementById("results").innerHTML = resultsHTML;
+
+        // Update savings highlight
+        const savingsHTML = `
+                <h2>💰 Your Savings with Copper AI</h2>
+                <div class="amount">$${monthlySavings.toLocaleString()}/month</div>
+                <p style="font-size: 1.5rem; margin: 10px 0;">$${annualSavings.toLocaleString()}/year</p>
+                <p>You save <strong>${savingsPercent}%</strong> compared to ${competitorInfo.name}</p>
+                <p style="margin-top: 20px; font-size: 1rem;">
+                    Based on ${callVolume.toLocaleString()} calls/month (${totalMinutes.toLocaleString()} minutes)
+                </p>
+                <a href="#" class="cta-button">🚀 Get Started with Copper AI</a>
+            `;
+
+        document.getElementById("savingsHighlight").innerHTML = savingsHTML;
+      }
+
+      // Event listeners
+      document.getElementById("callVolume").addEventListener("input", updateResults);
+      document.getElementById("avgDuration").addEventListener("input", updateResults);
+      document.getElementById("competitor").addEventListener("change", updateResults);
+
+      // Initial calculation
+      updateResults();
+    </script>
+  </body>
+</html>

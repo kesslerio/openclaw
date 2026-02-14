@@ -1,0 +1,30 @@
+{
+  "name": "copper-ai-demo-environment",
+  "version": "1.0.0",
+  "description": "Safe demo environment for Copper AI unified server",
+  "keywords": [
+    "copper-ai",
+    "demo",
+    "home-health",
+    "testing"
+  ],
+  "license": "MIT",
+  "author": "Nike (SarinAI)",
+  "main": "server.js",
+  "scripts": {
+    "demo": "node server.js",
+    "generate": "node demo-data-generator.js",
+    "reset": "node setup-demo-db.js --reset",
+    "setup": "node setup-demo-db.js"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^8.4.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

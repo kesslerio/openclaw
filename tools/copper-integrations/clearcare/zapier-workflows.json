@@ -1,0 +1,314 @@
+{
+  "workflows": [
+    {
+      "name": "Voice EVV → ClearCare Update",
+      "description": "When caregiver calls to clock in/out, update ClearCare visit status",
+      "trigger": {
+        "app": "Webhooks by Zapier",
+        "event": "Catch Hook",
+        "url": "https://hooks.zapier.com/hooks/catch/12345/abc123/",
+        "method": "POST",
+        "expectedData": {
+          "event": "clock_in",
+          "caregiver_phone": "+14697421095",
+          "caregiver_name": "Maria Garcia",
+          "client_name": "Mrs. Johnson",
+          "timestamp": "2026-02-03T14:30:00Z",
+          "clearcare_visit_id": "123456",
+          "location": {
+            "lat": 32.7767,
+            "lon": -96.797
+          }
+        }
+      },
+      "actions": [
+        {
+          "step": 1,
+          "app": "Email by Zapier",
+          "action": "Send Outbound Email",
+          "config": {
+            "to": "noreply@clearcareonline.com",
+            "subject": "EVV Update - Visit {{clearcare_visit_id}}",
+            "body": "Caregiver {{caregiver_name}} clocked {{event}} for visit {{clearcare_visit_id}} at {{timestamp}}.\n\nLocation: {{location.lat}}, {{location.lon}}\n\nPlease update visit status to '{{#if (eq event \"clock_in\")}}In Progress{{else}}Completed{{/if}}'.\n\n- Copper AI"
+          },
+          "notes": "ClearCare doesn't have direct Zapier integration yet, so we use email. Agency should configure ClearCare to accept EVV updates via email."
+        },
+        {
+          "step": 2,
+          "app": "Google Sheets",
+          "action": "Create Spreadsheet Row",
+          "config": {
+            "spreadsheet": "Copper AI - EVV Logs",
+            "worksheet": "EVV Events",
+            "values": {
+              "Timestamp": "{{timestamp}}",
+              "Event": "{{event}}",
+              "Caregiver": "{{caregiver_name}}",
+              "Phone": "{{caregiver_phone}}",
+              "Client": "{{client_name}}",
+              "ClearCare Visit ID": "{{clearcare_visit_id}}"
+            }
+          },
+          "notes": "Backup log in Google Sheets for compliance audits"
+        }
+      ]
+    },
+    {
+      "name": "ClearCare Schedule → Copper AI Notification",
+      "description": "When new visit assigned in ClearCare, call caregiver to notify",
+      "trigger": {
+        "app": "Email Parser by Zapier",
+        "event": "New Email",
+        "mailbox": "parse@copper.ai",
+        "emailPattern": {
+          "from": "noreply@clearcareonline.com",
+          "subject": "New Visit Assigned - {{caregiver_name}}",
+          "bodyFields": {
+            "caregiver_name": "text",
+            "client_name": "text",
+            "visit_date": "date",
+            "visit_time": "time",
+            "duration": "number",
+            "address": "text"
+          }
+        }
+      },
+      "actions": [
+        {
+          "step": 1,
+          "app": "Webhooks by Zapier",
+          "action": "POST",
+          "config": {
+            "url": "https://copper-ai.railway.app/webhook/new-visit",
+            "method": "POST",
+            "data": {
+              "caregiver_name": "{{caregiver_name}}",
+              "caregiver_phone": "{{lookup 'Caregiver Phone' in Google Sheets}}",
+              "client_name": "{{client_name}}",
+              "visit_date": "{{visit_date}}",
+              "visit_time": "{{visit_time}}",
+              "duration_minutes": "{{duration}}",
+              "address": "{{address}}"
+            },
+            "headers": {
+              "Content-Type": "application/json",
+              "X-Webhook-Signature": "{{compute HMAC-SHA256 signature}}"
+            }
+          }
+        },
+        {
+          "step": 2,
+          "app": "Google Sheets",
+          "action": "Lookup Spreadsheet Row",
+          "config": {
+            "spreadsheet": "Copper AI - Caregivers",
+            "worksheet": "Caregiver Directory",
+            "lookupColumn": "Name",
+            "lookupValue": "{{caregiver_name}}",
+            "returnColumn": "Phone"
+          },
+          "notes": "Get caregiver phone number from directory"
+        }
+      ]
+    },
+    {
+      "name": "No-Show Risk → Alert Agency",
+      "description": "When caregiver doesn't confirm visit, alert agency owner",
+      "trigger": {
+        "app": "Webhooks by Zapier",
+        "event": "Catch Hook",
+        "url": "https://hooks.zapier.com/hooks/catch/12345/xyz789/",
+        "method": "POST",
+        "expectedData": {
+          "event": "no_show_risk",
+          "risk_level": "HIGH",
+          "caregiver_name": "Maria Garcia",
+          "caregiver_phone": "+14697421095",
+          "client_name": "Mrs. Johnson",
+          "visit_time": "2026-02-04T14:00:00Z",
+          "reason": "Didn't answer 2hr confirmation call",
+          "recommendation": "Find backup caregiver"
+        }
+      },
+      "actions": [
+        {
+          "step": 1,
+          "app": "SMS by Zapier",
+          "action": "Send SMS",
+          "config": {
+            "to": "{{lookup 'Agency Owner Phone' in Google Sheets}}",
+            "message": "🚨 NO-SHOW RISK: {{risk_level}}\n\nCaregiver: {{caregiver_name}}\nClient: {{client_name}}\nVisit: {{visit_time}}\nIssue: {{reason}}\n\n⚠️ FIND BACKUP CAREGIVER NOW\n\n- Copper AI"
+          }
+        },
+        {
+          "step": 2,
+          "app": "Telegram",
+          "action": "Send Message",
+          "config": {
+            "chat_id": "{{lookup 'Agency Telegram ID' in Google Sheets}}",
+            "text": "🚨 *NO-SHOW RISK ALERT*\n\n*Level:* {{risk_level}}\n*Caregiver:* {{caregiver_name}} ({{caregiver_phone}})\n*Client:* {{client_name}}\n*Visit Time:* {{visit_time}}\n*Reason:* {{reason}}\n\n*ACTION REQUIRED:* {{recommendation}}\n\n_Copper AI Monitoring_",
+            "parse_mode": "Markdown"
+          }
+        },
+        {
+          "step": 3,
+          "app": "Google Sheets",
+          "action": "Create Spreadsheet Row",
+          "config": {
+            "spreadsheet": "Copper AI - Alerts",
+            "worksheet": "No-Show Risks",
+            "values": {
+              "Timestamp": "{{now}}",
+              "Risk Level": "{{risk_level}}",
+              "Caregiver": "{{caregiver_name}}",
+              "Client": "{{client_name}}",
+              "Visit Time": "{{visit_time}}",
+              "Reason": "{{reason}}",
+              "Status": "Pending"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Daily Schedule Sync (CSV Import)",
+      "description": "Import today's schedule from ClearCare CSV export",
+      "trigger": {
+        "app": "Google Drive",
+        "event": "New File in Folder",
+        "folder": "ClearCare Exports",
+        "filePattern": "schedule_*.csv"
+      },
+      "actions": [
+        {
+          "step": 1,
+          "app": "Formatter by Zapier",
+          "action": "Parse CSV",
+          "config": {
+            "csv": "{{file_content}}",
+            "delimiter": ",",
+            "hasHeader": true
+          }
+        },
+        {
+          "step": 2,
+          "app": "Webhooks by Zapier",
+          "action": "POST (Loop)",
+          "config": {
+            "url": "https://copper-ai.railway.app/webhook/import-schedule",
+            "method": "POST",
+            "data": {
+              "visits": "{{parsed_csv_rows}}"
+            }
+          },
+          "notes": "Bulk import all visits for the day"
+        }
+      ]
+    }
+  ],
+  "setup_instructions": {
+    "1. Create Zapier Account": "Go to https://zapier.com and sign up (free tier: 5 zaps)",
+    "2. Set Up Email Parser": [
+      "Go to https://parser.zapier.com",
+      "Create new mailbox: parse@copper.ai (or your custom domain)",
+      "Forward ClearCare notification emails to this address",
+      "Create parser rules to extract: caregiver_name, client_name, visit_date, visit_time, address"
+    ],
+    "3. Create Webhook URLs": [
+      "In Zapier, create new Zap with 'Webhooks by Zapier' trigger",
+      "Select 'Catch Hook'",
+      "Copy the webhook URL provided",
+      "Paste into Copper AI webhook server config"
+    ],
+    "4. Connect Apps": [
+      "Connect Email by Zapier (for sending EVV updates to ClearCare)",
+      "Connect Google Sheets (for logging & caregiver directory)",
+      "Connect SMS by Zapier or Twilio (for agency alerts)",
+      "Connect Telegram (optional, for Arvind's alerts)"
+    ],
+    "5. Test Workflows": [
+      "Use 'Test' button in Zapier for each step",
+      "Send test webhook payload from Copper AI server",
+      "Verify data flows end-to-end",
+      "Check Google Sheets logs populate correctly"
+    ],
+    "6. Enable Zaps": "Turn on all 4 workflows (they're off by default)",
+    "7. Monitor": "Check Zapier Task History daily for any failed steps"
+  },
+  "google_sheets_setup": {
+    "spreadsheet_name": "Copper AI - ClearCare Integration",
+    "worksheets": [
+      {
+        "name": "Caregiver Directory",
+        "columns": ["Name", "Phone", "Language", "Agency", "Status", "Notes"],
+        "purpose": "Lookup table for caregiver phone numbers"
+      },
+      {
+        "name": "EVV Events",
+        "columns": [
+          "Timestamp",
+          "Event",
+          "Caregiver",
+          "Phone",
+          "Client",
+          "ClearCare Visit ID",
+          "Location"
+        ],
+        "purpose": "Backup log of all EVV clock-in/out events (for compliance)"
+      },
+      {
+        "name": "No-Show Risks",
+        "columns": [
+          "Timestamp",
+          "Risk Level",
+          "Caregiver",
+          "Client",
+          "Visit Time",
+          "Reason",
+          "Status",
+          "Resolved By"
+        ],
+        "purpose": "Track high-risk visits and agency response"
+      },
+      {
+        "name": "Agency Contacts",
+        "columns": [
+          "Agency Name",
+          "Owner Name",
+          "Owner Phone",
+          "Owner Email",
+          "Telegram ID",
+          "Plan",
+          "Status"
+        ],
+        "purpose": "Lookup table for agency alert contacts"
+      }
+    ]
+  },
+  "troubleshooting": {
+    "Zapier webhook not triggering": [
+      "Check webhook URL is correct in Copper AI server",
+      "Verify webhook signature matches (check ZAPIER_WEBHOOK_SECRET)",
+      "Test with curl command first",
+      "Check Zapier Task History for error messages"
+    ],
+    "Email parser not extracting data": [
+      "Verify ClearCare emails are being forwarded to parser mailbox",
+      "Check parser rules match actual email format",
+      "Update parser template if ClearCare email format changed",
+      "Test with sample email in Zapier Email Parser dashboard"
+    ],
+    "SMS not sending": [
+      "Check SMS by Zapier credits (free tier: 100 SMS/month)",
+      "Verify phone numbers are in E.164 format (+1...)",
+      "Check Twilio account balance if using Twilio",
+      "Test with your own phone number first"
+    ],
+    "Google Sheets not updating": [
+      "Re-authenticate Google Sheets connection in Zapier",
+      "Check spreadsheet sharing permissions (Zapier needs edit access)",
+      "Verify column names match exactly (case-sensitive)",
+      "Check Zapier Task History for 'permission denied' errors"
+    ]
+  }
+}
