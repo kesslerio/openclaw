@@ -1,0 +1,35 @@
+# Test Dependencies for Memex Test Suite
+
+# Core Testing Framework
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+pytest-mock>=3.11.0
+
+# Async Support
+asyncio>=3.4.3
+
+# Mocking and Test Utilities
+unittest-mock>=1.5.0
+
+# Data Manipulation
+numpy>=1.24.0
+
+# Coverage (Optional but Recommended)
+pytest-cov>=4.1.0
+coverage>=7.2.0
+
+# Code Quality (Optional)
+pytest-flake8>=1.1.1
+pytest-black>=0.3.12
+
+# Performance Testing (Optional)
+pytest-benchmark>=4.0.0
+
+# HTML Reports (Optional)
+pytest-html>=3.2.0
+
+# Parallel Execution (Optional)
+pytest-xdist>=3.3.0
+
+# Note: Core application dependencies should be in ../requirements.txt
+# This file is specifically for test-only dependencies

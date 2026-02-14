@@ -1,0 +1,49 @@
+[tool.poetry]
+name = "memex"
+version = "0.1.0"
+description = "AI Second Brain - Liberate and query your meeting transcripts"
+authors = ["Nike <nike@clawd.bot>"]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.109.0"
+uvicorn = { extras = ["standard"], version = "^0.27.0" }
+playwright = "^1.41.0"
+chromadb = "^0.4.22"
+langchain = "^0.1.4"
+langchain-openai = "^0.0.5"
+openai = "^1.10.0"
+anthropic = "^0.8.1"
+python-dotenv = "^1.0.0"
+pydantic-settings = "^2.1.0"
+beautifulsoup4 = "^4.12.3"
+aiohttp = "^3.9.1"
+python-dateutil = "^2.8.2"
+sqlalchemy = "^2.0.25"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0.0"
+pytest-asyncio = "^0.23.3"
+pytest-cov = "^4.1.0"
+black = "^24.1.1"
+ruff = "^0.1.14"
+mypy = "^1.8.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_functions = "test_*"
+addopts = "-v --cov=. --cov-report=html --cov-report=term-missing"
+
+[tool.black]
+line-length = 100
+target-version = ['py311']
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"

@@ -205,12 +205,14 @@ Once everything is migrated and verified:
 ## Migration Checklist
 
 ```
-[ ] Phase 1: Memex -> openclaw/skills/memex/
-    [ ] Copy code
-    [ ] Move data to ~/memex-data/
-    [ ] Update paths
-    [ ] Test memex status/backfill/search
-    [ ] Remove old location
+[x] Phase 1: Memex -> openclaw/skills/memex/ (COMPLETED 2026-02-13)
+    [x] Copy 194 code files (5.3MB, excluding data/node_modules/caches)
+    [x] Move data to ~/memex-data/ (346MB: ChromaDB, FAISS, context cache)
+    [x] Symlink skills/memex/data -> ~/memex-data/
+    [x] Update 8 Python files with hardcoded clawd paths
+    [x] Remove .env with secrets (kept .env.example)
+    [ ] Test memex status/backfill/search (needs manual verification)
+    [ ] Remove old location (deferred to Phase 7)
 
 [x] Phase 2: Kanban -> openclaw/tools/kanban/ (COMPLETED 2026-02-09)
     [x] Move server + frontend
@@ -237,9 +239,11 @@ Once everything is migrated and verified:
     [ ] Verify backups
     [ ] Remove from clawd/ repo (deferred to Phase 7)
 
-[ ] Phase 6: Sales/Marketing tools
-    [ ] Move to openclaw/tools/copper-*/
-    [ ] Update any scripts referencing old paths
+[x] Phase 6: Sales/Marketing tools (COMPLETED 2026-02-13)
+    [x] Copy sales (37 files) to tools/copper-sales/
+    [x] Copy marketing (21 files) to tools/copper-marketing/
+    [x] Copy integrations (35 files) to tools/copper-integrations/
+    [x] Copy copper-ai (10 files) to tools/copper-ai/
 
 [ ] Phase 7: Retire clawd/ repo
     [ ] Final verification

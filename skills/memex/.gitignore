@@ -1,0 +1,17 @@
+# Data directory (symlinked to ~/memex-data/, not checked into git)
+data/
+db/
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Environment
+.env
+
+# Node
+node_modules/
+frontend/dist/

@@ -1,0 +1,132 @@
+[
+  {
+    "name": "OTZ",
+    "value": "8470921_80_80_104160_76_446820",
+    "domain": "www.google.com",
+    "path": "/",
+    "expires": 1773151270,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "NID",
+    "value": "528=lqYucxFRAY-AMSyV9ILHdMCKY_gpuKT3JXXPS01rhgLfWjXQKzYHSUkIJwphrLOqZbeaRGxBXWnXcn8GNbR2-RJT4sh-6EkuDqHk4ayaxh4u4eXpbuf06a2BEEra9E_PK3EsNtDFREw-QYvDy6wdlMCxR6ukhC5POoftU72n6xUEYJRjJd03PXIdZDuyGpphwNZKvlf9l5I8RfDe7Vy79aQ",
+    "domain": ".google.com",
+    "path": "/",
+    "expires": 1786370469.742091,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "_ga",
+    "value": "GA1.1.402144891.1770581180",
+    "domain": ".plaud.ai",
+    "path": "/",
+    "expires": 1805141499.006178,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "x-pld-tag",
+    "value": "441e625e39114e60",
+    "domain": "web.plaud.ai",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "cookieyes-consent",
+    "value": "consentid:SUlJNHBJR0tBd2NhbHVZckxUUXFUOVZQQjR2ZzZyN3I,consent:no,action:,necessary:yes,functional:yes,analytics:yes,advertisement:yes",
+    "domain": ".plaud.ai",
+    "path": "/",
+    "expires": 1802117499,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "Strict"
+  },
+  {
+    "name": "plaudfamoustxt",
+    "value": "The%20only%20way%20to%20do%20great%20work%20is%20to%20love%20what%20you%20do.",
+    "domain": "web.plaud.ai",
+    "path": "/",
+    "expires": 1770667580,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "__stripe_mid",
+    "value": "69a0d9a5-5e42-41b0-9326-638ccfab0e4797498e",
+    "domain": ".web.plaud.ai",
+    "path": "/",
+    "expires": 1802117500,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "Strict"
+  },
+  {
+    "name": "__stripe_sid",
+    "value": "b4496f6b-ccb2-4020-b3dd-6c305ea00ca37dc7b4",
+    "domain": ".web.plaud.ai",
+    "path": "/",
+    "expires": 1770583300,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "Strict"
+  },
+  {
+    "name": "__Secure-BUCKET",
+    "value": "CI0G",
+    "domain": ".google.com",
+    "path": "/",
+    "expires": 1786133478.887444,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "_ga_5N1K2J3M5R",
+    "value": "GS2.1.s1770581179$o1$g1$t1770581498$j40$l0$h0",
+    "domain": ".plaud.ai",
+    "path": "/",
+    "expires": 1805141498.667935,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "_dd_s",
+    "value": "aid=332353c8-d2e6-446e-b2cb-bfd30a1e1d2f&rum=2&id=06d033b2-6c75-4d07-8661-c0087d4824ac&created=1770581180056&expire=1770582398886",
+    "domain": ".plaud.ai",
+    "path": "/",
+    "expires": 1802117498,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Strict"
+  },
+  {
+    "name": "ph_phc_Be6wE0Vfi6lsbbfKfl4tgpzqKkB1UG29ddOlSA6B8NW_posthog",
+    "value": "%7B%22distinct_id%22%3A%225a508afae41a39851fd2666189a0f8a13d7e457f8a3eee88238f4deb2523876b%22%2C%22%24sesid%22%3A%5B1770581499209%2C%22019c3edc-be75-7e9f-8416-ba63ba8b1ca8%22%2C1770581180021%5D%2C%22%24epp%22%3Atrue%2C%22%24initial_person_info%22%3A%7B%22r%22%3A%22https%3A%2F%2Fwww.plaud.ai%2F%22%2C%22u%22%3A%22https%3A%2F%2Fweb.plaud.ai%2Flogin%3Ffrom_url%3D%2F%22%7D%7D",
+    "domain": ".plaud.ai",
+    "path": "/",
+    "expires": 1802117499,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "_ga_F1RPWCYBWZ",
+    "value": "GS2.1.s1770581180$o1$g1$t1770581499$j60$l0$h0",
+    "domain": ".plaud.ai",
+    "path": "/",
+    "expires": 1805141499.217575,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  }
+]

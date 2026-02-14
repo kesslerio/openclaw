@@ -1,0 +1,217 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                    MEMEX HISTORIAN SEARCH API SERVICE                      ║
+║                         Background Service Setup                           ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│ INSTALLATION (3 STEPS)                                                     │
+├────────────────────────────────────────────────────────────────────────────┤
+│                                                                            │
+│  1. Install dependencies                                                   │
+│     $ cd ~/clawd/memex                                                     │
+│     $ poetry install                                                       │
+│                                                                            │
+│  2. Install service                                                        │
+│     $ make install                                                         │
+│                                                                            │
+│  3. Verify running                                                         │
+│     $ make status                                                          │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│ ARCHITECTURE                                                               │
+├────────────────────────────────────────────────────────────────────────────┤
+│                                                                            │
+│   ┌─────────────┐                                                         │
+│   │ Memex Skill │  ← Python client integration                            │
+│   │  (Claude)   │                                                         │
+│   └──────┬──────┘                                                         │
+│          │                                                                 │
+│          │ HTTP GET http://localhost:8765/search?q=...                    │
+│          │                                                                 │
+│          ▼                                                                 │
+│   ┌─────────────────────────────────┐                                     │
+│   │  LaunchAgent (Auto-start)       │                                     │
+│   │  com.copperdigital.memex-api    │                                     │
+│   └──────────────┬──────────────────┘                                     │
+│                  │                                                         │
+│                  ▼                                                         │
+│   ┌─────────────────────────────────┐                                     │
+│   │  FastAPI Server (Port 8765)     │                                     │
+│   │  - GET /                        │  Health check                       │
+│   │  - GET /search                  │  Semantic search                    │
+│   │  - GET /stats                   │  Index statistics                   │
+│   └──────────────┬──────────────────┘                                     │
+│                  │                                                         │
+│                  ▼                                                         │
+│   ┌─────────────────────────────────┐                                     │
+│   │  ChromaDB Vector Store          │                                     │
+│   │  - all-MiniLM-L6-v2 (local)    │  No API costs!                      │
+│   │  - 384-dim embeddings           │                                     │
+│   │  - Metadata filtering           │                                     │
+│   └─────────────────────────────────┘                                     │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│ COMMANDS                                                                   │
+├────────────────────────────────────────────────────────────────────────────┤
+│                                                                            │
+│  Service Management:                                                       │
+│    make install     Install as background service                         │
+│    make start       Start the service                                     │
+│    make stop        Stop the service                                      │
+│    make restart     Restart the service                                   │
+│    make status      Check if running                                      │
+│    make test        Run API tests                                         │
+│    make logs        View service logs                                     │
+│    make uninstall   Remove service                                        │
+│                                                                            │
+│  API Testing:                                                              │
+│    curl http://localhost:8765/                                            │
+│    curl "http://localhost:8765/search?q=test&limit=5"                     │
+│    curl http://localhost:8765/stats                                       │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│ FILES CREATED                                                              │
+├────────────────────────────────────────────────────────────────────────────┤
+│                                                                            │
+│  Documentation (~/clawd/memex/):                                          │
+│    README_API.md          Main overview                                   │
+│    QUICKSTART.md          5-minute setup guide                            │
+│    API_SERVICE.md         Complete API reference                          │
+│    SKILL_INTEGRATION.md   Python client examples                          │
+│    ARCHITECTURE.md        System design details                           │
+│    SETUP_SUMMARY.md       Setup reference                                 │
+│    INDEX.md               File index                                      │
+│                                                                            │
+│  Scripts (~/clawd/memex/scripts/):                                        │
+│    install_service.sh     Install LaunchAgent                             │
+│    uninstall_service.sh   Remove LaunchAgent                              │
+│    start_api.sh           Start API server                                │
+│    stop_api.sh            Stop API server                                 │
+│    status_api.sh          Check status                                    │
+│    test_api.sh            Test endpoints (bash)                           │
+│    test_api.py            Test endpoints (Python)                         │
+│                                                                            │
+│  Service Config:                                                           │
+│    ~/Library/LaunchAgents/com.copperdigital.memex-api.plist               │
+│                                                                            │
+│  Build Tools:                                                              │
+│    Makefile               Convenient make commands                        │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│ API ENDPOINTS                                                              │
+├────────────────────────────────────────────────────────────────────────────┤
+│                                                                            │
+│  GET /                                                                     │
+│    Returns: {"status": "healthy", "indexed_chunks": 1234}                │
+│                                                                            │
+│  GET /search?q=QUERY&limit=10&speaker=NAME                                │
+│    Parameters:                                                             │
+│      q        - Search query (required)                                   │
+│      limit    - Number of results (1-50, default 10)                      │
+│      speaker  - Filter by speaker name (optional)                         │
+│    Returns: {"query": "...", "results": [...], "total": N}               │
+│                                                                            │
+│  GET /stats                                                                │
+│    Returns: {"total_chunks": N, "embedding_model": "...", ...}           │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│ PYTHON CLIENT EXAMPLE                                                      │
+├────────────────────────────────────────────────────────────────────────────┤
+│                                                                            │
+│  import requests                                                           │
+│                                                                            │
+│  class MemexClient:                                                        │
+│      def __init__(self, base_url="http://localhost:8765"):               │
+│          self.base_url = base_url                                         │
+│                                                                            │
+│      def search(self, query, limit=10):                                   │
+│          response = requests.get(                                         │
+│              f"{self.base_url}/search",                                   │
+│              params={"q": query, "limit": limit}                          │
+│          )                                                                 │
+│          return response.json()                                           │
+│                                                                            │
+│  # Usage                                                                   │
+│  client = MemexClient()                                                    │
+│  results = client.search("patient care", limit=5)                         │
+│                                                                            │
+│  for r in results['results']:                                             │
+│      print(f"{r['score']:.2f} - {r['text'][:100]}...")                   │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│ FEATURES                                                                   │
+├────────────────────────────────────────────────────────────────────────────┤
+│                                                                            │
+│  ✓ Local & Free        No API costs, runs entirely on your machine        │
+│  ✓ Fast                <100ms search latency                              │
+│  ✓ Auto-start          Starts on login via LaunchAgent                    │
+│  ✓ Fault-tolerant      Auto-restarts on crash                             │
+│  ✓ Semantic            Understands meaning, not just keywords             │
+│  ✓ Time-aware          Recent results ranked higher                       │
+│  ✓ Filterable          Search by speaker                                  │
+│  ✓ Simple API          Standard HTTP REST interface                       │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│ TROUBLESHOOTING                                                            │
+├────────────────────────────────────────────────────────────────────────────┤
+│                                                                            │
+│  Service won't start:                                                      │
+│    1. cat ~/Library/Logs/memex-api-error.log                             │
+│    2. poetry install                                                       │
+│    3. Try: poetry run python -m memex.historian.search_api                │
+│                                                                            │
+│  No search results:                                                        │
+│    - Index transcripts first:                                              │
+│      python -m memex.historian.transcript_indexer                         │
+│                                                                            │
+│  Port in use:                                                              │
+│    - lsof -i :8765                                                        │
+│    - kill -9 <PID>                                                        │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│ NEXT STEPS                                                                 │
+├────────────────────────────────────────────────────────────────────────────┤
+│                                                                            │
+│  1. Install service:        make install                                  │
+│  2. Test it works:          make test                                     │
+│  3. Index transcripts:      python -m ...transcript_indexer               │
+│  4. Integrate with skill:   See SKILL_INTEGRATION.md                      │
+│  5. Monitor logs:           make logs                                     │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│ DOCUMENTATION GUIDE                                                        │
+├────────────────────────────────────────────────────────────────────────────┤
+│                                                                            │
+│  New User:                  Start with README_API.md                      │
+│  Fast Setup:                Use QUICKSTART.md                             │
+│  Developer Integration:     Read SKILL_INTEGRATION.md                     │
+│  API Reference:             See API_SERVICE.md                            │
+│  Architecture Details:      Read ARCHITECTURE.md                          │
+│  Complete Reference:        Check SETUP_SUMMARY.md                        │
+│  File Index:                See INDEX.md                                  │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║  Service URL: http://localhost:8765                                        ║
+║  Logs:        ~/Library/Logs/memex-api*.log                               ║
+║  Data:        ~/clawd/memex/data/chroma/                                  ║
+╚════════════════════════════════════════════════════════════════════════════╝

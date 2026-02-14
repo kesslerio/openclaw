@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-slate-700;
+  }
+
+  body {
+    @apply bg-memex-bg text-memex-text;
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-memex-bg;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-700 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-600;
+  }
+}
+
+@layer components {
+  /* Custom button styles */
+  .btn-primary {
+    @apply px-4 py-2 bg-memex-primary text-white rounded-lg font-medium 
+           hover:bg-indigo-600 transition-colors duration-200
+           focus:outline-none focus:ring-2 focus:ring-memex-primary focus:ring-offset-2 focus:ring-offset-memex-bg;
+  }
+
+  .btn-secondary {
+    @apply px-4 py-2 bg-memex-surface text-memex-text rounded-lg font-medium
+           hover:bg-slate-700 transition-colors duration-200
+           focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2 focus:ring-offset-memex-bg;
+  }
+
+  /* Input styles */
+  .input {
+    @apply w-full px-4 py-2 bg-memex-surface text-memex-text rounded-lg
+           border border-slate-700 focus:border-memex-primary focus:ring-2 focus:ring-memex-primary/50
+           transition-all duration-200 placeholder-slate-500;
+  }
+
+  /* Card styles */
+  .card {
+    @apply bg-memex-surface rounded-xl p-6 border border-slate-700/50 shadow-lg;
+  }
+
+  /* Message bubble */
+  .message-user {
+    @apply bg-memex-primary text-white rounded-2xl rounded-tr-sm px-4 py-3 max-w-[80%] ml-auto;
+  }
+
+  .message-assistant {
+    @apply bg-memex-surface text-memex-text rounded-2xl rounded-tl-sm px-4 py-3 max-w-[80%] 
+           border border-slate-700/50;
+  }
+}
+
+/* Markdown content styling */
+.prose {
+  @apply max-w-none;
+}
+
+.prose h1 {
+  @apply text-3xl font-bold text-memex-text mb-4 mt-8;
+}
+
+.prose h2 {
+  @apply text-2xl font-semibold text-memex-text mb-3 mt-6;
+}
+
+.prose h3 {
+  @apply text-xl font-semibold text-slate-300 mb-2 mt-4;
+}
+
+.prose p {
+  @apply text-slate-300 mb-4 leading-relaxed;
+}
+
+.prose ul,
+.prose ol {
+  @apply text-slate-300 mb-4 ml-6;
+}
+
+.prose li {
+  @apply mb-2;
+}
+
+.prose code {
+  @apply bg-slate-800 text-memex-secondary px-1.5 py-0.5 rounded font-mono text-sm;
+}
+
+.prose pre {
+  @apply bg-slate-900 p-4 rounded-lg overflow-x-auto mb-4;
+}
+
+.prose pre code {
+  @apply bg-transparent p-0;
+}
+
+.prose a {
+  @apply text-memex-secondary hover:text-cyan-400 underline;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-memex-accent pl-4 italic text-slate-400 my-4;
+}
+
+/* Loading animation */
+@keyframes pulse-glow {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.loading-pulse {
+  animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-out;
+}

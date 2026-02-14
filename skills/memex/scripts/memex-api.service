@@ -1,0 +1,22 @@
+# Systemd service file for Linux
+# Install to: /etc/systemd/system/memex-api.service
+# Or user service: ~/.config/systemd/user/memex-api.service
+
+[Unit]
+Description=Memex HISTORIAN Search API
+After=network.target
+
+[Service]
+Type=simple
+User=arvindsarin
+WorkingDirectory=/Users/arvindsarin/clawd/memex
+Environment="PATH=/usr/local/bin:/usr/bin:/bin"
+Environment="PYTHONPATH=/Users/arvindsarin/clawd/memex"
+ExecStart=/usr/local/bin/poetry run python -m memex.historian.search_api
+Restart=on-failure
+RestartSec=10s
+StandardOutput=append:/var/log/memex-api.log
+StandardError=append:/var/log/memex-api-error.log
+
+[Install]
+WantedBy=multi-user.target

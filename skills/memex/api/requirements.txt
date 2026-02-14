@@ -1,0 +1,9 @@
+# Memex API Dependencies
+
+# FastAPI
+fastapi==0.109.2
+uvicorn[standard]==0.27.1
+pydantic==2.6.1
+
+# Python core dependencies (if not already installed)
+python-dateutil==2.8.2
