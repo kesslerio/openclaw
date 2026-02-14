@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nike's Second Brain 🧠</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+      body {
+        background: #0d1117;
+        color: #c9d1d9;
+      }
+      .sidebar {
+        background: #161b22;
+        border-right: 1px solid #30363d;
+      }
+      .doc-item {
+        border-bottom: 1px solid #21262d;
+      }
+      .doc-item:hover {
+        background: #21262d;
+      }
+      .doc-item.active {
+        background: #1f6feb22;
+        border-left: 3px solid #1f6feb;
+      }
+      .content {
+        background: #0d1117;
+      }
+      .prose {
+        max-width: none;
+      }
+      .prose h1 {
+        color: #f0f6fc;
+        border-bottom: 1px solid #30363d;
+        padding-bottom: 0.5rem;
+      }
+      .prose h2 {
+        color: #c9d1d9;
+        margin-top: 1.5rem;
+      }
+      .prose a {
+        color: #58a6ff;
+      }
+      .prose code {
+        background: #161b22;
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+      }
+      .prose pre {
+        background: #161b22;
+        border-radius: 8px;
+      }
+      .tag {
+        background: #1f6feb33;
+        color: #58a6ff;
+        padding: 2px 8px;
+        border-radius: 12px;
+        font-size: 12px;
+      }
+    </style>
+  </head>
+  <body class="h-screen flex">
+    <!-- Sidebar -->
+    <div class="sidebar w-80 flex flex-col h-full overflow-hidden">
+      <div class="p-4 border-b border-gray-700">
+        <h1 class="text-xl font-bold">🧠 Second Brain</h1>
+        <p class="text-sm text-gray-500">Nike + Arvind</p>
+      </div>
+
+      <!-- Tabs -->
+      <div class="flex border-b border-gray-700">
+        <button
+          onclick="showTab('journal')"
+          id="tab-journal"
+          class="flex-1 py-2 px-4 text-sm font-medium border-b-2 border-blue-500 text-blue-400"
+        >
+          Journal
+        </button>
+        <button
+          onclick="showTab('documents')"
+          id="tab-documents"
+          class="flex-1 py-2 px-4 text-sm font-medium text-gray-400 hover:text-white"
+        >
+          Documents
+        </button>
+        <button
+          onclick="showTab('notes')"
+          id="tab-notes"
+          class="flex-1 py-2 px-4 text-sm font-medium text-gray-400 hover:text-white"
+        >
+          Notes
+        </button>
+      </div>
+
+      <!-- File List -->
+      <div id="file-list" class="flex-1 overflow-y-auto"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="content flex-1 overflow-y-auto p-8">
+      <div id="doc-content" class="prose prose-invert max-w-4xl mx-auto">
+        <div class="text-center text-gray-500 mt-20">
+          <p class="text-6xl mb-4">🧠</p>
+          <p>Select a document to view</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const docs = {
+        journal: [
+          {
+            name: "2026-01-29",
+            title: "January 29, 2026",
+            tags: ["journal"],
+            file: "journal/2026-01-29.md",
+          },
+        ],
+        documents: [
+          {
+            name: "clawdbot-5-usecases",
+            title: "The 5 Clawdbot Use Cases",
+            tags: ["tech", "business"],
+            file: "documents/clawdbot-5-usecases.md",
+          },
+        ],
+        notes: [],
+      };
+
+      let currentTab = "journal";
+
+      function showTab(tab) {
+        currentTab = tab;
+        document.querySelectorAll('[id^="tab-"]').forEach((t) => {
+          t.classList.remove("border-blue-500", "text-blue-400");
+          t.classList.add("text-gray-400", "border-transparent");
+        });
+        document.getElementById("tab-" + tab).classList.add("border-blue-500", "text-blue-400");
+        document
+          .getElementById("tab-" + tab)
+          .classList.remove("text-gray-400", "border-transparent");
+        renderFileList();
+      }
+
+      function renderFileList() {
+        const list = document.getElementById("file-list");
+        const items = docs[currentTab] || [];
+
+        if (items.length === 0) {
+          list.innerHTML = '<div class="p-4 text-gray-500 text-center">No items yet</div>';
+          return;
+        }
+
+        list.innerHTML = items
+          .map(
+            (doc) => `
+                <div class="doc-item p-4 cursor-pointer" onclick="loadDoc('${doc.file}')">
+                    <div class="font-medium">${doc.title}</div>
+                    <div class="flex gap-2 mt-2">
+                        ${doc.tags.map((t) => `<span class="tag">${t}</span>`).join("")}
+                    </div>
+                </div>
+            `,
+          )
+          .join("");
+      }
+
+      async function loadDoc(file) {
+        try {
+          const resp = await fetch(file);
+          const text = await resp.text();
+          document.getElementById("doc-content").innerHTML = marked.parse(text);
+          hljs.highlightAll();
+        } catch (e) {
+          document.getElementById("doc-content").innerHTML =
+            '<p class="text-red-400">Error loading document</p>';
+        }
+      }
+
+      // Initialize
+      renderFileList();
+    </script>
+  </body>
+</html>
