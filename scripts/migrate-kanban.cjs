@@ -7,7 +7,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const DATA_PATH = "./clawd/data/kanban.json";
+const DATA_PATH = "./tools/kanban/data/kanban.json";
 
 const PRIORITY_LEVELS = ["high", "medium", "low"];
 const CATEGORIES = ["Work", "Personal", "CopperAI", "General"];

@@ -5,7 +5,7 @@
  */
 
 const fs = require("fs");
-const DATA_PATH = "./clawd/data/kanban.json";
+const DATA_PATH = "./tools/kanban/data/kanban.json";
 
 console.log("🎨 Adding demo analysis to tasks...\n");
 

@@ -7,7 +7,7 @@ const fs = require("fs");
 const path = require("path");
 
 const OLD_DATA_PATH = "/Users/arvindsarin/Cursor/Claude-2026/clawd/kanban/data/kanban-data.json";
-const TARGET_PATH = "./clawd/data/kanban.json";
+const TARGET_PATH = "./tools/kanban/data/kanban.json";
 
 console.log("🔄 Migrating existing Kanban tasks to new schema...\n");
 

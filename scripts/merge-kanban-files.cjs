@@ -15,7 +15,7 @@ const POSSIBLE_LOCATIONS = [
   "./clawd/kanban.json",
 ];
 
-const TARGET_PATH = "./clawd/data/kanban.json";
+const TARGET_PATH = "./tools/kanban/data/kanban.json";
 
 function findKanbanFiles() {
   const found = [];

@@ -11,7 +11,7 @@ const fs = require("fs");
 const path = require("path");
 const https = require("https");
 
-const DATA_PATH = "./clawd/data/kanban.json";
+const DATA_PATH = "./tools/kanban/data/kanban.json";
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
 
 if (!ANTHROPIC_API_KEY) {

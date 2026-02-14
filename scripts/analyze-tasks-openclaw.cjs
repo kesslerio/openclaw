@@ -7,7 +7,7 @@
 const fs = require("fs");
 const { execSync } = require("child_process");
 
-const DATA_PATH = "./clawd/data/kanban.json";
+const DATA_PATH = "./tools/kanban/data/kanban.json";
 
 console.log("🤖 AI Task Analyzer (via OpenClaw)...\n");
 

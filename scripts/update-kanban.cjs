@@ -8,7 +8,7 @@ const fs = require("fs");
 const path = require("path");
 
 // SINGLE SOURCE OF TRUTH - Updated path
-const DATA_PATH = path.resolve(__dirname, "../clawd/data/kanban.json");
+const DATA_PATH = path.resolve(__dirname, "../tools/kanban/data/kanban.json");
 
 function loadData() {
   if (!fs.existsSync(DATA_PATH)) {
