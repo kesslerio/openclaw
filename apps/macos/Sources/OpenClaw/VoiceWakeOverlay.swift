@@ -15,7 +15,7 @@ final class VoiceWakeOverlayController {
     /// (Menu bar menus typically live at `.popUpMenu`.)
     static let preferredWindowLevel = NSWindow.Level(rawValue: NSWindow.Level.popUpMenu.rawValue - 4)
 
-    enum Source: String { case wakeWord, pushToTalk }
+    enum Source: String { case wakeWord, pushToTalk, dictation }
 
     var model = Model()
     var isVisible: Bool { self.model.isVisible }

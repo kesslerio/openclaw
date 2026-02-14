@@ -166,6 +166,12 @@ struct MenuContent: View {
         .onChange(of: self.state.voicePushToTalkEnabled) { _, enabled in
             VoicePushToTalkHotkey.shared.setEnabled(voiceWakeSupported && enabled)
         }
+        .task {
+            VoiceDictationHotkey.shared.setEnabled(voiceWakeSupported && self.state.voiceDictationEnabled)
+        }
+        .onChange(of: self.state.voiceDictationEnabled) { _, enabled in
+            VoiceDictationHotkey.shared.setEnabled(voiceWakeSupported && enabled)
+        }
         .task(id: self.state.connectionMode) {
             await self.loadBrowserControlEnabled()
         }

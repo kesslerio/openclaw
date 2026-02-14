@@ -7,7 +7,7 @@ import Observation
 final class VoiceSessionCoordinator {
     static let shared = VoiceSessionCoordinator()
 
-    enum Source: String { case wakeWord, pushToTalk }
+    enum Source: String { case wakeWord, pushToTalk, dictation }
 
     struct Session {
         let token: UUID

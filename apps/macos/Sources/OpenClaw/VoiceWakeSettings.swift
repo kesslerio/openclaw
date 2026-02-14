@@ -64,6 +64,15 @@ struct VoiceWakeSettings: View {
                     binding: self.$state.voicePushToTalkEnabled)
                     .disabled(!voiceWakeSupported)
 
+                SettingsToggleRow(
+                    title: "Hold Left Option to dictate",
+                    subtitle: """
+                    Dictation mode that transcribes speech and types it into \
+                    the focused app when you release the key.
+                    """,
+                    binding: self.$state.voiceDictationEnabled)
+                    .disabled(!voiceWakeSupported)
+
                 if !voiceWakeSupported {
                     Label("Voice Wake requires macOS 26 or newer.", systemImage: "exclamationmark.triangle.fill")
                         .font(.callout)
@@ -646,6 +655,7 @@ extension VoiceWakeSettings {
         let state = AppState(preview: true)
         state.swabbleEnabled = true
         state.voicePushToTalkEnabled = true
+        state.voiceDictationEnabled = false
         state.swabbleTriggerWords = ["Claude", "Hey"]
 
         let view = VoiceWakeSettings(state: state, isActive: true)

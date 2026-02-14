@@ -135,6 +135,12 @@ final class AppState {
             forKey: voicePushToTalkEnabledKey) } }
     }
 
+    var voiceDictationEnabled: Bool {
+        didSet { self.ifNotPreview { UserDefaults.standard.set(
+            self.voiceDictationEnabled,
+            forKey: voiceDictationEnabledKey) } }
+    }
+
     var talkEnabled: Bool {
         didSet {
             self.ifNotPreview {
@@ -262,6 +268,8 @@ final class AppState {
             .stringArray(forKey: voiceWakeAdditionalLocalesKey) ?? []
         self.voicePushToTalkEnabled = UserDefaults.standard
             .object(forKey: voicePushToTalkEnabledKey) as? Bool ?? false
+        self.voiceDictationEnabled = UserDefaults.standard
+            .object(forKey: voiceDictationEnabledKey) as? Bool ?? false
         self.talkEnabled = UserDefaults.standard.bool(forKey: talkEnabledKey)
         self.seamColorHex = nil
         if let storedHeartbeats = UserDefaults.standard.object(forKey: heartbeatsEnabledKey) as? Bool {
@@ -680,6 +688,7 @@ extension AppState {
         state.voiceWakeLocaleID = Locale.current.identifier
         state.voiceWakeAdditionalLocaleIDs = ["en-US", "de-DE"]
         state.voicePushToTalkEnabled = false
+        state.voiceDictationEnabled = false
         state.talkEnabled = false
         state.iconOverride = .system
         state.heartbeatsEnabled = true
