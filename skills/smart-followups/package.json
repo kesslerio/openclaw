@@ -1,0 +1,97 @@
+{
+  "name": "@openclaw/smart-followups",
+  "version": "1.0.4",
+  "description": "OpenClaw skill: Say 'followups' to get 3 contextual suggestions (Quick, Deep Dive, Related) as buttons or text",
+  "keywords": [
+    "ai",
+    "chat",
+    "conversation",
+    "discord",
+    "follow-up",
+    "imessage",
+    "openclaw",
+    "signal",
+    "skill",
+    "slack",
+    "suggestions",
+    "telegram",
+    "whatsapp"
+  ],
+  "homepage": "https://clawhub.ai/skills/smart-followups",
+  "bugs": {
+    "url": "https://github.com/robbyczgw-cla/smart-followups/issues"
+  },
+  "license": "MIT",
+  "author": "Robby <robbyczgw@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/robbyczgw-cla/smart-followups.git"
+  },
+  "bin": {
+    "followups-cli": "./cli/followups-cli.js"
+  },
+  "files": [
+    "handler.js",
+    "cli/",
+    "README.md",
+    "SKILL.md",
+    "CHANNELS.md",
+    "FAQ.md",
+    "LICENSE"
+  ],
+  "main": "handler.js",
+  "scripts": {
+    "demo": "echo '[{\"user\":\"What is Docker?\",\"assistant\":\"Docker is a containerization platform.\"}]' | node cli/followups-cli.js --mode text",
+    "test": "node cli/followups-cli.js --help && echo 'CLI OK'"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "openclaw": {
+    "skill": true,
+    "handler": "handler.js",
+    "cli": "cli/followups-cli.js",
+    "triggers": [
+      "followups",
+      "follow-ups",
+      "suggestions",
+      "what should I ask"
+    ],
+    "capabilities": [
+      "inline-buttons",
+      "text-fallback"
+    ],
+    "channels": {
+      "telegram": "buttons",
+      "discord": "buttons",
+      "slack": "buttons",
+      "signal": "text",
+      "whatsapp": "text",
+      "imessage": "text",
+      "sms": "text",
+      "matrix": "text",
+      "email": "text"
+    },
+    "config": {
+      "provider": {
+        "type": "string",
+        "default": "openclaw",
+        "enum": [
+          "openclaw",
+          "openrouter",
+          "anthropic"
+        ],
+        "description": "Authentication provider"
+      },
+      "model": {
+        "type": "string",
+        "default": null,
+        "description": "Model override (null = inherit from session)"
+      },
+      "apiKey": {
+        "type": "string",
+        "description": "API key for openrouter/anthropic providers"
+      }
+    }
+  }
+}

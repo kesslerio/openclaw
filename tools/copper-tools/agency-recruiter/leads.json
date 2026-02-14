@@ -1,0 +1,37 @@
+{
+  "metadata": {
+    "created": "2026-02-03T04:00:00Z",
+    "lastUpdated": "2026-02-03T04:00:00Z",
+    "version": "1.0.0",
+    "owner": "Nike (SarinAI)",
+    "campaign": "Copper AI - ClearCare + Axxess Pilots"
+  },
+  "stats": {
+    "total": 0,
+    "byStatus": {
+      "FOUND": 0,
+      "CONTACTED": 0,
+      "RESPONDED": 0,
+      "DEMOED": 0,
+      "PILOT": 0,
+      "CUSTOMER": 0,
+      "LOST": 0
+    },
+    "byPlatform": {
+      "clearcare": 0,
+      "axxess": 0,
+      "other": 0
+    },
+    "emailMetrics": {
+      "sent": 0,
+      "opened": 0,
+      "clicked": 0,
+      "replied": 0,
+      "openRate": "0%",
+      "clickRate": "0%",
+      "replyRate": "0%"
+    }
+  },
+  "prospects": [],
+  "notes": "Lead tracker for Copper AI pilot recruitment. Status flow: FOUND → CONTACTED → RESPONDED → DEMOED → PILOT → CUSTOMER"
+}

@@ -1,0 +1,97 @@
+╔════════════════════════════════════════════════════════════╗
+║        CONTACT ANALYSIS SCRIPTS - QUICK REFERENCE          ║
+║                 All Scripts Fixed & Working                ║
+╚════════════════════════════════════════════════════════════╝
+
+✓ All 3 scripts tested and verified working on macOS
+✓ All paths fixed (no more /home/ubuntu/ errors)
+✓ Graceful dependency handling (Himalaya optional)
+✓ Command-line argument support added
+
+────────────────────────────────────────────────────────────
+
+DAILY WORKFLOW:
+
+1️⃣  Get recommendations:
+   python3 scripts/reach-out-recommendations.py
+
+2️⃣  View recommendations:
+   cat data/contacts/daily-recommendations.json
+
+3️⃣  Update frequency analysis (optional):
+   python3 scripts/analyze-contact-frequency.py
+
+────────────────────────────────────────────────────────────
+
+WEEKLY TASKS:
+
+📥 Import new contacts from Google CSV:
+   python3 scripts/parse-contacts.py ~/Downloads/contacts.csv
+
+────────────────────────────────────────────────────────────
+
+OUTPUT FILES:
+📁 data/contacts/
+  ├── contacts.json               (Full database)
+  ├── daily-recommendations.json  (Today's targets)
+  ├── report.json                 (Frequency analysis)
+  └── summary.json                (Statistics)
+
+────────────────────────────────────────────────────────────
+
+SCRIPTS:
+
+1. parse-contacts.py
+   Purpose: Parse Google Contacts CSV
+   Usage:   python3 scripts/parse-contacts.py [csv-file]
+   Status:  ✓ WORKING
+
+2. analyze-contact-frequency.py
+   Purpose: Analyze email frequency
+   Usage:   python3 scripts/analyze-contact-frequency.py
+   Status:  ✓ WORKING (Himalaya optional)
+
+3. reach-out-recommendations.py
+   Purpose: Daily outreach recommendations
+   Usage:   python3 scripts/reach-out-recommendations.py
+   Status:  ✓ WORKING
+
+────────────────────────────────────────────────────────────
+
+QUICK TEST:
+python3 scripts/reach-out-recommendations.py
+
+Expected output:
+🎯 DAILY REACH-OUT RECOMMENDATIONS
+==================================================
+1. [Contact Name]
+   Category: business | Frequency: warm
+   📧 email@example.com
+   💡 Follow up on business opportunity
+
+────────────────────────────────────────────────────────────
+
+TROUBLESHOOTING:
+
+❌ CSV not found
+   → Specify path: python3 scripts/parse-contacts.py /path/to/file.csv
+
+❌ Himalaya not found
+   → Install: cargo install himalaya
+   → Or ignore: Scripts work without it
+
+❌ Permission denied
+   → Fix: chmod +x scripts/*.py
+
+────────────────────────────────────────────────────────────
+
+📚 DOCUMENTATION:
+  • CONTACT_SCRIPTS_GUIDE.md - Full user guide
+  • CONTACT_SCRIPTS_TEST_RESULTS.md - Test report & fixes
+
+────────────────────────────────────────────────────────────
+
+Last tested: 2026-02-01
+Platform: macOS (Darwin 25.2.0)
+Status: ✓ ALL TESTS PASSED
+

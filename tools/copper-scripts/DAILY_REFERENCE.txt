@@ -1,0 +1,208 @@
+╔════════════════════════════════════════════════════════════════════════╗
+║                  COPPER AI - DAILY SCRIPT REFERENCE                    ║
+║                     Quick Commands for Sales & Ops                     ║
+╚════════════════════════════════════════════════════════════════════════╝
+
+BEFORE SALES CALLS
+═══════════════════════════════════════════════════════════════════════════
+cd ~/clawd/scripts
+
+# Full prep with all details
+node sales-call-prep.js --agency "Agency Name" --evv "WellSky" --pain "no-shows"
+
+# Quick prep (just pain point)
+node sales-call-prep.js --pain "time-savings"
+
+# Competitor battle
+node sales-call-prep.js --competitor "dialora" --pain "no-shows"
+
+EVV Options: WellSky | Axxess | ClearCare | Sandata | Other
+Pain Points: no-shows | time-savings | evv-integration | compliance
+
+
+DURING DEMOS
+═══════════════════════════════════════════════════════════════════════════
+# Calculate ROI live
+node roi-calculator-cli.js --calls 1000 --caregivers 30
+
+# Compare to alternatives
+node roi-calculator-cli.js --calls 500 --compare answering-service
+node roi-calculator-cli.js --calls 2000 --compare vapi-ai
+
+
+AFTER DEMOS
+═══════════════════════════════════════════════════════════════════════════
+# Get follow-up email template
+node email-campaign-generator.js demo-follow-up
+
+# Update metrics
+node copper-metrics-tracker.js note "Demo with ABC Health - strong interest"
+
+
+CONTENT CREATION
+═══════════════════════════════════════════════════════════════════════════
+# LinkedIn posts (Monday/Wednesday/Friday)
+node linkedin-post-generator.js no-shows          # Pain point Monday
+node linkedin-post-generator.js cost-comparison   # Value prop Wednesday
+node linkedin-post-generator.js founder-story     # Thought leadership Friday
+
+All themes: no-shows | time-savings | evv-integration | cost-comparison |
+            compliance | caregiver-experience | founder-story | industry-trends
+
+
+EMAIL SEQUENCES
+═══════════════════════════════════════════════════════════════════════════
+# Cold outreach (4 emails: Days 0, 3, 7, 14)
+node email-campaign-generator.js cold-outreach
+
+# Post-demo nurture (3 emails: Days 0, 2, 7)
+node email-campaign-generator.js demo-follow-up
+
+# Trial customer (3 emails: Days 7, 14, 21)
+node email-campaign-generator.js trial-nurture
+
+# Customer success (2 emails: Days 30, 90)
+node email-campaign-generator.js customer-success
+
+
+COMPETITIVE INTELLIGENCE
+═══════════════════════════════════════════════════════════════════════════
+# Quick check
+node competitor-monitor.js check
+
+# Full report
+node competitor-monitor.js report
+
+# Save to second-brain
+node competitor-monitor.js save
+
+
+METRICS TRACKING
+═══════════════════════════════════════════════════════════════════════════
+# Add metrics
+node copper-metrics-tracker.js add customers 52
+node copper-metrics-tracker.js add revenue 24500
+node copper-metrics-tracker.js add calls 50000
+
+# Add notes/milestones
+node copper-metrics-tracker.js note "Closed deal with ABC Health - $500 MRR"
+
+# View dashboard
+node copper-metrics-tracker.js report
+
+# Check goals
+node copper-metrics-tracker.js goals
+
+
+LEAD RESEARCH
+═══════════════════════════════════════════════════════════════════════════
+# Create research file
+./prospect-research.sh "Agency Name"
+
+# Get daily outreach recommendations
+python3 reach-out-recommendations.py
+
+
+TASK MANAGEMENT
+═══════════════════════════════════════════════════════════════════════════
+# Add task
+node update-kanban.js add --title "Call Alex" --owner Arvind --category sales
+
+# Move task
+node update-kanban.js move --id 5 --status done
+
+# List all tasks
+node update-kanban.js list
+
+# List by status
+node update-kanban.js list --status doing
+
+
+╔════════════════════════════════════════════════════════════════════════╗
+║                         WEEKLY WORKFLOW                                ║
+╚════════════════════════════════════════════════════════════════════════╝
+
+MONDAY MORNING (30 min)
+───────────────────────────────────────────────────────────────────────────
+node copper-metrics-tracker.js report
+python3 reach-out-recommendations.py
+node competitor-monitor.js check
+node linkedin-post-generator.js no-shows > post.txt
+
+BEFORE EACH CALL (15 min)
+───────────────────────────────────────────────────────────────────────────
+node sales-call-prep.js --agency "NAME" --evv "SYSTEM" --pain "ISSUE"
+node roi-calculator-cli.js --calls NUMBER --caregivers NUMBER
+
+AFTER EACH DEMO (10 min)
+───────────────────────────────────────────────────────────────────────────
+node email-campaign-generator.js demo-follow-up | head -50 > follow-up.txt
+node copper-metrics-tracker.js note "Demo completed"
+
+WEDNESDAY CONTENT (30 min)
+───────────────────────────────────────────────────────────────────────────
+node linkedin-post-generator.js cost-comparison > post.txt
+# Edit, personalize, post to LinkedIn
+
+FRIDAY WRAP (15 min)
+───────────────────────────────────────────────────────────────────────────
+node copper-metrics-tracker.js add customers X
+node copper-metrics-tracker.js add revenue Y
+node competitor-monitor.js save
+
+
+╔════════════════════════════════════════════════════════════════════════╗
+║                        TROUBLESHOOTING                                 ║
+╚════════════════════════════════════════════════════════════════════════╝
+
+Script won't run?
+  - Make sure you're in ~/clawd/scripts directory
+  - Check if script is executable: chmod +x script-name.sh
+  - For Node scripts: Use 'node script.js' not just './script.js'
+  - For Python scripts: Use 'python3 script.py'
+
+Missing Playwright?
+  - Run: npx playwright install
+  - Fixes: get-youtube-transcript.js, yt-transcript-playwright.js
+
+Get help for any script?
+  - node script.js --help
+  - ./script.sh --help
+  - python3 script.py --help
+
+Check if script works:
+  - Look for "✅" in output (success)
+  - Look for "❌" in output (error)
+  - Exit code 0 = success, non-zero = error
+
+
+╔════════════════════════════════════════════════════════════════════════╗
+║                       QUICK TIPS                                       ║
+╚════════════════════════════════════════════════════════════════════════╝
+
+1. Use 'all' to see all templates:
+   node email-campaign-generator.js all
+   node linkedin-post-generator.js all
+
+2. Pipe output to file for editing:
+   node linkedin-post-generator.js no-shows > post.txt
+
+3. Chain commands:
+   node sales-call-prep.js --pain "no-shows" && \
+   node roi-calculator-cli.js --calls 1000
+
+4. Create aliases in ~/.zshrc:
+   alias prep="node ~/clawd/scripts/sales-call-prep.js"
+   alias roi="node ~/clawd/scripts/roi-calculator-cli.js"
+   alias metrics="node ~/clawd/scripts/copper-metrics-tracker.js"
+
+5. Schedule weekly reports with cron/launchd
+
+
+═══════════════════════════════════════════════════════════════════════════
+For detailed documentation, see:
+  - BUSINESS_PRIORITIES.md    (Business-focused guide)
+  - QUICK_FIXES.md            (Fix broken scripts)
+  - SCRIPT_AUDIT_REPORT.md    (Full technical audit)
+  - SCRIPT_STATUS_MATRIX.txt  (Visual overview)
+═══════════════════════════════════════════════════════════════════════════

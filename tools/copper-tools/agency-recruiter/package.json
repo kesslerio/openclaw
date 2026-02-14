@@ -1,0 +1,29 @@
+{
+  "name": "agency-recruiter",
+  "version": "1.0.0",
+  "description": "Automated recruitment tool for home health agency pilots",
+  "keywords": [
+    "cold-outreach",
+    "copper-ai",
+    "email-automation",
+    "home-health",
+    "lead-generation"
+  ],
+  "license": "MIT",
+  "author": "Nike (SarinAI)",
+  "main": "send-campaign.js",
+  "scripts": {
+    "campaign": "node send-campaign.js",
+    "scrape": "node linkedin-scraper.js",
+    "test": "echo \"No tests yet\" && exit 0"
+  },
+  "dependencies": {
+    "csv-parse": "^5.5.3",
+    "csv-stringify": "^6.4.6",
+    "dotenv": "^16.4.1"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

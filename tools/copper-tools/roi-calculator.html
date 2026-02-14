@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Copper AI ROI Calculator - See Your Savings</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+      }
+
+      .header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 40px;
+        text-align: center;
+      }
+
+      .header h1 {
+        font-size: 32px;
+        margin-bottom: 10px;
+      }
+
+      .header p {
+        font-size: 16px;
+        opacity: 0.9;
+      }
+
+      .content {
+        padding: 40px;
+      }
+
+      .input-group {
+        margin-bottom: 30px;
+      }
+
+      .input-group label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: #333;
+        font-size: 14px;
+      }
+
+      .input-group input {
+        width: 100%;
+        padding: 12px;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        font-size: 16px;
+        transition: border-color 0.3s;
+      }
+
+      .input-group input:focus {
+        outline: none;
+        border-color: #667eea;
+      }
+
+      .input-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .results {
+        background: #f8f9fa;
+        border-radius: 12px;
+        padding: 30px;
+        margin-top: 30px;
+      }
+
+      .results h2 {
+        color: #333;
+        margin-bottom: 20px;
+        font-size: 24px;
+      }
+
+      .metric {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 15px;
+        border-left: 4px solid #667eea;
+      }
+
+      .metric-label {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 5px;
+      }
+
+      .metric-value {
+        font-size: 32px;
+        font-weight: bold;
+        color: #667eea;
+      }
+
+      .metric-value.positive {
+        color: #4caf50;
+      }
+
+      .metric-value.negative {
+        color: #f44336;
+      }
+
+      .highlight-box {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 30px;
+        border-radius: 12px;
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .highlight-box h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+
+      .highlight-box .big-number {
+        font-size: 48px;
+        font-weight: bold;
+        margin: 10px 0;
+      }
+
+      .cta-button {
+        background: white;
+        color: #667eea;
+        padding: 15px 30px;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-top: 20px;
+        transition: transform 0.2s;
+      }
+
+      .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .comparison {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin-top: 30px;
+      }
+
+      .comparison-card {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        text-align: center;
+      }
+
+      .comparison-card h4 {
+        color: #666;
+        margin-bottom: 10px;
+        font-size: 14px;
+      }
+
+      .comparison-card .value {
+        font-size: 28px;
+        font-weight: bold;
+        color: #333;
+      }
+
+      @media (max-width: 600px) {
+        .input-row,
+        .comparison {
+          grid-template-columns: 1fr;
+        }
+
+        .header h1 {
+          font-size: 24px;
+        }
+
+        .metric-value {
+          font-size: 24px;
+        }
+
+        .highlight-box .big-number {
+          font-size: 36px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>🚀 Copper AI ROI Calculator</h1>
+        <p>See how much your agency can save with voice AI</p>
+      </div>
+
+      <div class="content">
+        <div class="input-group">
+          <label>How many visits does your agency complete per week?</label>
+          <input type="number" id="visitsPerWeek" value="200" min="1" oninput="calculate()" />
+        </div>
+
+        <div class="input-row">
+          <div class="input-group">
+            <label>Average revenue per visit ($)</label>
+            <input type="number" id="revenuePerVisit" value="150" min="1" oninput="calculate()" />
+          </div>
+
+          <div class="input-group">
+            <label>Current no-show rate (%)</label>
+            <input
+              type="number"
+              id="noShowRate"
+              value="12"
+              min="0"
+              max="100"
+              step="0.1"
+              oninput="calculate()"
+            />
+          </div>
+        </div>
+
+        <div class="input-row">
+          <div class="input-group">
+            <label>Caregivers on staff</label>
+            <input type="number" id="numCaregivers" value="20" min="1" oninput="calculate()" />
+          </div>
+
+          <div class="input-group">
+            <label>Admin hourly cost ($)</label>
+            <input type="number" id="adminHourly" value="25" min="1" oninput="calculate()" />
+          </div>
+        </div>
+
+        <div class="results" id="results">
+          <!-- Results will be inserted here -->
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function calculate() {
+        // Get inputs
+        const visitsPerWeek = parseFloat(document.getElementById("visitsPerWeek").value) || 0;
+        const revenuePerVisit = parseFloat(document.getElementById("revenuePerVisit").value) || 0;
+        const noShowRate = parseFloat(document.getElementById("noShowRate").value) / 100 || 0;
+        const numCaregivers = parseFloat(document.getElementById("numCaregivers").value) || 0;
+        const adminHourly = parseFloat(document.getElementById("adminHourly").value) || 0;
+
+        // Calculate current losses
+        const weeklyRevenue = visitsPerWeek * revenuePerVisit;
+        const currentNoShows = visitsPerWeek * noShowRate;
+        const currentWeeklyLoss = currentNoShows * revenuePerVisit;
+        const currentAnnualLoss = currentWeeklyLoss * 52;
+
+        // Calculate with basic voice AI (40% reduction)
+        const basicReduction = 0.4;
+        const basicNoShows = currentNoShows * (1 - basicReduction);
+        const basicWeeklyLoss = basicNoShows * revenuePerVisit;
+        const basicAnnualLoss = basicWeeklyLoss * 52;
+        const basicSavings = currentAnnualLoss - basicAnnualLoss;
+
+        // Calculate with Copper AI (65% reduction)
+        const copperReduction = 0.65;
+        const copperNoShows = currentNoShows * (1 - copperReduction);
+        const copperWeeklyLoss = copperNoShows * revenuePerVisit;
+        const copperAnnualLoss = copperWeeklyLoss * 52;
+        const copperSavings = currentAnnualLoss - copperAnnualLoss;
+
+        // Admin time savings (estimate 15 min per no-show currently, 5 min with Copper AI)
+        const currentAdminHoursWeek = (currentNoShows * 15) / 60;
+        const copperAdminHoursWeek = (copperNoShows * 5) / 60;
+        const adminTimeSaved = currentAdminHoursWeek - copperAdminHoursWeek;
+        const adminMoneySaved = adminTimeSaved * adminHourly * 52;
+
+        // Total value delivered
+        const totalValue = copperSavings + adminMoneySaved;
+
+        // Copper AI cost
+        const copperMonthlyCost = 500;
+        const copperAnnualCost = copperMonthlyCost * 12;
+
+        // Net profit
+        const netProfit = totalValue - copperAnnualCost;
+
+        // ROI ratio
+        const roiRatio = totalValue / copperAnnualCost;
+
+        // Payback period (months)
+        const monthlyValue = totalValue / 12;
+        const paybackMonths = copperAnnualCost / monthlyValue;
+
+        // Generate results HTML
+        const resultsHTML = `
+                <h2>📊 Your Results</h2>
+                
+                <div class="metric">
+                    <div class="metric-label">Current Annual Loss (No-Shows)</div>
+                    <div class="metric-value negative">$${currentAnnualLoss.toLocaleString("en-US", { maximumFractionDigits: 0 })}</div>
+                </div>
+                
+                <div class="comparison">
+                    <div class="comparison-card">
+                        <h4>Basic Voice AI (40% reduction)</h4>
+                        <div class="value" style="color: #ff9800;">$${basicSavings.toLocaleString("en-US", { maximumFractionDigits: 0 })}</div>
+                        <small>saved per year</small>
+                    </div>
+                    
+                    <div class="comparison-card">
+                        <h4>Copper AI (65% reduction)</h4>
+                        <div class="value" style="color: #4caf50;">$${copperSavings.toLocaleString("en-US", { maximumFractionDigits: 0 })}</div>
+                        <small>saved per year</small>
+                    </div>
+                </div>
+                
+                <div class="metric">
+                    <div class="metric-label">Admin Time Saved (per year)</div>
+                    <div class="metric-value">${(adminTimeSaved * 52).toLocaleString("en-US", { maximumFractionDigits: 0 })} hours</div>
+                    <small>Worth $${adminMoneySaved.toLocaleString("en-US", { maximumFractionDigits: 0 })}</small>
+                </div>
+                
+                <div class="metric">
+                    <div class="metric-label">Total Value Delivered (Year 1)</div>
+                    <div class="metric-value positive">$${totalValue.toLocaleString("en-US", { maximumFractionDigits: 0 })}</div>
+                </div>
+                
+                <div class="metric">
+                    <div class="metric-label">Copper AI Cost (Year 1)</div>
+                    <div class="metric-value">$${copperAnnualCost.toLocaleString("en-US", { maximumFractionDigits: 0 })}</div>
+                </div>
+                
+                <div class="highlight-box">
+                    <h3>💰 Your Net Profit</h3>
+                    <div class="big-number">$${netProfit.toLocaleString("en-US", { maximumFractionDigits: 0 })}</div>
+                    <p style="font-size: 18px; margin: 10px 0;">
+                        <strong>${roiRatio.toFixed(1)}:1 ROI</strong> • Pays for itself in <strong>${paybackMonths.toFixed(1)} months</strong>
+                    </p>
+                    <p style="opacity: 0.9; margin-top: 10px;">
+                        That's ${(netProfit / 12).toLocaleString("en-US", { maximumFractionDigits: 0 })} extra profit per month
+                    </p>
+                    <button class="cta-button" onclick="window.location.href='mailto:arvind@copperdigital.com?subject=Copper AI Demo Request&body=Hi Arvind,%0A%0AI just used your ROI calculator and I%27m saving $${netProfit.toLocaleString()}%2Fyear with Copper AI!%0A%0AI%27d love to schedule a demo.%0A%0AThanks!'">
+                        📅 Schedule Free Demo
+                    </button>
+                </div>
+                
+                <div style="margin-top: 30px; padding: 20px; background: #fff3cd; border-radius: 8px; border-left: 4px solid #ffc107;">
+                    <strong>🎯 The Copper AI Advantage:</strong>
+                    <ul style="margin: 10px 0 0 20px; line-height: 1.8;">
+                        <li><strong>Predictive Intelligence:</strong> We don't just confirm visits, we PREDICT which ones will no-show</li>
+                        <li><strong>65% Reduction:</strong> Industry-leading no-show prevention (vs 40% for basic voice AI)</li>
+                        <li><strong>White-Glove Support:</strong> We train your caregivers for you</li>
+                        <li><strong>No Developer Needed:</strong> Live in 7 days, not 3 months</li>
+                    </ul>
+                </div>
+            `;
+
+        document.getElementById("results").innerHTML = resultsHTML;
+      }
+
+      // Calculate on page load
+      calculate();
+    </script>
+  </body>
+</html>

@@ -245,11 +245,13 @@ Once everything is migrated and verified:
     [x] Copy integrations (35 files) to tools/copper-integrations/
     [x] Copy copper-ai (10 files) to tools/copper-ai/
 
-[ ] Phase 7: Retire clawd/ repo
-    [ ] Final verification
-    [ ] Archive on GitHub
-    [ ] Remove local clone
-    [ ] Update all docs
+[x] Phase 7: Retire clawd/ repo (COMPLETED 2026-02-13)
+    [x] Selective migration: 21 skills, tools, scripts, plans to openclaw
+    [x] Full archive to ~/clawd-archive/ (202MB, excludes .git/node_modules/data)
+    [x] Stopped clawd-sync LaunchAgent and fswatch processes
+    [x] Moved LaunchAgent plists to ~/clawd-archive/launchagents/
+    [ ] Archive on GitHub (manual step)
+    [ ] Remove local clone (manual step, after verifying archive)
 ```
 
 ---
