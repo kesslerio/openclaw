@@ -190,7 +190,7 @@ GET /stats
 
 ```bash
 # Install dependencies
-cd /home/ubuntu/clawd/memex/historian
+cd /home/ubuntu/openclaw/skills/memex/historian
 pip install -r requirements.txt
 
 # Set API key

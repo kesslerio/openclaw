@@ -2,7 +2,7 @@
 
 # Batch add all tasks from history
 
-cd /home/ubuntu/clawd
+cd /home/ubuntu/openclaw
 
 # Personal/Financial Tasks
 node scripts/update-kanban.js add --title "Copper Estate Checks" --details "Handle Copper Estate checks" --owner Arvind --category personal --status todo --urgent false

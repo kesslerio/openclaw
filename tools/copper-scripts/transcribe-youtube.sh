@@ -55,7 +55,7 @@ async function downloadAudio(videoId) {
 downloadAudio(process.argv[2]);
 EOF
 
-cd /home/ubuntu/clawd
+cd /home/ubuntu/openclaw
 AUDIO_URL=$(node /tmp/download_audio.js "$VIDEO_ID" 2>/dev/null)
 
 if [ -z "$AUDIO_URL" ]; then

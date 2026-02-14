@@ -17,7 +17,7 @@ This API provides:
 
 ```bash
 # 1. Install dependencies
-cd ~/clawd/memex
+cd ~/Cursor/Claude-2026/openclaw/skills/memex
 poetry install
 
 # 2. Install as background service
@@ -175,7 +175,7 @@ for r in results['results']:
 cat ~/Library/Logs/memex-api-error.log
 
 # Install dependencies
-cd ~/clawd/memex
+cd ~/Cursor/Claude-2026/openclaw/skills/memex
 poetry install
 
 # Try manual start
@@ -186,7 +186,7 @@ poetry run python -m memex.historian.search_api
 
 ```bash
 # Index transcripts first
-cd ~/clawd/memex
+cd ~/Cursor/Claude-2026/openclaw/skills/memex
 poetry run python -m memex.historian.transcript_indexer
 ```
 
@@ -202,7 +202,7 @@ kill -9 <PID>
 
 ## Configuration
 
-Edit `~/clawd/memex/historian/config.py`:
+Edit `~/Cursor/Claude-2026/openclaw/skills/memex/historian/config.py`:
 
 ```python
 API_PORT = 8765           # Change port
@@ -213,7 +213,7 @@ MAX_RESULTS = 50          # Maximum results
 ## Files
 
 ```
-~/clawd/memex/
+~/Cursor/Claude-2026/openclaw/skills/memex/
 ├── scripts/
 │   ├── install_service.sh    # Install LaunchAgent
 │   ├── start_api.sh          # Start script

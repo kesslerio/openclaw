@@ -6,7 +6,7 @@
 
 set -e
 
-MEMEX_DIR="/Users/arvindsarin/Cursor/Claude-2026/clawd/memex"
+MEMEX_DIR="/Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex"
 cd "$MEMEX_DIR"
 
 echo "🎯 Memex Surgical Upgrade"
@@ -46,7 +46,7 @@ cat > ~/.openclaw/scripts/start-memex-api.sh << 'EOFSTART'
 #!/bin/bash
 set -e
 
-MEMEX_DIR="${HOME}/Cursor/Claude-2026/clawd/memex"
+MEMEX_DIR="${HOME}/Cursor/Claude-2026/openclaw/skills/memex"
 LOG_DIR="${HOME}/.openclaw/logs"
 LOG_FILE="${LOG_DIR}/memex-api.log"
 PID_FILE="${LOG_DIR}/memex-api.pid"
@@ -117,6 +117,6 @@ JOURNAL_COUNT=$(find data/journals -name "*.md" 2>/dev/null | wc -l | tr -d ' ')
 echo "   Existing journals: $JOURNAL_COUNT"
 
 echo ""
-echo "🔒 Security: All OAuth tokens preserved at ~/clawd/.tokens/"
+echo "🔒 Security: All OAuth tokens preserved at ~/openclaw/.tokens/"
 echo "💾 Backup: ~/memex-backup-latest/"
 echo ""

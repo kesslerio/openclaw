@@ -24,7 +24,7 @@ Memex has been successfully integrated into OpenClaw as a native skill following
 │   ├── memex             # Main CLI entry point
 │   ├── journal_backfill.py
 │   └── daily_ingest.py
-├── data/                 # Symlink to ~/Cursor/Claude-2026/clawd/memex/data
+├── data/                 # Symlink to ~/Cursor/Claude-2026/openclaw/skills/memex/data
 ├── cache/                # Temp storage
 └── logs/                 # Skill logs
 ```
@@ -228,13 +228,13 @@ Using claude-sonnet-4-20250514 ($3/1M input, $15/1M output)
 
 ### Copied
 
-- All Python modules from `~/Cursor/Claude-2026/clawd/memex/` to skill lib/
+- All Python modules from `~/Cursor/Claude-2026/openclaw/skills/memex/` to skill lib/
 - All scripts to skill scripts/
 - .env to skill root
 
 ### Symlinked
 
-- `~/.openclaw/skills/memex/data` → `~/Cursor/Claude-2026/clawd/memex/data`
+- `~/.openclaw/skills/memex/data` → `~/Cursor/Claude-2026/openclaw/skills/memex/data`
 
 ---
 

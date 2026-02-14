@@ -9,7 +9,7 @@
 
 ### 1. Environment Configuration
 
-- **Created**: `/Users/arvindsarin/Cursor/Claude-2026/clawd/memex/.env`
+- **Created**: `/Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex/.env`
 - **Purpose**: Centralized environment variables
 - **Contains**: ANTHROPIC_API_KEY, user info, timezone
 - **Permissions**: 600 (secure, user-only access)
@@ -82,7 +82,7 @@ The system is fully configured but needs your Anthropic API key to run.
 ### Option 1: Edit .env file directly
 
 ```bash
-nano ~/Cursor/Claude-2026/clawd/memex/.env
+nano ~/Cursor/Claude-2026/openclaw/skills/memex/.env
 ```
 
 Replace this line:
@@ -98,7 +98,7 @@ With your actual key from: https://console.anthropic.com/settings/keys
 ```bash
 # Get your API key from console.anthropic.com
 # Then run:
-cd ~/Cursor/Claude-2026/clawd/memex
+cd ~/Cursor/Claude-2026/openclaw/skills/memex
 echo 'ANTHROPIC_API_KEY=sk-ant-api03-YOUR_ACTUAL_KEY' > .env.local
 cat .env.local >> .env
 rm .env.local
@@ -120,7 +120,7 @@ Once API key is set:
 ### 1. Verify Setup
 
 ```bash
-cd ~/Cursor/Claude-2026/clawd/memex
+cd ~/Cursor/Claude-2026/openclaw/skills/memex
 ./scripts/complete_setup.sh
 ```
 
@@ -160,13 +160,13 @@ curl http://localhost:8765/
 
 ### Scripts
 
-- `/Users/arvindsarin/Cursor/Claude-2026/clawd/memex/scripts/journal_backfill.py`
-- `/Users/arvindsarin/Cursor/Claude-2026/clawd/memex/scripts/daily_ingest.py`
-- `/Users/arvindsarin/Cursor/Claude-2026/clawd/memex/scripts/complete_setup.sh`
+- `/Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex/scripts/journal_backfill.py`
+- `/Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex/scripts/daily_ingest.py`
+- `/Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex/scripts/complete_setup.sh`
 
 ### Configuration
 
-- `/Users/arvindsarin/Cursor/Claude-2026/clawd/memex/.env` (environment variables)
+- `/Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex/.env` (environment variables)
 - `/Users/arvindsarin/.openclaw/jobs.json` (cron jobs)
 - `/Users/arvindsarin/Library/LaunchAgents/com.memex.api.plist` (API auto-start)
 
@@ -179,9 +179,9 @@ curl http://localhost:8765/
 
 ### Data
 
-- `~/Cursor/Claude-2026/clawd/memex/data/journals/` (generated journals)
-- `~/Cursor/Claude-2026/clawd/memex/data/chroma/` (vector database)
-- `~/Cursor/Claude-2026/clawd/memex/data/integrations/` (emails, calendar)
+- `~/Cursor/Claude-2026/openclaw/skills/memex/data/journals/` (generated journals)
+- `~/Cursor/Claude-2026/openclaw/skills/memex/data/chroma/` (vector database)
+- `~/Cursor/Claude-2026/openclaw/skills/memex/data/integrations/` (emails, calendar)
 
 ---
 
@@ -216,7 +216,7 @@ tail -f ~/.openclaw/logs/memex-api.stdout.log
 ### Manual Journal Generation
 
 ```bash
-cd ~/Cursor/Claude-2026/clawd/memex
+cd ~/Cursor/Claude-2026/openclaw/skills/memex
 
 # Generate journal for specific date
 ./scripts/daily_ingest.py --journal-only --date 2026-02-01
@@ -317,14 +317,14 @@ Before considering fully operational:
 2. **Update .env** (1 minute)
 
    ```bash
-   nano ~/Cursor/Claude-2026/clawd/memex/.env
+   nano ~/Cursor/Claude-2026/openclaw/skills/memex/.env
    # Replace YOUR_KEY_HERE with actual key
    ```
 
 3. **Verify Setup** (1 minute)
 
    ```bash
-   cd ~/Cursor/Claude-2026/clawd/memex
+   cd ~/Cursor/Claude-2026/openclaw/skills/memex
    ./scripts/complete_setup.sh
    ```
 
@@ -368,7 +368,7 @@ With Anthropic Max 200 plan (unlimited API calls, pay-per-token):
 
 - ✅ .env file has 600 permissions (user-only read/write)
 - ✅ API key never committed to git (.env in .gitignore)
-- ✅ OAuth tokens remain encrypted at `~/clawd/.tokens/`
+- ✅ OAuth tokens remain encrypted at `~/openclaw/.tokens/`
 - ✅ LaunchAgent runs as user (not root)
 - ✅ All scripts validate input and handle errors
 - ✅ Model enforcement prevents non-Claude usage
@@ -391,7 +391,7 @@ cat ~/.openclaw/jobs.json | jq '.jobs[] | select(.id | contains("memex"))'
 
 ```bash
 # Verify key is set
-cd ~/Cursor/Claude-2026/clawd/memex
+cd ~/Cursor/Claude-2026/openclaw/skills/memex
 source .env
 echo $ANTHROPIC_API_KEY | cut -c1-20
 ```
@@ -411,7 +411,7 @@ launchctl load ~/Library/LaunchAgents/com.memex.api.plist
 
 ```bash
 # Reinstall dependencies
-cd ~/Cursor/Claude-2026/clawd/memex
+cd ~/Cursor/Claude-2026/openclaw/skills/memex
 pip3 install --break-system-packages anthropic pydantic-settings uvicorn fastapi
 ```
 

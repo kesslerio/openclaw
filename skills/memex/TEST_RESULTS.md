@@ -4,7 +4,7 @@
 
 ### 1. Environment Configuration
 
-- ✅ .env file created at `/Users/arvindsarin/Cursor/Claude-2026/clawd/memex/.env`
+- ✅ .env file created at `/Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex/.env`
 - ✅ .env file has secure permissions (600)
 - ✅ .env file can be sourced by bash scripts
 - ✅ API key placeholder in place (needs replacement)
@@ -106,7 +106,7 @@ pip3 install --break-system-packages "pydantic<2.0"
 
 ```bash
 # Get key from: https://console.anthropic.com/settings/keys
-nano ~/Cursor/Claude-2026/clawd/memex/.env
+nano ~/Cursor/Claude-2026/openclaw/skills/memex/.env
 # Replace: ANTHROPIC_API_KEY=sk-ant-api03-YOUR_KEY_HERE
 # With:    ANTHROPIC_API_KEY=sk-ant-api03-ACTUAL_KEY
 ```
@@ -194,7 +194,7 @@ nano ~/Cursor/Claude-2026/clawd/memex/.env
 
 1. **Set API Key** (2 minutes)
    ```bash
-   nano ~/Cursor/Claude-2026/clawd/memex/.env
+   nano ~/Cursor/Claude-2026/openclaw/skills/memex/.env
    # Replace YOUR_KEY_HERE with actual key
    ```
 
@@ -215,7 +215,7 @@ nano ~/Cursor/Claude-2026/clawd/memex/.env
 3. **Test Journal Generation** (2 minutes)
 
    ```bash
-   cd ~/Cursor/Claude-2026/clawd/memex
+   cd ~/Cursor/Claude-2026/openclaw/skills/memex
 
    # Test without ChromaDB dependency
    python3 -c "
@@ -244,7 +244,7 @@ If you want to test journal generation immediately before fixing ChromaDB:
 1. **Create a minimal test script**:
 
 ```bash
-cat > ~/Cursor/Claude-2026/clawd/memex/test_journal.py << 'EOF'
+cat > ~/Cursor/Claude-2026/openclaw/skills/memex/test_journal.py << 'EOF'
 #!/usr/bin/env python3
 import sys
 from pathlib import Path

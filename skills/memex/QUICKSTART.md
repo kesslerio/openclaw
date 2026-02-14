@@ -3,14 +3,14 @@
 ## 1. Install Dependencies
 
 ```bash
-cd ~/clawd/memex
+cd ~/Cursor/Claude-2026/openclaw/skills/memex
 poetry install
 ```
 
 ## 2. Install Service
 
 ```bash
-cd ~/clawd/memex/scripts
+cd ~/Cursor/Claude-2026/openclaw/skills/memex/scripts
 ./install_service.sh
 ```
 
@@ -80,7 +80,7 @@ curl http://localhost:8765/stats
 1. Check dependencies:
 
 ```bash
-cd ~/clawd/memex
+cd ~/Cursor/Claude-2026/openclaw/skills/memex
 poetry install
 ```
 
@@ -93,7 +93,7 @@ cat ~/Library/Logs/memex-api-error.log
 3. Try manual start:
 
 ```bash
-cd ~/clawd/memex
+cd ~/Cursor/Claude-2026/openclaw/skills/memex
 poetry run python -m memex.historian.search_api
 ```
 
@@ -102,7 +102,7 @@ poetry run python -m memex.historian.search_api
 Index your transcripts first:
 
 ```bash
-cd ~/clawd/memex
+cd ~/Cursor/Claude-2026/openclaw/skills/memex
 poetry run python -m memex.historian.transcript_indexer
 ```
 
@@ -122,13 +122,13 @@ kill -9 <PID>
 
 ## File Locations
 
-| Item        | Location                                                   |
-| ----------- | ---------------------------------------------------------- |
-| Scripts     | `~/clawd/memex/scripts/`                                   |
-| LaunchAgent | `~/Library/LaunchAgents/com.copperdigital.memex-api.plist` |
-| Logs        | `~/Library/Logs/memex-api*.log`                            |
-| Data        | `~/clawd/memex/data/`                                      |
-| Config      | `~/clawd/memex/historian/config.py`                        |
+| Item        | Location                                                         |
+| ----------- | ---------------------------------------------------------------- |
+| Scripts     | `~/Cursor/Claude-2026/openclaw/skills/memex/scripts/`            |
+| LaunchAgent | `~/Library/LaunchAgents/com.copperdigital.memex-api.plist`       |
+| Logs        | `~/Library/Logs/memex-api*.log`                                  |
+| Data        | `~/Cursor/Claude-2026/openclaw/skills/memex/data/`               |
+| Config      | `~/Cursor/Claude-2026/openclaw/skills/memex/historian/config.py` |
 
 ## Next Steps
 

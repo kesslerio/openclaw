@@ -206,7 +206,7 @@ print(f"Generated {len(journals)} journals")
 ### CLI Script
 
 ```bash
-/home/ubuntu/clawd/memex/scripts/generate_daily_journal.py
+/home/ubuntu/openclaw/skills/memex/scripts/generate_daily_journal.py
 ```
 
 ---
@@ -234,7 +234,7 @@ print(f"Generated {len(journals)} journals")
 
 ```bash
 # Add to crontab
-0 8 * * * cd /home/ubuntu/clawd/memex && python scripts/generate_daily_journal.py
+0 8 * * * cd /home/ubuntu/openclaw/skills/memex && python scripts/generate_daily_journal.py
 ```
 
 ---

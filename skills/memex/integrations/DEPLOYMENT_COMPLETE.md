@@ -68,7 +68,7 @@ Complete OAuth2-based Gmail and Calendar integrations for Memex, supporting dual
 ┌─────────────────────────────────────────────────────────────┐
 │                   Data Storage Layer                         │
 │                                                              │
-│  ~/clawd/memex/data/integrations/                           │
+│  ~/Cursor/Claude-2026/openclaw/skills/memex/data/integrations/                           │
 │  ├── gmail/                                                  │
 │  │   ├── arvind@copperdigital.com/                          │
 │  │   │   ├── manifest.json                                  │
@@ -233,7 +233,7 @@ python3 sync_gmail_calendar.py
 
 ### OAuth2 Credentials
 
-**Location**: `~/clawd/credentials.json`
+**Location**: `~/openclaw/credentials.json`
 
 **Structure**:
 
@@ -255,7 +255,7 @@ python3 sync_gmail_calendar.py
 
 ### Access Tokens
 
-**Location**: `~/clawd/.tokens/`
+**Location**: `~/openclaw/.tokens/`
 
 **Files**:
 
@@ -273,7 +273,7 @@ python3 sync_gmail_calendar.py
 ### File Organization
 
 ```
-~/clawd/memex/data/integrations/
+~/Cursor/Claude-2026/openclaw/skills/memex/data/integrations/
 ├── gmail/
 │   ├── arvind@copperdigital.com/
 │   │   ├── manifest.json
@@ -356,7 +356,7 @@ python3 sync_gmail_calendar.py
 - **OAuth2** with PKCE (Proof Key for Code Exchange)
 - **Automatic token refresh** (no re-authorization needed)
 - **Scoped permissions** (read-only, specific APIs)
-- **Local token storage** (~/clawd/.tokens/, 600 permissions)
+- **Local token storage** (~/openclaw/.tokens/, 600 permissions)
 
 ### Data Protection
 
@@ -441,10 +441,10 @@ python3 memex/scripts/setup_gmail_calendar.py --test-gmail arvind@copperdigital.
 
 ```bash
 # Check manifest
-cat ~/clawd/memex/data/integrations/gmail/arvind@copperdigital.com/manifest.json
+cat ~/Cursor/Claude-2026/openclaw/skills/memex/data/integrations/gmail/arvind@copperdigital.com/manifest.json
 
 # Count synced items
-find ~/clawd/memex/data/integrations/gmail -name "*.json" | grep -v manifest | wc -l
+find ~/Cursor/Claude-2026/openclaw/skills/memex/data/integrations/gmail -name "*.json" | grep -v manifest | wc -l
 ```
 
 ### Metrics
@@ -471,13 +471,13 @@ find ~/clawd/memex/data/integrations/gmail -name "*.json" | grep -v manifest | w
 crontab -e
 
 # Add line (sync daily at 6 AM)
-0 6 * * * cd ~/Cursor/Claude-2026/clawd && python3 memex/scripts/sync_gmail_calendar.py >> ~/clawd/logs/sync.log 2>&1
+0 6 * * * cd ~/Cursor/Claude-2026/openclaw && python3 memex/scripts/sync_gmail_calendar.py >> ~/openclaw/logs/sync.log 2>&1
 ```
 
 ### Manual Sync
 
 ```bash
-cd /Users/arvindsarin/Cursor/Claude-2026/clawd
+cd /Users/arvindsarin/Cursor/Claude-2026/openclaw
 
 # Quick sync (last 7 days)
 python3 memex/scripts/sync_gmail_calendar.py --start-date $(date -v-7d +%Y-%m-%d)
@@ -492,7 +492,7 @@ python3 memex/scripts/sync_gmail_calendar.py --start-date 2026-01-01 --end-date 
 
 ```bash
 # Delete token
-rm ~/clawd/.tokens/gmail_arvind@copperdigital.com.json
+rm ~/openclaw/.tokens/gmail_arvind@copperdigital.com.json
 
 # Re-authorize
 python3 memex/scripts/setup_gmail_calendar.py --authorize-gmail arvind@copperdigital.com
@@ -672,7 +672,7 @@ python3 sync_gmail_calendar.py --start-date 2020-01-01 --end-date 2020-12-31 --m
 ### Code Location
 
 ```
-/Users/arvindsarin/Cursor/Claude-2026/clawd/memex/
+/Users/arvindsarin/Cursor/Claude-2026/openclaw/memex/
 ├── integrations/
 │   ├── __init__.py
 │   ├── models.py

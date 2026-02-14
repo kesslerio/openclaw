@@ -131,7 +131,7 @@
 
 - Vocabulary: "makeup" = "mac app".
 - Never edit `node_modules` (global/Homebrew/npm/git installs too). Updates overwrite. Skill notes go in `tools.md` or `AGENTS.md`.
-- Signal: "update fly" => `fly ssh console -a flawd-bot -C "bash -lc 'cd /data/clawd/openclaw && git pull --rebase origin main'"` then `fly machines restart e825232f34d058 -a flawd-bot`.
+- Signal: "update fly" => `fly ssh console -a flawd-bot -C "bash -lc 'cd /data/openclaw && git pull --rebase origin main'"` then `fly machines restart e825232f34d058 -a flawd-bot`.
 - When working on a GitHub Issue or PR, print the full URL at the end of the task.
 - When answering questions, respond with high-confidence answers only: verify in code; do not guess.
 - Never update the Carbon dependency.
@@ -176,6 +176,76 @@
 - For manual `openclaw message send` messages that include `!`, use the heredoc pattern noted below to avoid the Bash tool’s escaping.
 - Release guardrails: do not change version numbers without operator’s explicit consent; always ask permission before running any npm publish/release step.
 
+## Campaign Data Integrity & Auto-Discovery Protocol
+
+When working with campaigns (e.g., `/Campaigns/vc-outreach-2026`), **ALWAYS** run auto-discovery BEFORE analyzing status:
+
+### Pre-Analysis Discovery (REQUIRED)
+
+Before answering ANY "what's done/pending" question:
+
+```bash
+# Run auto-discovery script FIRST
+bash scripts/discover-campaign-status.sh
+```
+
+This will:
+
+1. Check for running web services/dashboards
+2. Identify all data sources (state.json, dashboard.html, etc.)
+3. Detect sync discrepancies
+4. Report which is source of truth
+
+**NEVER analyze files without discovery first.** File timestamps may be stale, dashboards may exist, multiple sources may conflict.
+
+### Data Architecture (Single Source of Truth)
+
+```
+state.json (SOURCE OF TRUTH)
+    ├─ All campaign state persisted here
+    ├─ send-email.py writes here after sends
+    └─ Dashboard syncs FROM this
+
+dashboard.html (VIEW LAYER)
+    └─ Reads from state.json (or synced via sync-dashboard-data.py)
+
+Hooks:
+    ├─ pre-send.sh: Validate before email send
+    └─ post-send.sh: Auto-sync state → dashboard
+```
+
+### Email Send Workflow (Automated)
+
+When emails are sent via `scripts/send-email.py`:
+
+1. ✅ **Pre-send hook** runs automatically (duplicate check, validation)
+2. ✅ Email sends via SMTP
+3. ✅ **State persists** to `state.json` automatically
+4. ✅ **Post-send hook** runs automatically (syncs dashboard, optionally commits)
+
+**No manual updates needed.** The system keeps itself in sync.
+
+### Manual Sync (If Needed)
+
+If dashboard and state.json drift out of sync:
+
+```bash
+cd scripts
+python3 sync-dashboard-data.py  # state.json → dashboard.html
+```
+
+### Discovery-First Checklist
+
+Before any campaign analysis, verify:
+
+- [ ] Ran `discover-campaign-status.sh`
+- [ ] Checked for running services (lsof -i :3000-9000)
+- [ ] Identified source of truth (state.json)
+- [ ] Verified sync status
+- [ ] Used correct data source for analysis
+
+**Never assume files are current.** Always discover first.
+
 ## NPM + 1Password (publish/verify)
 
 - Use the 1password skill; all `op` commands must run inside a fresh tmux session.
@@ -184,3 +254,11 @@
 - Publish: `npm publish --access public --otp="<otp>"` (run from the package dir).
 - Verify without local npmrc side effects: `npm view <pkg> version --userconfig "$(mktemp)"`.
 - Kill the tmux session after publish.
+
+## Campaign Email Setup
+
+- **Gmail App Password**: Pre-configured in `~/.zshrc` as `GMAIL_APP_PASSWORD="cgnzofbqkqqcvycm"`
+- **Never ask for Gmail credentials** - already set up and working
+- Sender: arvind@copperdigital.com
+- To use in Python scripts: `export GMAIL_APP_PASSWORD="cgnzofbqkqqcvycm"` before running
+- Test mode (`--test` flag) sends to sender email instead of actual recipients

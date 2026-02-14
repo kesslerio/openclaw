@@ -2,7 +2,7 @@
   "login_url": "https://web.plaud.ai/",
   "recordings_url": "https://web.plaud.ai/login?from_url=/",
   "transcript_url": "https://web.plaud.ai/file/8e0730e8a88d0c93012da71764d15606",
-  "cookies_file": "/Users/arvindsarin/clawd/memex/scraper/plaud_cookies.json",
+  "cookies_file": "/Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex/scraper/plaud_cookies.json",
   "found_selectors": {
     "[class*='recording']": 3,
     "[class*='item']": 619,

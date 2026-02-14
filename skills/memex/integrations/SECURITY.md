@@ -188,10 +188,10 @@ Once environment variables are working:
 
 ```bash
 # Backup first (just in case)
-cp ~/clawd/credentials.json ~/clawd/credentials.json.backup
+cp ~/openclaw/credentials.json ~/openclaw/credentials.json.backup
 
 # Remove original
-rm ~/clawd/credentials.json
+rm ~/openclaw/credentials.json
 ```
 
 ---
@@ -318,13 +318,13 @@ grep '"success": false' ~/.tokens/audit.log
 
 ## File Permissions Reference
 
-| Path                       | Permissions      | Reason                               |
-| -------------------------- | ---------------- | ------------------------------------ |
-| `~/.tokens/`               | 700 (drwx------) | Directory access restricted to owner |
-| `~/.tokens/*.json`         | 600 (-rw-------) | Token files readable only by owner   |
-| `~/.tokens/.keyfile`       | 600 (-rw-------) | Encryption key secured               |
-| `~/.tokens/audit.log`      | 600 (-rw-------) | Audit log secured                    |
-| `~/clawd/credentials.json` | 600 (-rw-------) | (deprecated, use env vars)           |
+| Path                          | Permissions      | Reason                               |
+| ----------------------------- | ---------------- | ------------------------------------ |
+| `~/.tokens/`                  | 700 (drwx------) | Directory access restricted to owner |
+| `~/.tokens/*.json`            | 600 (-rw-------) | Token files readable only by owner   |
+| `~/.tokens/.keyfile`          | 600 (-rw-------) | Encryption key secured               |
+| `~/.tokens/audit.log`         | 600 (-rw-------) | Audit log secured                    |
+| `~/openclaw/credentials.json` | 600 (-rw-------) | (deprecated, use env vars)           |
 
 ---
 

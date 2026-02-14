@@ -1,10 +1,10 @@
 #!/bin/bash
-# Auto-sync script for clawd workspace
+# Auto-sync script for openclaw workspace
 # Watches for file changes and auto-commits/pushes to GitHub
 
-WORKSPACE="/Users/arvindsarin/clawd"
-LOGFILE="$WORKSPACE/scripts/auto-sync.log"
-LOCKFILE="/tmp/clawd-sync.lock"
+WORKSPACE="/Users/arvindsarin/Cursor/Claude-2026/openclaw"
+LOGFILE="$WORKSPACE/tools/copper-scripts/auto-sync.log"
+LOCKFILE="/tmp/openclaw-sync.lock"
 
 # Exclude patterns (don't trigger sync on these)
 EXCLUDE_PATTERNS=(

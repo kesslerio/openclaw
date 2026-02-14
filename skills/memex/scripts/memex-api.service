@@ -9,9 +9,9 @@ After=network.target
 [Service]
 Type=simple
 User=arvindsarin
-WorkingDirectory=/Users/arvindsarin/clawd/memex
+WorkingDirectory=/Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex
 Environment="PATH=/usr/local/bin:/usr/bin:/bin"
-Environment="PYTHONPATH=/Users/arvindsarin/clawd/memex"
+Environment="PYTHONPATH=/Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex"
 ExecStart=/usr/local/bin/poetry run python -m memex.historian.search_api
 Restart=on-failure
 RestartSec=10s

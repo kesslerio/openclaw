@@ -394,7 +394,7 @@ Estimated cost: $0.05 (initial indexing)
 **Run Indexer:**
 
 ```bash
-cd /Users/arvindsarin/clawd/memex
+cd /Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex
 python -c "
 import asyncio
 from historian.indexer import TranscriptIndexer
@@ -427,7 +427,7 @@ asyncio.run(main())
 | ------------------ | ------ | ----------------------------------- |
 | Install PostgreSQL | [ ]    | `brew install postgresql@15`        |
 | Start service      | [ ]    | `brew services start postgresql@15` |
-| Create database    | [ ]    | `createdb clawd`                    |
+| Create database    | [ ]    | `createdb openclaw`                 |
 | Create user        | [ ]    | SQL command                         |
 | Install pgvector   | [ ]    | `brew install pgvector`             |
 | Enable extension   | [ ]    | `CREATE EXTENSION vector;`          |
@@ -439,7 +439,7 @@ asyncio.run(main())
 | ----------------------- | ------ | ------------------------------------ |
 | Install PostgreSQL      | [ ]    | `apt install postgresql`             |
 | Install pgvector        | [ ]    | `apt install postgresql-15-pgvector` |
-| Create database         | [ ]    | `createdb clawd`                     |
+| Create database         | [ ]    | `createdb openclaw`                  |
 | Create user             | [ ]    | SQL command                          |
 | Enable extension        | [ ]    | `CREATE EXTENSION vector;`           |
 | Configure remote access | [ ]    | pg_hba.conf                          |
@@ -447,8 +447,8 @@ asyncio.run(main())
 **Verification:**
 
 ```bash
-psql clawd -c "SELECT version();"
-psql clawd -c "SELECT * FROM pg_extension WHERE extname = 'vector';"
+psql openclaw -c "SELECT version();"
+psql openclaw -c "SELECT * FROM pg_extension WHERE extname = 'vector';"
 ```
 
 ---
@@ -474,7 +474,7 @@ psql clawd -c "SELECT * FROM pg_extension WHERE extname = 'vector';"
 **Apply Schema:**
 
 ```bash
-cd /Users/arvindsarin/clawd/memex
+cd /Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex
 psql $DATABASE_URL -f schema/001_initial_schema.sql
 ```
 
@@ -620,7 +620,7 @@ psql $DATABASE_URL -f schema/001_initial_schema.sql
 **Run Tests:**
 
 ```bash
-cd /Users/arvindsarin/clawd/memex
+cd /Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex
 pytest tests/ -v --cov=. --cov-report=html
 ```
 
@@ -658,7 +658,7 @@ pytest tests/ -v --cov=. --cov-report=html
 ```bash
 # memex/.env
 OPENAI_API_KEY=sk-...
-DATABASE_URL=postgresql://nike:password@localhost:5432/clawd
+DATABASE_URL=postgresql://nike:password@localhost:5432/openclaw
 PLAUD_EMAIL=arvind@example.com
 PLAUD_PASSWORD=secure_password
 MEMEX_API_PORT=8891

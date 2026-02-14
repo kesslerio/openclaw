@@ -132,7 +132,7 @@ python scripts/create_trail.py \
 
 ```bash
 # Clone repository
-cd /home/ubuntu/clawd/memex
+cd /home/ubuntu/openclaw/skills/memex
 
 # Install Python dependencies
 pip install -r requirements.txt
@@ -148,14 +148,14 @@ cd ..
 **Terminal 1: Backend**
 
 ```bash
-cd /home/ubuntu/clawd/memex
+cd /home/ubuntu/openclaw/skills/memex
 uvicorn api.main:app --reload --port 8765
 ```
 
 **Terminal 2: Frontend**
 
 ```bash
-cd /home/ubuntu/clawd/memex/frontend
+cd /home/ubuntu/openclaw/skills/memex/frontend
 npm run dev
 ```
 
@@ -417,7 +417,7 @@ npm test
 **Backend:**
 
 ```bash
-cd /home/ubuntu/clawd/memex
+cd /home/ubuntu/openclaw/skills/memex
 pytest tests/ -v
 ```
 

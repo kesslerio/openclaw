@@ -12,7 +12,7 @@
 2. **ANTHROPIC_API_KEY Set** ✅
    - Extracted from OpenClaw Nike agent auth profile
    - API Key: `sk-ant-oat01-3CvUF9P...w-MEAqqwAA`
-   - Added to `/Users/arvindsarin/Cursor/Claude-2026/clawd/memex/.env`
+   - Added to `/Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex/.env`
 
 3. **Script Environment Loading** ✅
    - Both `journal_backfill.py` and `daily_ingest.py` now load .env automatically
@@ -94,7 +94,7 @@ $ ./scripts/daily_ingest.py --help
 ### 1. Journal Backfill ✅
 
 ```bash
-cd ~/Cursor/Claude-2026/clawd/memex
+cd ~/Cursor/Claude-2026/openclaw/skills/memex
 
 # When you have data, run:
 ./scripts/journal_backfill.py
@@ -141,7 +141,7 @@ Currently no test data found in:
 Once you have transcripts, emails, or calendar data:
 
 ```bash
-cd ~/Cursor/Claude-2026/clawd/memex
+cd ~/Cursor/Claude-2026/openclaw/skills/memex
 ./scripts/journal_backfill.py
 ```
 

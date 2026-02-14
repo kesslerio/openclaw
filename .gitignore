@@ -72,10 +72,10 @@ USER.md
 # local tooling
 .serena/
 
-# Clawd Kanban
-clawd/frontend/node_modules/
-clawd/server/node_modules/
-clawd/logs/
+# Kanban Mission Control
+tools/kanban/frontend/node_modules/
+tools/kanban/server/node_modules/
+tools/kanban/logs/
 
 # Skills
 skills/*/venv/

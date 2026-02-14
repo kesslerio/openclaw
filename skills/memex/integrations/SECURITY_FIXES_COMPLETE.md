@@ -243,10 +243,10 @@ After verifying environment variables work:
 
 ```bash
 # Backup first
-cp ~/clawd/credentials.json ~/clawd/credentials.json.backup
+cp ~/openclaw/credentials.json ~/openclaw/credentials.json.backup
 
 # Remove original
-rm ~/clawd/credentials.json
+rm ~/openclaw/credentials.json
 ```
 
 **Note**: System will continue working with `credentials.json` if environment variables aren't set (backward compatible).

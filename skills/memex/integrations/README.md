@@ -118,7 +118,7 @@ python ../scripts/sync_gmail_calendar.py \
 ## Data Output
 
 ```
-~/clawd/memex/data/integrations/
+~/Cursor/Claude-2026/openclaw/skills/memex/data/integrations/
 ├── gmail/
 │   ├── arvind@copperdigital.com/
 │   │   ├── manifest.json
@@ -145,7 +145,7 @@ python ../scripts/sync_gmail_calendar.py \
 
 ## Security
 
-- Tokens stored in `~/clawd/.tokens/`
+- Tokens stored in `~/openclaw/.tokens/`
 - Read-only access
 - OAuth2 refresh handling
 - No credentials in code

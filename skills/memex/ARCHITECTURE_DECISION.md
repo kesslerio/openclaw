@@ -27,7 +27,7 @@ OpenClaw Infrastructure:
 
 ```
 Memex Codebase:
-├── ~/Cursor/Claude-2026/clawd/memex/
+├── ~/Cursor/Claude-2026/openclaw/skills/memex/
 │   ├── scripts/ (Python scripts)
 │   ├── journalist/ (journal generator)
 │   ├── retrieval/ (query engine)
@@ -123,7 +123,7 @@ class OpenClawClient:
 │   ├── journalist/
 │   ├── retrieval/
 │   └── integrations/
-└── data/ → ~/clawd/memex/data (symlink)
+└── data/ → ~/Cursor/Claude-2026/openclaw/skills/memex/data (symlink)
 ```
 
 **How it works:**
@@ -181,7 +181,7 @@ class OpenClawClient:
 
 ```bash
 # Current (broken):
-cd ~/Cursor/Claude-2026/clawd/memex
+cd ~/Cursor/Claude-2026/openclaw/skills/memex
 export ANTHROPIC_API_KEY=...
 ./scripts/journal_backfill.py
 
@@ -207,13 +207,13 @@ openclaw memex query "summarize last week"
 mkdir -p ~/.openclaw/skills/memex/{scripts,lib}
 
 # Move code
-mv ~/Cursor/Claude-2026/clawd/memex/journalist ~/.openclaw/skills/memex/lib/
-mv ~/Cursor/Claude-2026/clawd/memex/retrieval ~/.openclaw/skills/memex/lib/
-mv ~/Cursor/Claude-2026/clawd/memex/integrations ~/.openclaw/skills/memex/lib/
-mv ~/Cursor/Claude-2026/clawd/memex/scripts/*.py ~/.openclaw/skills/memex/scripts/
+mv ~/Cursor/Claude-2026/openclaw/skills/memex/journalist ~/.openclaw/skills/memex/lib/
+mv ~/Cursor/Claude-2026/openclaw/skills/memex/retrieval ~/.openclaw/skills/memex/lib/
+mv ~/Cursor/Claude-2026/openclaw/skills/memex/integrations ~/.openclaw/skills/memex/lib/
+mv ~/Cursor/Claude-2026/openclaw/skills/memex/scripts/*.py ~/.openclaw/skills/memex/scripts/
 
 # Symlink data (keep in original location)
-ln -s ~/clawd/memex/data ~/.openclaw/skills/memex/data
+ln -s ~/Cursor/Claude-2026/openclaw/skills/memex/data ~/.openclaw/skills/memex/data
 ```
 
 ### Phase 2: skill.yaml (15 min)
@@ -303,12 +303,12 @@ If you need journals TODAY:
 3. **Copy key** (starts with `sk-ant-api03-`)
 4. **Update**:
    ```bash
-   nano ~/Cursor/Claude-2026/clawd/memex/.env
+   nano ~/Cursor/Claude-2026/openclaw/skills/memex/.env
    # Replace the oat01 token with api03 key
    ```
 5. **Test**:
    ```bash
-   cd ~/Cursor/Claude-2026/clawd/memex
+   cd ~/Cursor/Claude-2026/openclaw/skills/memex
    ./scripts/journal_backfill.py --max 1
    ```
 

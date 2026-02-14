@@ -19,7 +19,7 @@ The Memex API provides three main endpoints:
 ### Installation
 
 ```bash
-cd /home/ubuntu/clawd/memex/api
+cd /home/ubuntu/openclaw/skills/memex/api
 pip install -r requirements.txt
 ```
 

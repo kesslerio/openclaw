@@ -2,7 +2,7 @@
 
 **Date**: February 3, 2026
 **Status**: Complete
-**Location**: `/Users/arvindsarin/Cursor/Claude-2026/clawd/memex/scraper/`
+**Location**: `/Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex/scraper/`
 
 ## Overview
 

@@ -101,7 +101,7 @@ journal_data = generator.generate_journal(
 ### 3. Journal Backfill (CLI)
 
 ```bash
-cd ~/Cursor/Claude-2026/clawd/memex
+cd ~/Cursor/Claude-2026/openclaw/skills/memex
 
 # Backfill all journals from July 2025 to today
 ./scripts/journal_backfill.py
@@ -119,7 +119,7 @@ cd ~/Cursor/Claude-2026/clawd/memex
 ### 4. Daily Ingestion (CLI)
 
 ```bash
-cd ~/Cursor/Claude-2026/clawd/memex
+cd ~/Cursor/Claude-2026/openclaw/skills/memex
 
 # Full daily ingest (sync + index + journal)
 ./scripts/daily_ingest.py
@@ -156,7 +156,7 @@ echo $ANTHROPIC_API_KEY
 Generate journals for all historical data:
 
 ```bash
-cd ~/Cursor/Claude-2026/clawd/memex
+cd ~/Cursor/Claude-2026/openclaw/skills/memex
 
 # Test with 5 journals first
 ./scripts/journal_backfill.py --max 5
@@ -178,14 +178,14 @@ Add to `~/.openclaw/jobs.json`:
       "id": "memex-daily-ingest",
       "name": "Memex Daily Ingest",
       "schedule": "0 6 * * *",
-      "command": "cd ~/Cursor/Claude-2026/clawd/memex && ./scripts/daily_ingest.py",
+      "command": "cd ~/Cursor/Claude-2026/openclaw/skills/memex && ./scripts/daily_ingest.py",
       "description": "Sync emails/calendar and index data (6 AM daily)"
     },
     {
       "id": "memex-build-journal",
       "name": "Memex Build Journal",
       "schedule": "0 21 * * *",
-      "command": "cd ~/Cursor/Claude-2026/clawd/memex && ./scripts/daily_ingest.py --journal-only",
+      "command": "cd ~/Cursor/Claude-2026/openclaw/skills/memex && ./scripts/daily_ingest.py --journal-only",
       "description": "Generate yesterday's journal (9 PM daily)"
     }
   ]
@@ -267,7 +267,7 @@ curl http://localhost:8765/
 - ✅ Emails: `data/integrations/gmail/` (7,000+)
 - ✅ Calendar: `data/integrations/calendar/` (230+)
 - ✅ Transcripts: `data/transcripts/` (2,500+)
-- ✅ OAuth tokens: `~/clawd/.tokens/` (4 accounts, encrypted)
+- ✅ OAuth tokens: `~/openclaw/.tokens/` (4 accounts, encrypted)
 
 ### No OpenAI References Remain ✅
 
@@ -344,7 +344,7 @@ model: claude-sonnet-4-20250514
 
 ## 🔒 Security Notes
 
-- ✅ All OAuth tokens remain encrypted at `~/clawd/.tokens/`
+- ✅ All OAuth tokens remain encrypted at `~/openclaw/.tokens/`
 - ✅ No API keys stored in code (environment variables only)
 - ✅ Model enforcement prevents accidental GPT usage
 - ✅ Backup created before all changes
@@ -367,7 +367,7 @@ model: claude-sonnet-4-20250514
 
 ```bash
 # Test model enforcement
-cd ~/Cursor/Claude-2026/clawd/memex
+cd ~/Cursor/Claude-2026/openclaw/skills/memex
 python3 -c "from config.model_enforcer import ModelEnforcer; ModelEnforcer.enforce()"
 
 # Test journal generator

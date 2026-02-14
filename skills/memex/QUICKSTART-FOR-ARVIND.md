@@ -44,7 +44,7 @@ Once you have `plaud-selectors.json`:
 Nike will ask you to run:
 
 ```bash
-cd ~/clawd/memex
+cd ~/Cursor/Claude-2026/openclaw/skills/memex
 python scraper/plaud_scraper.py --test
 ```
 
@@ -119,7 +119,7 @@ This downloads 1 file to verify everything works.
 
 ### Q: Is my data safe?
 
-**A:** Yes! All downloaded to your local machine (`~/clawd/memex/data/`). No cloud. You have full control.
+**A:** Yes! All downloaded to your local machine (`~/Cursor/Claude-2026/openclaw/skills/memex/data/`). No cloud. You have full control.
 
 ### Q: What if the scraper breaks?
 

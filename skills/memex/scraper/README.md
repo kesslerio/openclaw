@@ -32,7 +32,7 @@ pip install playwright
 playwright install chromium
 
 # Install from package
-cd /Users/arvindsarin/Cursor/Claude-2026/clawd/memex
+cd /Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex
 pip install -e .
 ```
 
@@ -519,7 +519,7 @@ logging.getLogger('memex.scraper').setLevel(logging.DEBUG)
 
 This implementation fully complies with the specifications in:
 
-- `/Users/arvindsarin/Cursor/Claude-2026/clawd/plans/ONE-YEAR-ROADMAP-2026.md` (lines 52-510)
+- `/Users/arvindsarin/Cursor/Claude-2026/openclaw/plans/ONE-YEAR-ROADMAP-2026.md` (lines 52-510)
 
 Key features implemented:
 

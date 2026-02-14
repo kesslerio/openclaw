@@ -72,7 +72,7 @@ npm install -g vercel
 ### Step 1: Prepare Backend
 
 ```bash
-cd /home/ubuntu/clawd/memex
+cd /home/ubuntu/openclaw/skills/memex
 
 # Create requirements.txt for Railway
 cat > requirements.txt << 'EOF'
@@ -188,7 +188,7 @@ curl -X POST $BACKEND_URL/api/chat/query \
 ### Step 1: Prepare Frontend
 
 ```bash
-cd /home/ubuntu/clawd/memex/frontend
+cd /home/ubuntu/openclaw/skills/memex/frontend
 
 # Create .env.production
 cat > .env.production << 'EOF'
@@ -214,7 +214,7 @@ npm i -g vercel
 vercel login
 
 # Deploy
-cd /home/ubuntu/clawd/memex/frontend
+cd /home/ubuntu/openclaw/skills/memex/frontend
 vercel
 
 # Production deployment
@@ -587,7 +587,7 @@ railway logs
 
 ```bash
 # Local changes
-cd /home/ubuntu/clawd/memex
+cd /home/ubuntu/openclaw/skills/memex
 git add .
 git commit -m "feat: Add feature X"
 git push
@@ -600,7 +600,7 @@ railway up
 ### Updating Frontend
 
 ```bash
-cd /home/ubuntu/clawd/memex/frontend
+cd /home/ubuntu/openclaw/skills/memex/frontend
 npm run build
 vercel --prod
 
@@ -666,11 +666,11 @@ python scripts/migrate_db.py
 
 ```bash
 # Terminal 1: Backend
-cd /home/ubuntu/clawd/memex
+cd /home/ubuntu/openclaw/skills/memex
 uvicorn api.main:app --reload --port 8765
 
 # Terminal 2: Frontend
-cd /home/ubuntu/clawd/memex/frontend
+cd /home/ubuntu/openclaw/skills/memex/frontend
 npm run dev
 
 # Access: http://localhost:3000

@@ -362,7 +362,7 @@ This toolkit contains **12 production-ready assets** for Copper AI's complete go
 ## 📁 File Structure
 
 ```
-/home/ubuntu/clawd/
+/home/ubuntu/openclaw/
 ├── marketing/
 │   ├── copper-roi-calculator.html          # Interactive ROI tool
 │   ├── demo-script.md                      # 15-min sales demo

@@ -12,7 +12,7 @@ const POSSIBLE_LOCATIONS = [
   "./kanban/kanban.json",
   "./kanban/data/kanban.json",
   "./data/kanban.json",
-  "./clawd/kanban.json",
+  "./tools/kanban/kanban.json",
 ];
 
 const TARGET_PATH = "./tools/kanban/data/kanban.json";
@@ -195,7 +195,7 @@ function createFreshDatabase() {
 }
 
 function backupAndCleanup(files, targetPath) {
-  const backupDir = "./clawd/data/backups";
+  const backupDir = "./tools/kanban/data/backups";
 
   if (!fs.existsSync(backupDir)) {
     fs.mkdirSync(backupDir, { recursive: true });

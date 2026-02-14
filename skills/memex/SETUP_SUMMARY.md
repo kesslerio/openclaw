@@ -11,7 +11,7 @@ Complete background service setup for programmatic transcript search.
    - Runs service on login, restarts on crash
    - Logs to `~/Library/Logs/memex-api*.log`
 
-2. **Management Scripts** (`/Users/arvindsarin/clawd/memex/scripts/`)
+2. **Management Scripts** (`/Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex/scripts/`)
    - `start_api.sh` - Start the API server
    - `stop_api.sh` - Stop the API server
    - `status_api.sh` - Check service status
@@ -63,7 +63,7 @@ Complete background service setup for programmatic transcript search.
 ┌─────────────────────────────────────────────────────────┐
 │              ChromaDB Vector Store                       │
 │  - Embeddings: all-MiniLM-L6-v2 (local, free)          │
-│  - Location: ~/clawd/memex/data/chroma                  │
+│  - Location: ~/Cursor/Claude-2026/openclaw/skills/memex/data/chroma                  │
 │  - Metadata: speaker, date, title, transcript_id        │
 └─────────────────────────────────────────────────────────┘
 ```
@@ -72,7 +72,7 @@ Complete background service setup for programmatic transcript search.
 
 ```bash
 # 1. Install dependencies
-cd ~/clawd/memex
+cd ~/Cursor/Claude-2026/openclaw/skills/memex
 poetry install
 
 # 2. Install service
@@ -182,7 +182,7 @@ tail -f ~/Library/Logs/memex-api-error.log
 ### Using Scripts
 
 ```bash
-cd ~/clawd/memex/scripts
+cd ~/Cursor/Claude-2026/openclaw/skills/memex/scripts
 
 ./start_api.sh    # Start (foreground)
 ./stop_api.sh     # Stop
@@ -221,16 +221,16 @@ for result in results['results']:
 
 | Item            | Location                                                                    |
 | --------------- | --------------------------------------------------------------------------- |
-| **Scripts**     | `/Users/arvindsarin/clawd/memex/scripts/`                                   |
+| **Scripts**     | `/Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex/scripts/`      |
 | **LaunchAgent** | `/Users/arvindsarin/Library/LaunchAgents/com.copperdigital.memex-api.plist` |
 | **Logs**        | `~/Library/Logs/memex-api.log`, `memex-api-error.log`                       |
-| **Data**        | `~/clawd/memex/data/`                                                       |
-| **Config**      | `~/clawd/memex/historian/config.py`                                         |
-| **API Code**    | `~/clawd/memex/historian/search_api.py`                                     |
+| **Data**        | `~/Cursor/Claude-2026/openclaw/skills/memex/data/`                          |
+| **Config**      | `~/Cursor/Claude-2026/openclaw/skills/memex/historian/config.py`            |
+| **API Code**    | `~/Cursor/Claude-2026/openclaw/skills/memex/historian/search_api.py`        |
 
 ## Configuration
 
-Edit `~/clawd/memex/historian/config.py`:
+Edit `~/Cursor/Claude-2026/openclaw/skills/memex/historian/config.py`:
 
 ```python
 # API Settings
@@ -263,7 +263,7 @@ DECAY_RATE = 0.05          # 5% decay per day
 1. Check dependencies:
 
 ```bash
-cd ~/clawd/memex
+cd ~/Cursor/Claude-2026/openclaw/skills/memex
 poetry install
 ```
 
@@ -276,7 +276,7 @@ cat ~/Library/Logs/memex-api-error.log
 3. Try manual start:
 
 ```bash
-cd ~/clawd/memex
+cd ~/Cursor/Claude-2026/openclaw/skills/memex
 poetry run python -m memex.historian.search_api
 ```
 
@@ -285,7 +285,7 @@ poetry run python -m memex.historian.search_api
 Index transcripts first:
 
 ```bash
-cd ~/clawd/memex
+cd ~/Cursor/Claude-2026/openclaw/skills/memex
 poetry run python -m memex.historian.transcript_indexer
 ```
 
@@ -316,7 +316,7 @@ make status
 2. Check ChromaDB:
 
 ```bash
-ls -la ~/clawd/memex/data/chroma
+ls -la ~/Cursor/Claude-2026/openclaw/skills/memex/data/chroma
 ```
 
 3. Restart:

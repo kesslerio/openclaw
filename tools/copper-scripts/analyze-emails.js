@@ -9,8 +9,26 @@ const path = require("path");
 const { execSync } = require("child_process");
 
 const TODAY = new Date().toISOString().split("T")[0];
-const SUMMARY_FILE = path.join(process.env.HOME, "clawd", "memory", `email-summary-${TODAY}.md`);
-const KANBAN_FILE = path.join(process.env.HOME, "clawd", "kanban.json");
+const SUMMARY_FILE = path.join(
+  process.env.HOME,
+  "Cursor",
+  "Claude-2026",
+  "openclaw",
+  "tools",
+  "copper-scripts",
+  "memory",
+  `email-summary-${TODAY}.md`,
+);
+const KANBAN_FILE = path.join(
+  process.env.HOME,
+  "Cursor",
+  "Claude-2026",
+  "openclaw",
+  "tools",
+  "kanban",
+  "data",
+  "kanban.json",
+);
 
 async function analyzeEmails() {
   // Check if summary file exists

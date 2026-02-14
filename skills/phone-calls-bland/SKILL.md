@@ -40,7 +40,7 @@ Add to your environment or `.env`:
 BLAND_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
-Or store in `~/.clawd/secrets.json`:
+Or store in `~/.openclaw/secrets.json`:
 
 ```json
 {

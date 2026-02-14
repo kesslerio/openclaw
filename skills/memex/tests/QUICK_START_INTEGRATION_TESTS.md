@@ -17,7 +17,7 @@ fixtures_integrations.py       30+ fixtures 18KB
 ### All Tests
 
 ```bash
-cd /Users/arvindsarin/Cursor/Claude-2026/clawd/memex/tests
+cd /Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex/tests
 
 # Simple run
 pytest test_gmail_service.py test_calendar_service.py test_integration_models.py test_oauth_flow.py -v
@@ -192,7 +192,7 @@ pip install -r requirements-test.txt
 ### "No module named memex"
 
 ```bash
-export PYTHONPATH="/Users/arvindsarin/Cursor/Claude-2026/clawd:$PYTHONPATH"
+export PYTHONPATH="/Users/arvindsarin/Cursor/Claude-2026/openclaw:$PYTHONPATH"
 ```
 
 ### Tests are slow

@@ -2,11 +2,11 @@
 
 ## Overview
 
-Created comprehensive test suites for the Memex AI Second Brain system based on specifications from `/Users/arvindsarin/Cursor/Claude-2026/clawd/plans/ONE-YEAR-ROADMAP-2026.md` (lines 233-509 for scraper, lines 889-end for vector store).
+Created comprehensive test suites for the Memex AI Second Brain system based on specifications from `/Users/arvindsarin/Cursor/Claude-2026/openclaw/plans/ONE-YEAR-ROADMAP-2026.md` (lines 233-509 for scraper, lines 889-end for vector store).
 
 ## Files Created/Updated
 
-### 1. `/Users/arvindsarin/Cursor/Claude-2026/clawd/memex/tests/test_plaud_scraper.py`
+### 1. `/Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex/tests/test_plaud_scraper.py`
 
 **Lines of Code:** 520
 **Test Classes:** 6
@@ -53,7 +53,7 @@ Created comprehensive test suites for the Memex AI Second Brain system based on 
 
 - `test_full_workflow_with_limit_1` - End-to-end test (skipped by default)
 
-### 2. `/Users/arvindsarin/Cursor/Claude-2026/clawd/memex/tests/test_vector_store.py`
+### 2. `/Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex/tests/test_vector_store.py`
 
 **Lines of Code:** 630
 **Test Classes:** 7
@@ -103,7 +103,7 @@ Created comprehensive test suites for the Memex AI Second Brain system based on 
 
 - `test_full_workflow_transcript_to_search` - Complete workflow
 
-### 3. `/Users/arvindsarin/Cursor/Claude-2026/clawd/memex/tests/conftest.py`
+### 3. `/Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex/tests/conftest.py`
 
 **Lines of Code:** 464
 **Fixtures:** 25+
@@ -160,7 +160,7 @@ Created comprehensive test suites for the Memex AI Second Brain system based on 
 - `assert_valid_metadata` - Validate metadata fields
 - `measure_execution_time` - Performance measurement
 
-### 4. `/Users/arvindsarin/Cursor/Claude-2026/clawd/memex/tests/pytest.ini`
+### 4. `/Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex/tests/pytest.ini`
 
 **Configuration for:**
 
@@ -170,7 +170,7 @@ Created comprehensive test suites for the Memex AI Second Brain system based on 
 - Async test support
 - Logging configuration
 
-### 5. `/Users/arvindsarin/Cursor/Claude-2026/clawd/memex/tests/README.md`
+### 5. `/Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex/tests/README.md`
 
 **Comprehensive documentation including:**
 
@@ -235,7 +235,7 @@ Created comprehensive test suites for the Memex AI Second Brain system based on 
 
 ```bash
 # Run all tests (skip integration)
-cd /Users/arvindsarin/Cursor/Claude-2026/clawd/memex
+cd /Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex
 pytest tests/ -v -m "not integration"
 
 # Run specific test file
@@ -386,7 +386,7 @@ np.testing.assert_array_almost_equal(arr1, arr2)
 2. **Run Unit Tests:**
 
    ```bash
-   cd /Users/arvindsarin/Cursor/Claude-2026/clawd/memex
+   cd /Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex
    pytest tests/ -v -m "not integration"
    ```
 
@@ -476,7 +476,7 @@ The test suite provides comprehensive coverage of the Memex system's core functi
 All test files are located in:
 
 ```
-/Users/arvindsarin/Cursor/Claude-2026/clawd/memex/tests/
+/Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex/tests/
 ```
 
 The test suite is ready for immediate use and CI/CD integration.

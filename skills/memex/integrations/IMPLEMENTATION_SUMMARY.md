@@ -9,7 +9,7 @@ Complete OAuth2-based Gmail and Calendar integrations for Memex, supporting both
 
 ### Files Created (10 files, ~2,100 lines)
 
-**Integration Module** (`/Users/arvindsarin/Cursor/Claude-2026/clawd/memex/integrations/`):
+**Integration Module** (`/Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex/integrations/`):
 
 ```
 ├── __init__.py              # Module exports (30 lines)
@@ -22,7 +22,7 @@ Complete OAuth2-based Gmail and Calendar integrations for Memex, supporting both
 └── IMPLEMENTATION_SUMMARY.md # This file
 ```
 
-**Scripts** (`/Users/arvindsarin/Cursor/Claude-2026/clawd/memex/scripts/`):
+**Scripts** (`/Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex/scripts/`):
 
 ```
 ├── setup_gmail_calendar.py  # Authorization & testing (180 lines)
@@ -229,7 +229,7 @@ Daily journals
 ### File Organization
 
 ```
-~/clawd/memex/data/integrations/
+~/Cursor/Claude-2026/openclaw/skills/memex/data/integrations/
 ├── gmail/
 │   ├── arvind@copperdigital.com/
 │   │   ├── manifest.json
@@ -273,7 +273,7 @@ Daily journals
 2. Enable Gmail API and Calendar API
 3. Create OAuth2 credentials (Desktop app)
 4. Download credentials.json
-5. Place at `~/clawd/credentials.json`
+5. Place at `~/openclaw/credentials.json`
 
 ### Installation (1 minute)
 
@@ -347,7 +347,7 @@ python memex/scripts/sync_gmail_calendar.py \
 
 ### OAuth2 Tokens
 
-- Stored in `~/clawd/.tokens/`
+- Stored in `~/openclaw/.tokens/`
 - File permissions: 600 (owner only)
 - Automatic refresh on expiry
 - Can be revoked at https://myaccount.google.com/permissions
@@ -360,7 +360,7 @@ python memex/scripts/sync_gmail_calendar.py \
 
 ### Credentials
 
-- OAuth2 credentials in `~/clawd/credentials.json`
+- OAuth2 credentials in `~/openclaw/credentials.json`
 - Not committed to git (.gitignored)
 - Only used for authorization flow
 
@@ -372,7 +372,7 @@ python memex/scripts/sync_gmail_calendar.py \
    - Create project at https://console.cloud.google.com
    - Enable Gmail API and Calendar API
    - Create OAuth2 credentials
-   - Download to `~/clawd/credentials.json`
+   - Download to `~/openclaw/credentials.json`
 
 2. **Install dependencies**:
 
@@ -429,7 +429,7 @@ python memex/scripts/sync_gmail_calendar.py \
 1. **Cron job** (daily sync at 6 AM):
 
    ```bash
-   0 6 * * * cd ~/Cursor/Claude-2026/clawd && python memex/scripts/sync_gmail_calendar.py >> ~/clawd/logs/sync.log 2>&1
+   0 6 * * * cd ~/Cursor/Claude-2026/openclaw && python memex/scripts/sync_gmail_calendar.py >> ~/openclaw/logs/sync.log 2>&1
    ```
 
 2. **Incremental sync**:

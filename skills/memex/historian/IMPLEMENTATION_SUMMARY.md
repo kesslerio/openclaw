@@ -2,11 +2,11 @@
 
 ## What Was Built
 
-Complete implementation of the MemexVectorStore as specified in `/Users/arvindsarin/Cursor/Claude-2026/clawd/plans/ONE-YEAR-ROADMAP-2026.md` (lines 516-887).
+Complete implementation of the MemexVectorStore as specified in `/Users/arvindsarin/Cursor/Claude-2026/openclaw/plans/ONE-YEAR-ROADMAP-2026.md` (lines 516-887).
 
 ## Files Created
 
-### 1. `/Users/arvindsarin/Cursor/Claude-2026/clawd/memex/historian/models.py`
+### 1. `/Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex/historian/models.py`
 
 **Data Models**
 
@@ -28,7 +28,7 @@ Complete implementation of the MemexVectorStore as specified in `/Users/arvindsa
   - Properties: collection_name, document_count, embedding_model, etc.
   - Method: to_dict()
 
-### 2. `/Users/arvindsarin/Cursor/Claude-2026/clawd/memex/historian/vector_store.py`
+### 2. `/Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex/historian/vector_store.py`
 
 **MemexVectorStore Class - Complete Implementation**
 
@@ -95,7 +95,7 @@ Complete implementation of the MemexVectorStore as specified in `/Users/arvindsa
 - `reset_collection(name)`: Reset specific collection
 - `reset_all()`: Reset all collections
 
-### 3. Updated `/Users/arvindsarin/Cursor/Claude-2026/clawd/memex/historian/__init__.py`
+### 3. Updated `/Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex/historian/__init__.py`
 
 **Package Exports**
 
@@ -107,7 +107,7 @@ Added exports for:
 - `EmbeddingResult`
 - `VectorStoreStats`
 
-### 4. `/Users/arvindsarin/Cursor/Claude-2026/clawd/memex/historian/example_usage.py`
+### 4. `/Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex/historian/example_usage.py`
 
 **Usage Examples**
 
@@ -120,7 +120,7 @@ Demonstrates:
 - Getting context windows
 - Retrieving statistics
 
-### 5. `/Users/arvindsarin/Cursor/Claude-2026/clawd/memex/historian/test_memex_vector_store.py`
+### 5. `/Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex/historian/test_memex_vector_store.py`
 
 **Unit Tests**
 
@@ -136,7 +136,7 @@ Comprehensive test suite covering:
 - Context window generation
 - Data models
 
-### 6. `/Users/arvindsarin/Cursor/Claude-2026/clawd/memex/historian/MEMEX_VECTOR_STORE.md`
+### 6. `/Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex/historian/MEMEX_VECTOR_STORE.md`
 
 **Complete Documentation**
 
@@ -152,7 +152,7 @@ Includes:
 - Advanced features (metadata filtering, custom weighting)
 - Troubleshooting guide
 
-### 7. Backup: `/Users/arvindsarin/Cursor/Claude-2026/clawd/memex/historian/vector_store_old.py`
+### 7. Backup: `/Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex/historian/vector_store_old.py`
 
 **Original VectorStore Preserved**
 
@@ -195,14 +195,14 @@ Where:
 Run the example:
 
 ```bash
-cd /Users/arvindsarin/Cursor/Claude-2026/clawd/memex/historian
+cd /Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex/historian
 python example_usage.py
 ```
 
 Run the tests:
 
 ```bash
-cd /Users/arvindsarin/Cursor/Claude-2026/clawd/memex/historian
+cd /Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex/historian
 pytest test_memex_vector_store.py -v
 ```
 
@@ -237,7 +237,7 @@ pytest test_memex_vector_store.py -v
 
 ## File Locations
 
-All files created at: `/Users/arvindsarin/Cursor/Claude-2026/clawd/memex/historian/`
+All files created at: `/Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex/historian/`
 
 ```
 memex/historian/

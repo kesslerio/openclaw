@@ -9,7 +9,7 @@
 
 ## Executive Summary
 
-This document outlines a comprehensive 12-month technical roadmap for transforming the clawd workspace from a personal productivity system into a fully autonomous AI companion platform. The plan covers infrastructure, automation, intelligence, integrations, and business systems.
+This document outlines a comprehensive 12-month technical roadmap for transforming the openclaw workspace from a personal productivity system into a fully autonomous AI companion platform. The plan covers infrastructure, automation, intelligence, integrations, and business systems.
 
 ### Vision Statement
 

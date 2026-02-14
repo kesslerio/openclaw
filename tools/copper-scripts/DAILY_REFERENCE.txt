@@ -5,7 +5,7 @@
 
 BEFORE SALES CALLS
 ═══════════════════════════════════════════════════════════════════════════
-cd ~/clawd/scripts
+cd ~/Cursor/Claude-2026/openclaw/tools/copper-scripts
 
 # Full prep with all details
 node sales-call-prep.js --agency "Agency Name" --evv "WellSky" --pain "no-shows"
@@ -156,7 +156,7 @@ node competitor-monitor.js save
 ╚════════════════════════════════════════════════════════════════════════╝
 
 Script won't run?
-  - Make sure you're in ~/clawd/scripts directory
+  - Make sure you're in ~/Cursor/Claude-2026/openclaw/tools/copper-scripts directory
   - Check if script is executable: chmod +x script-name.sh
   - For Node scripts: Use 'node script.js' not just './script.js'
   - For Python scripts: Use 'python3 script.py'
@@ -192,9 +192,9 @@ Check if script works:
    node roi-calculator-cli.js --calls 1000
 
 4. Create aliases in ~/.zshrc:
-   alias prep="node ~/clawd/scripts/sales-call-prep.js"
-   alias roi="node ~/clawd/scripts/roi-calculator-cli.js"
-   alias metrics="node ~/clawd/scripts/copper-metrics-tracker.js"
+   alias prep="node ~/Cursor/Claude-2026/openclaw/tools/copper-scripts/sales-call-prep.js"
+   alias roi="node ~/Cursor/Claude-2026/openclaw/tools/copper-scripts/roi-calculator-cli.js"
+   alias metrics="node ~/Cursor/Claude-2026/openclaw/tools/copper-scripts/copper-metrics-tracker.js"
 
 5. Schedule weekly reports with cron/launchd
 

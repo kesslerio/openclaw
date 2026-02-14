@@ -63,7 +63,7 @@ Comprehensive test suite for Gmail and Calendar integration services.
 ### All Integration Tests
 
 ```bash
-cd /Users/arvindsarin/Cursor/Claude-2026/clawd/memex/tests
+cd /Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex/tests
 
 # Run all integration tests
 pytest test_gmail_service.py test_calendar_service.py test_integration_models.py test_oauth_flow.py -v
@@ -312,7 +312,7 @@ jobs:
 
 ```bash
 # Add parent directory to PYTHONPATH
-export PYTHONPATH="${PYTHONPATH}:/Users/arvindsarin/Cursor/Claude-2026/clawd"
+export PYTHONPATH="${PYTHONPATH}:/Users/arvindsarin/Cursor/Claude-2026/openclaw"
 ```
 
 ### Tests fail with "No valid credentials"

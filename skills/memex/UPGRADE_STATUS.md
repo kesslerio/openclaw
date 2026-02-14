@@ -44,7 +44,7 @@ source ~/.zshrc
 **Current State**: Uses OpenAI/GPT
 **Required**: Replace with Claude version
 
-**File to create**: `/Users/arvindsarin/Cursor/Claude-2026/clawd/memex/retrieval/query_engine_claude.py`
+**File to create**: `/Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex/retrieval/query_engine_claude.py`
 
 **Key changes**:
 
@@ -122,13 +122,13 @@ response = client.messages.create(
   "id": "memex-daily-ingest",
   "name": "Memex Daily Ingest",
   "schedule": "0 6 * * *",
-  "command": "cd ~/Cursor/Claude-2026/clawd/memex && python3 scripts/daily_ingest.py"
+  "command": "cd ~/Cursor/Claude-2026/openclaw/skills/memex && python3 scripts/daily_ingest.py"
 },
 {
   "id": "memex-build-journal",
   "name": "Memex Build Journal",
   "schedule": "0 21 * * *",
-  "command": "cd ~/Cursor/Claude-2026/clawd/memex && python3 scripts/daily_ingest.py --journal-only"
+  "command": "cd ~/Cursor/Claude-2026/openclaw/skills/memex && python3 scripts/daily_ingest.py --journal-only"
 }
 ```
 
@@ -150,7 +150,7 @@ response = client.messages.create(
 - Emails: `data/integrations/gmail/` (7,000+)
 - Calendar: `data/integrations/calendar/` (230+)
 - Transcripts: `data/transcripts/` (2,500+)
-- OAuth tokens: `~/clawd/.tokens/` (4 accounts, encrypted)
+- OAuth tokens: `~/openclaw/.tokens/` (4 accounts, encrypted)
 
 ### Infrastructure Ready ✅
 
@@ -185,7 +185,7 @@ source ~/.zshrc
 ### Step 2: Verify Model Enforcement (1 min)
 
 ```bash
-cd ~/Cursor/Claude-2026/clawd/memex
+cd ~/Cursor/Claude-2026/openclaw/skills/memex
 python3 -c "import sys; sys.path.insert(0, '.'); from config.model_enforcer import ModelEnforcer; ModelEnforcer.enforce()"
 # Should print: ✅ Model enforcement passed: claude-sonnet-4-20250514
 ```
@@ -231,7 +231,7 @@ See full implementation in original prompt (search for "journal_backfill.py")
 python3 -c "from config.model_enforcer import ModelEnforcer; ModelEnforcer.enforce()"
 
 # Test query engine (after migration)
-cd ~/Cursor/Claude-2026/clawd/memex
+cd ~/Cursor/Claude-2026/openclaw/skills/memex
 python3 -c "from retrieval.query_engine import QueryEngine; q = QueryEngine(); print(q.model)"
 
 # Test journal generator (after migration)

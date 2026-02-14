@@ -34,14 +34,14 @@ done
 
 # Load API key from environment or secrets file
 if [[ -z "$BLAND_API_KEY" ]]; then
-    if [[ -f ~/.clawd/secrets.json ]]; then
-        BLAND_API_KEY=$(jq -r '.bland_api_key // empty' ~/.clawd/secrets.json 2>/dev/null)
+    if [[ -f ~/.openclaw/secrets.json ]]; then
+        BLAND_API_KEY=$(jq -r '.bland_api_key // empty' ~/.openclaw/secrets.json 2>/dev/null)
     fi
 fi
 
 if [[ -z "$BLAND_API_KEY" ]]; then
     echo "Error: BLAND_API_KEY not set"
-    echo "Set it in your environment or in ~/.clawd/secrets.json"
+    echo "Set it in your environment or in ~/.openclaw/secrets.json"
     exit 1
 fi
 

@@ -51,14 +51,14 @@ You need OAuth2 credentials from Google Cloud Console.
 
 6. **Place credentials file**:
    ```bash
-   mv ~/Downloads/credentials.json ~/clawd/credentials.json
+   mv ~/Downloads/credentials.json ~/openclaw/credentials.json
    ```
 ````
 
 ### 2. Install Dependencies (1 minute)
 
 ```bash
-cd ~/Cursor/Claude-2026/clawd
+cd ~/Cursor/Claude-2026/openclaw
 pip install -r memex/integrations/requirements.txt
 ```
 
@@ -78,7 +78,7 @@ Dependencies installed:
 Run the setup script to authorize all accounts:
 
 ```bash
-cd ~/Cursor/Claude-2026/clawd
+cd ~/Cursor/Claude-2026/openclaw
 python memex/scripts/setup_gmail_calendar.py --authorize-all
 ```
 
@@ -99,10 +99,10 @@ python memex/scripts/setup_gmail_calendar.py --authorize-all
 
 **Tokens saved to**:
 
-- `~/clawd/.tokens/gmail_arvind@copperdigital.com.json`
-- `~/clawd/.tokens/gmail_arvind.sarin@gmail.com.json`
-- `~/clawd/.tokens/calendar_arvind@copperdigital.com.json`
-- `~/clawd/.tokens/calendar_arvind.sarin@gmail.com.json`
+- `~/openclaw/.tokens/gmail_arvind@copperdigital.com.json`
+- `~/openclaw/.tokens/gmail_arvind.sarin@gmail.com.json`
+- `~/openclaw/.tokens/calendar_arvind@copperdigital.com.json`
+- `~/openclaw/.tokens/calendar_arvind.sarin@gmail.com.json`
 
 ### Step 2: Test Connections (2 minutes)
 
@@ -146,7 +146,7 @@ python memex/scripts/setup_gmail_calendar.py --test-all
 #### Sync Last 30 Days (Default)
 
 ```bash
-cd ~/Cursor/Claude-2026/clawd
+cd ~/Cursor/Claude-2026/openclaw
 python memex/scripts/sync_gmail_calendar.py
 ```
 
@@ -198,7 +198,7 @@ python memex/scripts/sync_gmail_calendar.py \
 Data is saved to:
 
 ```
-~/clawd/memex/data/integrations/
+~/Cursor/Claude-2026/openclaw/skills/memex/data/integrations/
 ├── gmail/
 │   ├── arvind@copperdigital.com/
 │   │   ├── manifest.json
@@ -236,8 +236,8 @@ from datetime import datetime, timedelta
 
 # Configure
 config = GmailConfig(
-    credentials_path="~/clawd/credentials.json",
-    token_dir="~/clawd/.tokens"
+    credentials_path="~/openclaw/credentials.json",
+    token_dir="~/openclaw/.tokens"
 )
 
 # Create service
@@ -273,8 +273,8 @@ from datetime import datetime, timedelta
 
 # Configure
 config = CalendarConfig(
-    credentials_path="~/clawd/credentials.json",
-    token_dir="~/clawd/.tokens"
+    credentials_path="~/openclaw/credentials.json",
+    token_dir="~/openclaw/.tokens"
 )
 
 # Create service
@@ -421,10 +421,10 @@ https://www.googleapis.com/auth/calendar.events.readonly
 
 ```bash
 # Check if file exists
-ls ~/clawd/credentials.json
+ls ~/openclaw/credentials.json
 
 # If not, download from Google Cloud Console
-# Place at: ~/clawd/credentials.json
+# Place at: ~/openclaw/credentials.json
 ```
 
 ### Issue: "No valid credentials for <email>"
@@ -530,7 +530,7 @@ When the browser opens for authorization:
 
 Tokens are stored locally:
 
-- Location: `~/clawd/.tokens/`
+- Location: `~/openclaw/.tokens/`
 - Format: JSON files
 - Permissions: 600 (owner read/write only)
 - **Never commit to git!**
@@ -539,7 +539,7 @@ Tokens are stored locally:
 
 ```bash
 # Make sure these are gitignored
-cat ~/Cursor/Claude-2026/clawd/.gitignore
+cat ~/Cursor/Claude-2026/openclaw/.gitignore
 
 # Should include:
 credentials.json
@@ -579,7 +579,7 @@ After setup:
    crontab -e
 
    # Add line:
-   0 6 * * * cd ~/Cursor/Claude-2026/clawd && python memex/scripts/sync_gmail_calendar.py >> ~/clawd/logs/sync.log 2>&1
+   0 6 * * * cd ~/Cursor/Claude-2026/openclaw && python memex/scripts/sync_gmail_calendar.py >> ~/openclaw/logs/sync.log 2>&1
    ```
 
 3. **Integrate with Memex pipeline**:
@@ -616,7 +616,7 @@ help(CalendarService.batch_export)
 
 **Issues?**
 
-1. Check logs: `~/clawd/logs/`
+1. Check logs: `~/openclaw/logs/`
 2. Run with debug logging:
    ```python
    import logging

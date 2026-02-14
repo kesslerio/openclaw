@@ -9,7 +9,7 @@ const path = require("path");
 const fs = require("fs");
 
 // Load .env
-const envPath = path.join(process.env.HOME, "clawd", ".env");
+const envPath = path.join(process.env.HOME, "Cursor", "Claude-2026", "openclaw", ".env");
 if (fs.existsSync(envPath)) {
   const envContent = fs.readFileSync(envPath, "utf8");
   envContent.split("\n").forEach((line) => {
@@ -26,7 +26,7 @@ const API_BASE = "services.leadconnectorhq.com";
 
 if (!API_KEY) {
   console.error("❌ GHL_API_KEY or GOHIGHLEVEL_JWT_TOKEN not found in environment");
-  console.error("   Set in ~/clawd/.env or export GHL_API_KEY=your-key");
+  console.error("   Set in ~/Cursor/Claude-2026/openclaw/.env or export GHL_API_KEY=your-key");
   process.exit(1);
 }
 

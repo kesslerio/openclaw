@@ -44,7 +44,7 @@ memex/
 **Commands to Execute:**
 
 ```bash
-cd /Users/arvindsarin/clawd/memex
+cd /Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex
 mkdir -p scraper config
 touch scraper/__init__.py
 touch scraper/plaud_scraper.py
@@ -286,7 +286,7 @@ output_dir/
 **Commands to Execute:**
 
 ```bash
-cd /Users/arvindsarin/clawd/memex
+cd /Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex
 
 # Install ChromaDB
 pip install chromadb openai numpy
@@ -546,7 +546,7 @@ class TranscriptIndexer:
 
 ```bash
 # Index all transcripts
-cd /Users/arvindsarin/clawd/memex
+cd /Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex
 python -c "
 import asyncio
 from historian.indexer import TranscriptIndexer
@@ -649,7 +649,7 @@ async def get_context(
 pip install fastapi uvicorn
 
 # Run search API
-cd /Users/arvindsarin/clawd/memex
+cd /Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex
 uvicorn historian.search_api:app --host 0.0.0.0 --port 8890 --reload
 ```
 
@@ -688,15 +688,15 @@ brew install postgresql@15
 brew services start postgresql@15
 
 # Create database
-createdb clawd
+createdb openclaw
 
 # Create user
-psql clawd -c "CREATE USER nike WITH PASSWORD 'secure_password_here';"
-psql clawd -c "GRANT ALL PRIVILEGES ON DATABASE clawd TO nike;"
+psql openclaw -c "CREATE USER nike WITH PASSWORD 'secure_password_here';"
+psql openclaw -c "GRANT ALL PRIVILEGES ON DATABASE openclaw TO nike;"
 
 # Install pgvector extension
 brew install pgvector
-psql clawd -c "CREATE EXTENSION vector;"
+psql openclaw -c "CREATE EXTENSION vector;"
 ```
 
 **Commands (VPS/Ubuntu):**
@@ -710,22 +710,22 @@ sudo apt install postgresql postgresql-contrib
 sudo apt install postgresql-15-pgvector
 
 # Create database
-sudo -u postgres createdb clawd
-sudo -u postgres psql clawd -c "CREATE USER nike WITH PASSWORD 'secure_password_here';"
-sudo -u postgres psql clawd -c "GRANT ALL PRIVILEGES ON DATABASE clawd TO nike;"
-sudo -u postgres psql clawd -c "CREATE EXTENSION vector;"
+sudo -u postgres createdb openclaw
+sudo -u postgres psql openclaw -c "CREATE USER nike WITH PASSWORD 'secure_password_here';"
+sudo -u postgres psql openclaw -c "GRANT ALL PRIVILEGES ON DATABASE openclaw TO nike;"
+sudo -u postgres psql openclaw -c "CREATE EXTENSION vector;"
 ```
 
 **Environment Variables:**
 
 ```bash
-export DATABASE_URL="postgresql://nike:secure_password_here@localhost:5432/clawd"
+export DATABASE_URL="postgresql://nike:secure_password_here@localhost:5432/openclaw"
 ```
 
 **Acceptance Criteria:**
 
 - [ ] PostgreSQL running on both Mac and VPS
-- [ ] Database `clawd` created
+- [ ] Database `openclaw` created
 - [ ] pgvector extension installed
 - [ ] User `nike` has proper permissions
 
@@ -894,7 +894,7 @@ psql $DATABASE_URL -f memex/schema/001_initial_schema.sql
 **Commands:**
 
 ```bash
-cd /Users/arvindsarin/clawd/memex
+cd /Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex
 pip install alembic psycopg2-binary sqlalchemy
 
 # Initialize Alembic
@@ -906,7 +906,7 @@ alembic init migrations
 ```ini
 [alembic]
 script_location = migrations
-sqlalchemy.url = postgresql://nike:password@localhost/clawd
+sqlalchemy.url = postgresql://nike:password@localhost/openclaw
 ```
 
 **File:** `memex/migrations/env.py` (update)
@@ -1093,7 +1093,7 @@ memex/
 **Commands:**
 
 ```bash
-cd /Users/arvindsarin/clawd/memex
+cd /Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex
 mkdir -p api/routes api/middleware api/schemas
 touch api/__init__.py api/main.py
 touch api/routes/{__init__,search,transcripts,journals,tasks,health}.py
@@ -1151,7 +1151,7 @@ async def root():
 
 ```bash
 # Run API server
-cd /Users/arvindsarin/clawd/memex
+cd /Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex
 uvicorn api.main:app --host 0.0.0.0 --port 8891 --reload
 ```
 
@@ -1357,7 +1357,7 @@ pip install \
 
 ```bash
 # Start development environment
-cd /Users/arvindsarin/clawd/memex
+cd /Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex
 
 # Terminal 1: PostgreSQL
 brew services start postgresql@15

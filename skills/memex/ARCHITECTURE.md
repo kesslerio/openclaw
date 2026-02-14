@@ -74,7 +74,7 @@
 │  │              ChromaDB Vector Store                        │  │
 │  │  (memex/historian/vector_store.py)                       │  │
 │  │                                                            │  │
-│  │  Location: ~/clawd/memex/data/chroma/                    │  │
+│  │  Location: ~/Cursor/Claude-2026/openclaw/skills/memex/data/chroma/                    │  │
 │  │  Collection: plaud_transcripts                            │  │
 │  │                                                            │  │
 │  │  Storage:                                                 │  │
@@ -348,19 +348,19 @@ tail -f ~/Library/Logs/memex-api.log
 ### Backup ChromaDB
 
 ```bash
-tar -czf memex-backup-$(date +%Y%m%d).tar.gz ~/clawd/memex/data/chroma/
+tar -czf memex-backup-$(date +%Y%m%d).tar.gz ~/Cursor/Claude-2026/openclaw/skills/memex/data/chroma/
 ```
 
 ### Restore ChromaDB
 
 ```bash
-tar -xzf memex-backup-20240115.tar.gz -C ~/clawd/memex/data/
+tar -xzf memex-backup-20240115.tar.gz -C ~/Cursor/Claude-2026/openclaw/skills/memex/data/
 ```
 
 ### Re-index from Transcripts
 
 ```bash
-cd ~/clawd/memex
+cd ~/Cursor/Claude-2026/openclaw/skills/memex
 poetry run python -m memex.historian.transcript_indexer
 ```
 
@@ -369,7 +369,7 @@ poetry run python -m memex.historian.transcript_indexer
 ### Run in Development Mode
 
 ```bash
-cd ~/clawd/memex
+cd ~/Cursor/Claude-2026/openclaw/skills/memex
 poetry run python -m memex.historian.search_api
 ```
 
@@ -383,7 +383,7 @@ API_RELOAD = True
 ### Run Tests
 
 ```bash
-cd ~/clawd/memex
+cd ~/Cursor/Claude-2026/openclaw/skills/memex
 poetry run pytest tests/
 ```
 

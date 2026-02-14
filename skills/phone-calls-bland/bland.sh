@@ -20,8 +20,8 @@ if [[ "$COMMAND" == "help" || "$COMMAND" == "--help" || "$COMMAND" == "-h" || "$
 else
     # Load API key
     if [[ -z "$BLAND_API_KEY" ]]; then
-        if [[ -f ~/.clawd/secrets.json ]]; then
-            BLAND_API_KEY=$(jq -r '.bland_api_key // empty' ~/.clawd/secrets.json 2>/dev/null)
+        if [[ -f ~/.openclaw/secrets.json ]]; then
+            BLAND_API_KEY=$(jq -r '.bland_api_key // empty' ~/.openclaw/secrets.json 2>/dev/null)
         fi
     fi
 

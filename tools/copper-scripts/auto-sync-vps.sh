@@ -1,10 +1,10 @@
 #!/bin/bash
-# Auto-sync script for clawd workspace (VPS version)
+# Auto-sync script for openclaw workspace (VPS version)
 # Watches for file changes and auto-commits/pushes to GitHub
 
-WORKSPACE="/home/ubuntu/clawd"
-LOGFILE="$WORKSPACE/scripts/auto-sync-vps.log"
-LOCKFILE="/tmp/clawd-sync.lock"
+WORKSPACE="/home/ubuntu/openclaw"
+LOGFILE="$WORKSPACE/tools/copper-scripts/auto-sync-vps.log"
+LOCKFILE="/tmp/openclaw-sync.lock"
 
 log() {
     echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1" >> "$LOGFILE"

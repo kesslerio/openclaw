@@ -15,7 +15,7 @@ playwright install chromium
 Try the simplest example to verify everything works:
 
 ```bash
-cd /Users/arvindsarin/Cursor/Claude-2026/clawd/memex/scraper
+cd /Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex/scraper
 
 # Run example 1 (basic usage)
 python3 example_usage.py \
@@ -253,7 +253,7 @@ Export new transcripts daily at 2am:
 
 ```bash
 # Add to crontab
-0 2 * * * cd /path/to/clawd/memex/scraper && python3 -m memex.scraper.plaud_scraper --session plaud_session.json --output ./data/transcripts --headless >> export.log 2>&1
+0 2 * * * cd /path/to/openclaw/skills/memex/scraper && python3 -m memex.scraper.plaud_scraper --session plaud_session.json --output ./data/transcripts --headless >> export.log 2>&1
 ```
 
 ---

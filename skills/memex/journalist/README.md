@@ -236,7 +236,7 @@ Add to Clawdbot config:
 
 ```bash
 # Create script
-cat > /home/ubuntu/clawd/memex/scripts/generate_daily_journal.py << 'EOF'
+cat > /home/ubuntu/openclaw/skills/memex/scripts/generate_daily_journal.py << 'EOF'
 #!/usr/bin/env python3
 from journalist import DailyAutomation
 
@@ -244,11 +244,11 @@ automation = DailyAutomation()
 automation.generate_daily_journal()
 EOF
 
-chmod +x /home/ubuntu/clawd/memex/scripts/generate_daily_journal.py
+chmod +x /home/ubuntu/openclaw/skills/memex/scripts/generate_daily_journal.py
 
 # Add to crontab (8 AM daily)
 crontab -e
-# Add: 0 8 * * * cd /home/ubuntu/clawd/memex && python scripts/generate_daily_journal.py
+# Add: 0 8 * * * cd /home/ubuntu/openclaw/skills/memex && python scripts/generate_daily_journal.py
 ```
 
 ## 📝 Usage Examples
@@ -313,7 +313,7 @@ for item in action_items:
 Run tests:
 
 ```bash
-cd /home/ubuntu/clawd/memex
+cd /home/ubuntu/openclaw/skills/memex
 pytest tests/test_journalist.py -v
 ```
 
@@ -383,7 +383,7 @@ for item in journal_data['action_items']:
 - Conversational search
 - Feedback loop
 
-See: `/home/ubuntu/clawd/memex/second-brain/memex-visual-plan.md` for full roadmap
+See: `/home/ubuntu/openclaw/skills/memex/second-brain/memex-visual-plan.md` for full roadmap
 
 ---
 

@@ -435,6 +435,6 @@ CREATE INDEX idx_tags_tag ON transcript_tags(tag);
 
 For issues or questions:
 
-1. Check logs in `/Users/arvindsarin/Cursor/Claude-2026/clawd/logs/`
+1. Check logs in `/Users/arvindsarin/Cursor/Claude-2026/openclaw/logs/`
 2. Run health check: `python -m memex.db.connection`
 3. Review Supabase Dashboard > Database > Query Performance

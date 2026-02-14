@@ -8,7 +8,7 @@
 
 ```bash
 # 1. Navigate to unified server directory
-cd /home/ubuntu/clawd/integrations/unified-server
+cd /home/ubuntu/openclaw/tools/copper-integrations/unified-server
 
 # 2. Install Railway CLI (if not already installed)
 npm install -g @railway/cli

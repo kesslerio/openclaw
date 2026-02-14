@@ -11,9 +11,9 @@ from pathlib import Path
 from typing import Optional, List, Dict, Any
 
 # Database path
-DB_PATH = Path("/home/art/clawd/logs/sms.db")
-LEGACY_THREADS_DIR = Path("/home/art/clawd/logs/sms_threads")
-LEGACY_LOG = Path("/home/art/clawd/logs/dialpad_sms.jsonl")
+DB_PATH = Path("/home/art/openclaw/logs/sms.db")
+LEGACY_THREADS_DIR = Path("/home/art/openclaw/logs/sms_threads")
+LEGACY_LOG = Path("/home/art/openclaw/logs/dialpad_sms.jsonl")
 
 
 def init_db() -> sqlite3.Connection:

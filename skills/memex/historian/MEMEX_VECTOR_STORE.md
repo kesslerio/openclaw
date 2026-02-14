@@ -369,7 +369,7 @@ memex/historian/
 Run the example script:
 
 ```bash
-cd /Users/arvindsarin/Cursor/Claude-2026/clawd/memex/historian
+cd /Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex/historian
 python example_usage.py
 ```
 

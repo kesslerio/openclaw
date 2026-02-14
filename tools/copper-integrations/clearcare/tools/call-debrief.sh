@@ -4,7 +4,7 @@
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 TRACKER_FILE="$SCRIPT_DIR/pilot-tracker.json"
-MEMORY_DIR="/Users/arvindsarin/Cursor/Claude-2026/clawd/memory"
+MEMORY_DIR="/Users/arvindsarin/Cursor/Claude-2026/openclaw/memory"
 
 echo "📞 CALL DEBRIEF TOOL"
 echo "===================="

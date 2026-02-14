@@ -1,15 +1,15 @@
 #!/bin/bash
 # Install Memex HISTORIAN API as a macOS LaunchAgent
 
-PLIST_SOURCE="/Users/arvindsarin/clawd/memex/scripts/com.copperdigital.memex-api.plist"
+PLIST_SOURCE="/Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex/scripts/com.copperdigital.memex-api.plist"
 PLIST_DEST="/Users/arvindsarin/Library/LaunchAgents/com.copperdigital.memex-api.plist"
 
 echo "Installing Memex HISTORIAN Search API as a LaunchAgent..."
 
 # Make scripts executable
-chmod +x /Users/arvindsarin/clawd/memex/scripts/start_api.sh
-chmod +x /Users/arvindsarin/clawd/memex/scripts/stop_api.sh
-chmod +x /Users/arvindsarin/clawd/memex/scripts/status_api.sh
+chmod +x /Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex/scripts/start_api.sh
+chmod +x /Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex/scripts/stop_api.sh
+chmod +x /Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex/scripts/status_api.sh
 
 # Unload existing service if running
 if launchctl list | grep -q com.copperdigital.memex-api; then

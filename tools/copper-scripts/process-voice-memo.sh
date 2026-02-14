@@ -5,7 +5,7 @@
 set -euo pipefail
 
 VOICE_FILE="$1"
-TRANSCRIPT_DIR="$HOME/clawd/memory/voice-transcripts"
+TRANSCRIPT_DIR="$HOME/Cursor/Claude-2026/openclaw/memory/voice-transcripts"
 mkdir -p "$TRANSCRIPT_DIR"
 
 if [ ! -f "$VOICE_FILE" ]; then

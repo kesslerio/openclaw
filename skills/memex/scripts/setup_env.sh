@@ -8,7 +8,7 @@
 
 set -e
 
-CREDENTIALS_FILE="$HOME/clawd/credentials.json"
+CREDENTIALS_FILE="$HOME/openclaw/credentials.json"
 SHELL_RC=""
 
 # Detect shell

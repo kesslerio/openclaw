@@ -114,7 +114,7 @@ Thank you!
 
 ```bash
 # Store credentials securely in database
-cd /home/ubuntu/clawd/integrations/axxess
+cd /home/ubuntu/openclaw/tools/copper-integrations/axxess
 
 # Update agency record
 psql $DATABASE_URL -c "

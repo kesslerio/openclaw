@@ -39,7 +39,7 @@ Built with React 18 + Vite + TailwindCSS
 ### Installation
 
 ```bash
-cd /home/ubuntu/clawd/memex/frontend
+cd /home/ubuntu/openclaw/skills/memex/frontend
 npm install
 ```
 

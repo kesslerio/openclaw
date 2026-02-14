@@ -4,7 +4,7 @@ Generated: 2026-02-01
 
 ## Executive Summary
 
-Audited 42 scripts in /Users/arvindsarin/clawd/scripts/ to identify:
+Audited 42 scripts in /Users/arvindsarin/Cursor/Claude-2026/openclaw/tools/copper-scripts/ to identify:
 
 - Working production scripts
 - Broken scripts with fixable issues

@@ -17,8 +17,8 @@ echo ""
 echo "📋 MISSION CONTROL"
 echo "------------------"
 echo "YOUR PRIORITIES TODAY:"
-if [ -f /home/ubuntu/clawd/memory/arvind-todo-jan28.md ]; then
-    grep -E "^\- \[ \]" /home/ubuntu/clawd/memory/arvind-todo-jan28.md | head -5 | sed 's/- \[ \]/  •/'
+if [ -f /home/ubuntu/openclaw/memory/arvind-todo-jan28.md ]; then
+    grep -E "^\- \[ \]" /home/ubuntu/openclaw/memory/arvind-todo-jan28.md | head -5 | sed 's/- \[ \]/  •/'
 fi
 echo ""
 
@@ -26,8 +26,8 @@ echo ""
 echo "🐾 NIKE'S WORK"
 echo "--------------"
 echo "What I did overnight:"
-if [ -f "/home/ubuntu/clawd/second-brain/journal/$(date '+%Y-%m-%d').md" ]; then
-    grep -A3 "### Night" "/home/ubuntu/clawd/second-brain/journal/$(date '+%Y-%m-%d').md" 2>/dev/null | head -5
+if [ -f "/home/ubuntu/openclaw/second-brain/journal/$(date '+%Y-%m-%d').md" ]; then
+    grep -A3 "### Night" "/home/ubuntu/openclaw/second-brain/journal/$(date '+%Y-%m-%d').md" 2>/dev/null | head -5
 else
     echo "  • Building tools and automation"
 fi
@@ -41,9 +41,9 @@ echo ""
 # 4. Flight Status
 echo "✈️ FLIGHT STATUS"
 echo "----------------"
-if [ -f /home/ubuntu/clawd/memory/flight-tracking.json ]; then
-    OUT=$(jq -r '.lowest_seen.outbound' /home/ubuntu/clawd/memory/flight-tracking.json)
-    RET=$(jq -r '.lowest_seen.return' /home/ubuntu/clawd/memory/flight-tracking.json)
+if [ -f /home/ubuntu/openclaw/memory/flight-tracking.json ]; then
+    OUT=$(jq -r '.lowest_seen.outbound' /home/ubuntu/openclaw/memory/flight-tracking.json)
+    RET=$(jq -r '.lowest_seen.return' /home/ubuntu/openclaw/memory/flight-tracking.json)
     echo "  DFW→DEL (~Feb 9): \$$OUT (target: <\$800)"
     echo "  DEL→DFW (Feb 25): \$$RET (target: <\$700)"
 fi

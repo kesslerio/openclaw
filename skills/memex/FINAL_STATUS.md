@@ -144,7 +144,7 @@ memex query "meetings about X"
 - `config.json` - Configuration
 - `scripts/memex` - CLI entry point (symlinked to /opt/homebrew/bin)
 - `lib/` - Python modules (journalist, retrieval, integrations, config)
-- `data/` - Symlink to ~/Cursor/Claude-2026/clawd/memex/data/
+- `data/` - Symlink to ~/Cursor/Claude-2026/openclaw/skills/memex/data/
 
 **Integration**: Native OpenClaw skill, runs via jobs.json automation
 

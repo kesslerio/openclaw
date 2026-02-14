@@ -7,7 +7,7 @@ Chat with xAI's Grok models from Clawdbot. Supports text chat, vision, and all G
 ```bash
 clawdhub install xai
 # or
-cd ~/clawd/skills && git clone https://github.com/mvanhorn/clawdbot-skill-xai xai
+cd ~/Cursor/Claude-2026/openclaw/skills && git clone https://github.com/mvanhorn/clawdbot-skill-xai xai
 ```
 
 ## Setup

@@ -435,7 +435,7 @@ Ideas for additional automation:
 
 **"Command not found"**
 
-- Make sure you're in the `/home/ubuntu/clawd` directory
+- Make sure you're in the `/home/ubuntu/openclaw/tools/copper-scripts` directory
 - Run `chmod +x scripts/*.js` to make scripts executable
 
 **"Module not found"**

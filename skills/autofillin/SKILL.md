@@ -132,7 +132,7 @@ Form Data:
 - Changelog: v1.2.0 - Enhanced error handling, consolidated config
 
 Upload:
-- Folder: ~/clawd/skills/autofillin/
+- Folder: ~/Cursor/Claude-2026/openclaw/skills/autofillin/
 
 [WAIT FOR MANUAL CONFIRMATION TO PUBLISH]
 ```

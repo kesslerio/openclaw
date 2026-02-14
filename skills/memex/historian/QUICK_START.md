@@ -10,7 +10,7 @@ pip install chromadb openai numpy
 export OPENAI_API_KEY=sk-...
 
 # 3. Run example
-python /Users/arvindsarin/Cursor/Claude-2026/clawd/memex/historian/example_usage.py
+python /Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex/historian/example_usage.py
 ```
 
 ## Basic Usage (Copy-Paste Ready)
@@ -185,7 +185,7 @@ Please provide a brief summary."""
 ## File Locations
 
 ```
-/Users/arvindsarin/Cursor/Claude-2026/clawd/memex/historian/
+/Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex/historian/
 ├── vector_store.py           # Main implementation
 ├── models.py                 # Data models
 ├── example_usage.py          # Full examples

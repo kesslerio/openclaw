@@ -24,7 +24,7 @@
 
 ### Complete Kanban System Upgrade
 
-- **Single Source of Truth**: `clawd/data/kanban.json`
+- **Single Source of Truth**: `tools/kanban/data/kanban.json`
 - **Backend**: Express.js server on port 8888 (bound to 0.0.0.0)
 - **Frontend**: React + Vite + Tailwind CSS + Drag-and-Drop
 - **Mission Control**: Real-time system metrics dashboard
@@ -139,7 +139,7 @@
 
 ```
 openclaw/
-├── clawd/
+├── tools/kanban/
 │   ├── data/
 │   │   ├── kanban.json              ← Single source of truth
 │   │   └── backups/                 ← Auto-backups of old files
@@ -232,7 +232,7 @@ Open http://100.99.190.40:8888 on any device connected to Tailscale.
 
 ```bash
 # View logs
-tail -f /Users/arvindsarin/Cursor/Claude-2026/openclaw/clawd/logs/server.log
+tail -f /Users/arvindsarin/Cursor/Claude-2026/openclaw/tools/kanban/logs/server.log
 
 # Check if running
 lsof -ti:8888
@@ -249,14 +249,14 @@ curl http://localhost:8888/api/status
 lsof -ti:8888 | xargs kill -9
 
 # Start new process
-cd /Users/arvindsarin/Cursor/Claude-2026/openclaw/clawd/server
-nohup node server.js > ../logs/server.log 2>&1 &
+cd /Users/arvindsarin/Cursor/Claude-2026/openclaw/tools/kanban
+nohup node server/server.js > logs/server.log 2>&1 &
 ```
 
 ### Rebuild Frontend
 
 ```bash
-cd /Users/arvindsarin/Cursor/Claude-2026/openclaw/clawd/frontend
+cd /Users/arvindsarin/Cursor/Claude-2026/openclaw/tools/kanban/frontend
 npm run build
 ```
 
@@ -309,7 +309,7 @@ npm run build
 - **Files Found**: 0 (created fresh database)
 - **Tasks Migrated**: 0
 - **Schema Version**: 2.0
-- **Target File**: `/Users/arvindsarin/Cursor/Claude-2026/openclaw/clawd/data/kanban.json`
+- **Target File**: `/Users/arvindsarin/Cursor/Claude-2026/openclaw/tools/kanban/data/kanban.json`
 
 ### Schema Upgrades
 
@@ -334,8 +334,8 @@ npm run build
 
 ### Data Location
 
-- Single source of truth: `clawd/data/kanban.json`
-- Automatic backups in `clawd/data/backups/`
+- Single source of truth: `tools/kanban/data/kanban.json`
+- Automatic backups in `tools/kanban/data/backups/`
 - No database server required (JSON file-based)
 
 ---
@@ -451,14 +451,14 @@ lsof -ti:8888
 lsof -ti:8888 | xargs kill -9
 
 # Check logs for errors
-tail -50 /Users/arvindsarin/Cursor/Claude-2026/openclaw/clawd/logs/server.log
+tail -50 /Users/arvindsarin/Cursor/Claude-2026/openclaw/tools/kanban/logs/server.log
 ```
 
 ### Frontend Not Loading
 
 ```bash
 # Rebuild frontend
-cd /Users/arvindsarin/Cursor/Claude-2026/openclaw/clawd/frontend
+cd /Users/arvindsarin/Cursor/Claude-2026/openclaw/tools/kanban/frontend
 npm run build
 
 # Verify build directory exists

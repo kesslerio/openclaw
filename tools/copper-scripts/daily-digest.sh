@@ -16,8 +16,8 @@ echo ""
 # To-Do Summary
 echo "📝 TO-DO PRIORITIES"
 echo "-------------------"
-if [ -f /home/ubuntu/clawd/memory/arvind-todo-jan28.md ]; then
-    grep -E "^\- \[ \]" /home/ubuntu/clawd/memory/arvind-todo-jan28.md | head -5
+if [ -f /home/ubuntu/openclaw/memory/arvind-todo-jan28.md ]; then
+    grep -E "^\- \[ \]" /home/ubuntu/openclaw/memory/arvind-todo-jan28.md | head -5
 else
     echo "No to-do file found"
 fi
@@ -26,9 +26,9 @@ echo ""
 # Flight Status
 echo "✈️ FLIGHT TRACKING"
 echo "------------------"
-if [ -f /home/ubuntu/clawd/memory/flight-tracking.json ]; then
-    echo "Outbound (DFW→DEL ~Feb 9): \$$(jq -r '.lowest_seen.outbound' /home/ubuntu/clawd/memory/flight-tracking.json)"
-    echo "Return (DEL→DFW Feb 25): \$$(jq -r '.lowest_seen.return' /home/ubuntu/clawd/memory/flight-tracking.json)"
+if [ -f /home/ubuntu/openclaw/memory/flight-tracking.json ]; then
+    echo "Outbound (DFW→DEL ~Feb 9): \$$(jq -r '.lowest_seen.outbound' /home/ubuntu/openclaw/memory/flight-tracking.json)"
+    echo "Return (DEL→DFW Feb 25): \$$(jq -r '.lowest_seen.return' /home/ubuntu/openclaw/memory/flight-tracking.json)"
 fi
 echo ""
 
@@ -36,8 +36,8 @@ echo ""
 echo "📓 YESTERDAY'S HIGHLIGHTS"
 echo "-------------------------"
 YESTERDAY=$(date -d "yesterday" '+%Y-%m-%d' 2>/dev/null || date -v-1d '+%Y-%m-%d')
-if [ -f "/home/ubuntu/clawd/second-brain/journal/${YESTERDAY}.md" ]; then
-    head -20 "/home/ubuntu/clawd/second-brain/journal/${YESTERDAY}.md" | grep -v "^#" | head -5
+if [ -f "/home/ubuntu/openclaw/second-brain/journal/${YESTERDAY}.md" ]; then
+    head -20 "/home/ubuntu/openclaw/second-brain/journal/${YESTERDAY}.md" | grep -v "^#" | head -5
 else
     echo "No journal entry for yesterday"
 fi

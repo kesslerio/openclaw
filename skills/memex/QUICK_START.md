@@ -7,14 +7,14 @@
 1. Get your key: https://console.anthropic.com/settings/keys
 2. Edit the .env file:
    ```bash
-   nano ~/Cursor/Claude-2026/clawd/memex/.env
+   nano ~/Cursor/Claude-2026/openclaw/skills/memex/.env
    ```
 3. Replace `YOUR_KEY_HERE` with your actual key
 
 ### Step 2: Verify Setup (1 minute)
 
 ```bash
-cd ~/Cursor/Claude-2026/clawd/memex
+cd ~/Cursor/Claude-2026/openclaw/skills/memex
 ./scripts/complete_setup.sh
 ```
 
@@ -45,7 +45,7 @@ You'll get Telegram notifications for all operations.
 ## 📁 Where Are My Journals?
 
 ```bash
-~/Cursor/Claude-2026/clawd/memex/data/journals/
+~/Cursor/Claude-2026/openclaw/skills/memex/data/journals/
 ```
 
 Each journal is named `YYYY-MM-DD.md` with:
@@ -61,7 +61,7 @@ Each journal is named `YYYY-MM-DD.md` with:
 
 ```bash
 # Check setup status
-cd ~/Cursor/Claude-2026/clawd/memex
+cd ~/Cursor/Claude-2026/openclaw/skills/memex
 ./scripts/complete_setup.sh
 
 # Generate journals for all historical data

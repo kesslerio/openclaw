@@ -128,7 +128,7 @@ calendly schedule-event \
 To upgrade when v2.0 is published:
 
 ```bash
-cd ~/clawd/skills/calendly
+cd ~/Cursor/Claude-2026/openclaw/skills/calendly
 MCPORTER_CONFIG=./mcporter.json npx mcporter@latest generate-cli --server calendly --output calendly
 ```
 

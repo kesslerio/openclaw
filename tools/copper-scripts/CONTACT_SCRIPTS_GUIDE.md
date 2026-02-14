@@ -179,7 +179,7 @@ python3 scripts/reach-out-recommendations.py
 ```bash
 # Script will search these locations in order:
 # 1. ~/.clawdbot/media/inbound/
-# 2. ~/clawd/data/contacts/
+# 2. ~/Cursor/Claude-2026/openclaw/tools/copper-scripts/data/contacts/
 # 3. Current directory
 
 # Or specify path directly:

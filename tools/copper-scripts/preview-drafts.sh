@@ -3,7 +3,7 @@
 # Usage: ./preview-drafts.sh [port]
 
 PORT=${1:-8080}
-DRAFTS_DIR="/home/ubuntu/clawd/drafts"
+DRAFTS_DIR="/home/ubuntu/openclaw/drafts"
 
 echo "🌐 Starting preview server..."
 echo ""

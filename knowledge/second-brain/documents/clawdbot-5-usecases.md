@@ -80,7 +80,7 @@
 
 **Status:** ✅ Installed
 
-**Location:** `/home/ubuntu/clawd/skills/last30days/`
+**Location:** `/home/ubuntu/openclaw/skills/last30days/`
 
 **Usage:** "Use the last30days skill to research [topic]"
 

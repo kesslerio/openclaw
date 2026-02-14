@@ -4,7 +4,7 @@ Generated: 2026-02-01
 
 ## Executive Summary
 
-Audited 42 scripts in `/Users/arvindsarin/clawd/scripts/` for business utility, focusing on sales and operations tools.
+Audited 42 scripts in `/Users/arvindsarin/Cursor/Claude-2026/openclaw/tools/copper-scripts/` for business utility, focusing on sales and operations tools.
 
 **Key Findings:**
 
@@ -151,7 +151,7 @@ Audited 42 scripts in `/Users/arvindsarin/clawd/scripts/` for business utility, 
 ### Today (35 minutes)
 
 ```bash
-cd ~/clawd/scripts
+cd ~/Cursor/Claude-2026/openclaw/tools/copper-scripts
 
 # 1. Install Playwright (5 min)
 npx playwright install
@@ -266,7 +266,7 @@ scripts/
 
 ### Script won't run?
 
-1. Check if in correct directory: `cd ~/clawd/scripts`
+1. Check if in correct directory: `cd ~/Cursor/Claude-2026/openclaw/tools/copper-scripts`
 2. Make executable: `chmod +x script.sh`
 3. Use proper interpreter:
    - Node: `node script.js`

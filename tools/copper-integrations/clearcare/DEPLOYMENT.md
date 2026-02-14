@@ -18,7 +18,7 @@ railway login
 ### Step 2: Create New Project
 
 ```bash
-cd /home/ubuntu/clawd/integrations/clearcare
+cd /home/ubuntu/openclaw/tools/copper-integrations/clearcare
 railway init
 ```
 

@@ -25,7 +25,7 @@
 ## Quick Start (5 Minutes)
 
 ```bash
-cd /home/ubuntu/clawd/integrations/demo-environment
+cd /home/ubuntu/openclaw/tools/copper-integrations/demo-environment
 
 # 1. Install dependencies
 npm install

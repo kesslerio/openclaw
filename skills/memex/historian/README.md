@@ -52,7 +52,7 @@ historian/
 ### 1. Install Dependencies
 
 ```bash
-cd /home/ubuntu/clawd/memex/historian
+cd /home/ubuntu/openclaw/skills/memex/historian
 pip install -r requirements.txt
 ```
 
@@ -100,7 +100,7 @@ for result in results['results']:
 ### 5. Start API Server
 
 ```bash
-cd /home/ubuntu/clawd/memex
+cd /home/ubuntu/openclaw/skills/memex
 python -m historian.api
 ```
 
@@ -140,7 +140,7 @@ where:
 All components have TDD tests:
 
 ```bash
-cd /home/ubuntu/clawd/memex
+cd /home/ubuntu/openclaw/skills/memex
 pytest tests/test_recency_ranker.py -v
 pytest tests/test_vector_store.py -v
 pytest tests/test_text_processor.py -v
@@ -262,7 +262,7 @@ export OPENAI_API_KEY="sk-..."
 **Phase 3 (JOURNALIST):** Auto-generate daily journals from transcripts
 **Phase 4 (PARTNER):** Chat interface for conversational queries
 
-See: `/home/ubuntu/clawd/memex/second-brain/memex-visual-plan.md` for full roadmap
+See: `/home/ubuntu/openclaw/skills/memex/second-brain/memex-visual-plan.md` for full roadmap
 
 ---
 

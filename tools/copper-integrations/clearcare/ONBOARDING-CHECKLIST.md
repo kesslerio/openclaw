@@ -117,7 +117,7 @@ RETURNING id;
 
 ```bash
 # Import CSV to database
-cd /home/ubuntu/clawd/integrations/clearcare
+cd /home/ubuntu/openclaw/tools/copper-integrations/clearcare
 node scripts/import-caregivers.js --agency-id=1 --csv="path/to/caregivers.csv"
 ```
 

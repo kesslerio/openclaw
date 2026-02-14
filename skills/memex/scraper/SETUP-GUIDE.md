@@ -150,7 +150,7 @@ Export formats available: ___________________
 
 ### Step 7: Create Selector File
 
-Create a file: `~/clawd/memex/scraper/plaud-selectors.json`
+Create a file: `~/Cursor/Claude-2026/openclaw/skills/memex/scraper/plaud-selectors.json`
 
 ```json
 {

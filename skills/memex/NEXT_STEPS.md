@@ -36,7 +36,7 @@ Copy each complete file from the prompt into the corresponding location.
 ### 3. Test the Model Enforcement
 
 ```bash
-cd ~/Cursor/Claude-2026/clawd/memex
+cd ~/Cursor/Claude-2026/openclaw/skills/memex
 python3 -c "import sys; sys.path.insert(0, '.'); from config.model_enforcer import ModelEnforcer; ModelEnforcer.enforce()"
 ```
 
@@ -45,7 +45,7 @@ Should output: `✅ Model enforcement passed: claude-sonnet-4-20250514`
 ### 4. Quick Reference
 
 **Backup location**: `~/memex-backup-20260204-141258.tar.gz`
-**Tokens location**: `~/clawd/.tokens/` (preserved)
+**Tokens location**: `~/openclaw/.tokens/` (preserved)
 **Status doc**: `memex/UPGRADE_STATUS.md`
 **Upgrade script**: `memex/scripts/complete_upgrade.sh`
 

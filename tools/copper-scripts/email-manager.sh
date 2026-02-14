@@ -6,7 +6,7 @@ set -euo pipefail
 
 WORK_ACCOUNT="work"
 PERSONAL_ACCOUNT="personal"
-SUMMARY_FILE="$HOME/clawd/memory/email-summary-$(date +%Y-%m-%d).md"
+SUMMARY_FILE="$HOME/Cursor/Claude-2026/openclaw/memory/email-summary-$(date +%Y-%m-%d).md"
 
 echo "📧 Email Management - $(date)"
 echo "================================"

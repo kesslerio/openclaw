@@ -9,7 +9,7 @@ Priority fixes that can be done in under 30 minutes
 **Fix**:
 
 ```bash
-cd ~/clawd/scripts
+cd ~/Cursor/Claude-2026/openclaw/tools/copper-scripts
 npx playwright install
 ```
 
@@ -242,7 +242,7 @@ python3 parse-contacts.py path/to/contacts.csv
 **Fix**:
 
 ```bash
-cd ~/clawd
+cd ~/Cursor/Claude-2026/openclaw
 npx playwright install
 ```
 
@@ -270,7 +270,7 @@ After these fixes, you'll have:
 Run this to verify all fixes:
 
 ```bash
-cd ~/clawd/scripts
+cd ~/Cursor/Claude-2026/openclaw/tools/copper-scripts
 
 # Test 1: Playwright installed
 npx playwright --version

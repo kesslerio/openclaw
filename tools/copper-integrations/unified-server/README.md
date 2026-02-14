@@ -135,7 +135,7 @@ Same schema as `integrations/clearcare/database-schema.sql` + `integrations/axxe
 
 ```bash
 # Clone repo
-cd /home/ubuntu/clawd/integrations/unified-server
+cd /home/ubuntu/openclaw/tools/copper-integrations/unified-server
 
 # Install Railway CLI
 npm install -g @railway/cli

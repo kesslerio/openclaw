@@ -118,7 +118,7 @@ Categories:
 
 ## File Changes
 
-### /Users/arvindsarin/clawd/scripts/parse-contacts.py
+### /Users/arvindsarin/Cursor/Claude-2026/openclaw/tools/copper-scripts/parse-contacts.py
 
 **Lines modified**: 103-106 → 103-135
 **Changes**:
@@ -128,7 +128,7 @@ Categories:
 - Added auto-detection of CSV files
 - Added proper error messages
 
-### /Users/arvindsarin/clawd/scripts/analyze-contact-frequency.py
+### /Users/arvindsarin/Cursor/Claude-2026/openclaw/tools/copper-scripts/analyze-contact-frequency.py
 
 **Lines modified**: 10-24, 140-142
 **Changes**:
@@ -138,7 +138,7 @@ Categories:
 - Added dynamic path detection
 - Added existence check for data directory
 
-### /Users/arvindsarin/clawd/scripts/reach-out-recommendations.py
+### /Users/arvindsarin/Cursor/Claude-2026/openclaw/tools/copper-scripts/reach-out-recommendations.py
 
 **Lines modified**: 9-12, 53-62
 **Changes**:
@@ -151,7 +151,7 @@ Categories:
 
 ## Generated Files
 
-All scripts successfully generate output files in `/Users/arvindsarin/clawd/data/contacts/`:
+All scripts successfully generate output files in `/Users/arvindsarin/Cursor/Claude-2026/openclaw/tools/copper-scripts/data/contacts/`:
 
 | File                       | Size | Purpose                |
 | -------------------------- | ---- | ---------------------- |
@@ -240,7 +240,7 @@ These scripts are now ready for daily sales outreach:
 All scripts are located in:
 
 ```
-/Users/arvindsarin/clawd/scripts/
+/Users/arvindsarin/Cursor/Claude-2026/openclaw/tools/copper-scripts/
 ```
 
 Key files:

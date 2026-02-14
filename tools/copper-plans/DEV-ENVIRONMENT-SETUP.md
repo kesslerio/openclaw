@@ -113,10 +113,10 @@ cat ~/.ssh/id_ed25519.pub
 ### Step 5: Clone Repository
 
 ```bash
-# Clone clawd workspace
+# Clone openclaw workspace
 cd ~
-git clone git@github.com:arvindsarin/clawd.git
-cd clawd
+git clone git@github.com:openclaw/openclaw.git
+cd openclaw
 
 # Verify structure
 ls -la
@@ -203,10 +203,10 @@ sudo apt install -y inotify-tools
 ### Step 6: Clone Repository
 
 ```bash
-# Clone clawd workspace
+# Clone openclaw workspace
 cd /home/ubuntu
-git clone git@github.com:arvindsarin/clawd.git
-cd clawd
+git clone git@github.com:openclaw/openclaw.git
+cd openclaw
 ```
 
 ---
@@ -216,8 +216,8 @@ cd clawd
 ### Step 1: Create Virtual Environment
 
 ```bash
-# Navigate to clawd directory
-cd /Users/arvindsarin/clawd
+# Navigate to openclaw directory
+cd /Users/arvindsarin/Cursor/Claude-2026/openclaw
 
 # Create virtual environment
 python3.11 -m venv venv
@@ -337,21 +337,21 @@ pre-commit>=3.6.0
 brew services start postgresql@15
 
 # Create database
-createdb clawd
+createdb openclaw
 
 # Create user
-psql clawd <<EOF
+psql openclaw <<EOF
 CREATE USER nike WITH PASSWORD 'your_secure_password_here';
-GRANT ALL PRIVILEGES ON DATABASE clawd TO nike;
-\c clawd
+GRANT ALL PRIVILEGES ON DATABASE openclaw TO nike;
+\c openclaw
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 CREATE EXTENSION IF NOT EXISTS vector;
 GRANT ALL ON SCHEMA public TO nike;
 EOF
 
 # Verify
-psql clawd -c "\dx"  # List extensions
-psql clawd -c "\du"  # List users
+psql openclaw -c "\dx"  # List extensions
+psql openclaw -c "\du"  # List users
 ```
 
 ### Step 2: Create Database (VPS)
@@ -359,10 +359,10 @@ psql clawd -c "\du"  # List users
 ```bash
 # Switch to postgres user
 sudo -u postgres psql <<EOF
-CREATE DATABASE clawd;
+CREATE DATABASE openclaw;
 CREATE USER nike WITH PASSWORD 'your_secure_password_here';
-GRANT ALL PRIVILEGES ON DATABASE clawd TO nike;
-\c clawd
+GRANT ALL PRIVILEGES ON DATABASE openclaw TO nike;
+\c openclaw
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 CREATE EXTENSION IF NOT EXISTS vector;
 GRANT ALL ON SCHEMA public TO nike;
@@ -370,7 +370,7 @@ EOF
 
 # Configure remote access (if needed)
 sudo nano /etc/postgresql/15/main/pg_hba.conf
-# Add: host clawd nike 0.0.0.0/0 md5
+# Add: host openclaw nike 0.0.0.0/0 md5
 
 sudo nano /etc/postgresql/15/main/postgresql.conf
 # Set: listen_addresses = '*'
@@ -383,25 +383,25 @@ sudo systemctl restart postgresql
 
 ```bash
 # Navigate to memex directory
-cd /Users/arvindsarin/clawd/memex
+cd /Users/arvindsarin/Cursor/Claude-2026/openclaw/memex
 
 # Apply initial schema
-psql "postgresql://nike:password@localhost:5432/clawd" -f schema/001_initial_schema.sql
+psql "postgresql://nike:password@localhost:5432/openclaw" -f schema/001_initial_schema.sql
 
 # Verify tables
-psql "postgresql://nike:password@localhost:5432/clawd" -c "\dt"
+psql "postgresql://nike:password@localhost:5432/openclaw" -c "\dt"
 ```
 
 ### Step 4: Initialize Alembic Migrations
 
 ```bash
-cd /Users/arvindsarin/clawd/memex
+cd /Users/arvindsarin/Cursor/Claude-2026/openclaw/memex
 
 # Initialize Alembic
 alembic init migrations
 
 # Update alembic.ini
-sed -i '' 's|sqlalchemy.url = .*|sqlalchemy.url = postgresql://nike:password@localhost:5432/clawd|' alembic.ini
+sed -i '' 's|sqlalchemy.url = .*|sqlalchemy.url = postgresql://nike:password@localhost:5432/openclaw|' alembic.ini
 
 # Create initial migration
 alembic revision --autogenerate -m "Initial schema"
@@ -418,7 +418,7 @@ alembic upgrade head
 
 ```bash
 # Create .env file
-cat > /Users/arvindsarin/clawd/.env <<EOF
+cat > /Users/arvindsarin/Cursor/Claude-2026/openclaw/.env <<EOF
 # OpenAI
 OPENAI_API_KEY=sk-...
 
@@ -426,7 +426,7 @@ OPENAI_API_KEY=sk-...
 ANTHROPIC_API_KEY=sk-ant-...
 
 # Database
-DATABASE_URL=postgresql://nike:your_password@localhost:5432/clawd
+DATABASE_URL=postgresql://nike:your_password@localhost:5432/openclaw
 
 # Plaud.AI (for scraper)
 PLAUD_EMAIL=arvind@example.com
@@ -447,7 +447,7 @@ ENVIRONMENT=development
 EOF
 
 # Secure the file
-chmod 600 /Users/arvindsarin/clawd/.env
+chmod 600 /Users/arvindsarin/Cursor/Claude-2026/openclaw/.env
 ```
 
 ### Step 2: Load Environment Variables
@@ -455,8 +455,8 @@ chmod 600 /Users/arvindsarin/clawd/.env
 Add to `~/.zshrc` or `~/.bashrc`:
 
 ```bash
-# Clawd environment
-export $(grep -v '^#' /Users/arvindsarin/clawd/.env | xargs)
+# OpenClaw environment
+export $(grep -v '^#' /Users/arvindsarin/Cursor/Claude-2026/openclaw/.env | xargs)
 ```
 
 ### Step 3: Verify API Keys
@@ -503,7 +503,7 @@ After=network.target
 [Service]
 Type=simple
 User=ubuntu
-WorkingDirectory=/home/ubuntu/clawd/kanban/server
+WorkingDirectory=/home/ubuntu/openclaw/kanban/server
 ExecStart=/usr/bin/node kanban-server.js
 Restart=on-failure
 RestartSec=10
@@ -525,50 +525,50 @@ sudo systemctl status kanban-server
 
 ```bash
 # Create launchd plist
-cat > ~/Library/LaunchAgents/com.clawd.autosync.plist <<EOF
+cat > ~/Library/LaunchAgents/com.openclaw.autosync.plist <<EOF
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
     <key>Label</key>
-    <string>com.clawd.autosync</string>
+    <string>com.openclaw.autosync</string>
     <key>ProgramArguments</key>
     <array>
-        <string>/Users/arvindsarin/clawd/scripts/auto-sync.sh</string>
+        <string>/Users/arvindsarin/Cursor/Claude-2026/openclaw/scripts/auto-sync.sh</string>
     </array>
     <key>RunAtLoad</key>
     <true/>
     <key>KeepAlive</key>
     <true/>
     <key>StandardOutPath</key>
-    <string>/Users/arvindsarin/clawd/logs/auto-sync.log</string>
+    <string>/Users/arvindsarin/Cursor/Claude-2026/openclaw/logs/auto-sync.log</string>
     <key>StandardErrorPath</key>
-    <string>/Users/arvindsarin/clawd/logs/auto-sync-error.log</string>
+    <string>/Users/arvindsarin/Cursor/Claude-2026/openclaw/logs/auto-sync-error.log</string>
 </dict>
 </plist>
 EOF
 
 # Load the service
-launchctl load ~/Library/LaunchAgents/com.clawd.autosync.plist
+launchctl load ~/Library/LaunchAgents/com.openclaw.autosync.plist
 
 # Check status
-launchctl list | grep clawd
+launchctl list | grep openclaw
 ```
 
 ### Step 3: Configure Auto-Sync (VPS)
 
 ```bash
 # Create systemd service
-sudo cat > /etc/systemd/system/clawd-sync.service <<EOF
+sudo cat > /etc/systemd/system/openclaw-sync.service <<EOF
 [Unit]
-Description=Clawd Auto-Sync Service
+Description=OpenClaw Auto-Sync Service
 After=network.target
 
 [Service]
 Type=simple
 User=ubuntu
-WorkingDirectory=/home/ubuntu/clawd
-ExecStart=/home/ubuntu/clawd/scripts/auto-sync-vps.sh
+WorkingDirectory=/home/ubuntu/openclaw
+ExecStart=/home/ubuntu/openclaw/scripts/auto-sync-vps.sh
 Restart=on-failure
 RestartSec=30
 
@@ -578,8 +578,8 @@ EOF
 
 # Enable and start
 sudo systemctl daemon-reload
-sudo systemctl enable clawd-sync
-sudo systemctl start clawd-sync
+sudo systemctl enable openclaw-sync
+sudo systemctl start openclaw-sync
 ```
 
 ### Step 4: Configure Memex API (Optional)
@@ -594,11 +594,11 @@ After=network.target postgresql.service
 [Service]
 Type=simple
 User=ubuntu
-WorkingDirectory=/home/ubuntu/clawd/memex
-ExecStart=/home/ubuntu/clawd/venv/bin/uvicorn api.main:app --host 0.0.0.0 --port 8891
+WorkingDirectory=/home/ubuntu/openclaw/memex
+ExecStart=/home/ubuntu/openclaw/venv/bin/uvicorn api.main:app --host 0.0.0.0 --port 8891
 Restart=on-failure
 RestartSec=10
-Environment="DATABASE_URL=postgresql://nike:password@localhost:5432/clawd"
+Environment="DATABASE_URL=postgresql://nike:password@localhost:5432/openclaw"
 Environment="OPENAI_API_KEY=sk-..."
 
 [Install]
@@ -670,7 +670,7 @@ code --install-extension anthropics.claude-code
       "args": ["api.main:app", "--reload", "--port", "8891"],
       "cwd": "${workspaceFolder}/memex",
       "env": {
-        "DATABASE_URL": "postgresql://nike:password@localhost:5432/clawd"
+        "DATABASE_URL": "postgresql://nike:password@localhost:5432/openclaw"
       }
     },
     {
@@ -780,7 +780,7 @@ def mock_database_url(monkeypatch):
 
 ```bash
 # Run all tests
-cd /Users/arvindsarin/clawd
+cd /Users/arvindsarin/Cursor/Claude-2026/openclaw
 pytest
 
 # Run with coverage
@@ -855,7 +855,7 @@ brew services start postgresql@15     # Mac
 sudo systemctl start postgresql       # Linux
 
 # Check connection
-psql -h localhost -U nike -d clawd
+psql -h localhost -U nike -d openclaw
 ```
 
 #### 2. Playwright Browser Not Found
@@ -933,7 +933,7 @@ pip install -r requirements.txt
 ```bash
 # Check all running services
 systemctl list-units --type=service --state=running  # Linux
-launchctl list | grep clawd                           # Mac
+launchctl list | grep openclaw                           # Mac
 
 # Check port usage
 lsof -i :8888  # Kanban server
@@ -966,10 +966,10 @@ curl http://localhost:8891/docs
 brew services start postgresql@15
 
 # Activate venv
-source /Users/arvindsarin/clawd/venv/bin/activate
+source /Users/arvindsarin/Cursor/Claude-2026/openclaw/venv/bin/activate
 
 # Start Memex API (in background)
-cd /Users/arvindsarin/clawd/memex
+cd /Users/arvindsarin/Cursor/Claude-2026/openclaw/memex
 uvicorn api.main:app --port 8891 &
 
 echo "All services started!"

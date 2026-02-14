@@ -291,7 +291,7 @@ numpy>=1.24.0
 
 ```bash
 # Add parent directory to PYTHONPATH
-export PYTHONPATH="${PYTHONPATH}:/Users/arvindsarin/Cursor/Claude-2026/clawd/memex"
+export PYTHONPATH="${PYTHONPATH}:/Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex"
 ```
 
 ### Async Tests Failing

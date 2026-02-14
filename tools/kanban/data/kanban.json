@@ -1,0 +1,3779 @@
+{
+  "columns": {
+    "backlog": {
+      "id": "backlog",
+      "title": "BACKLOG",
+      "tasks": [],
+      "color": "#6B7280"
+    },
+    "todo": {
+      "id": "todo",
+      "title": "TODO",
+      "tasks": [
+        "task-1770226904731-yywq1whtp",
+        "task-1770226904731-d8ebnadz7",
+        "task-1770226904731-eajj2dbrb",
+        "task-1770226904731-v09mxbz95",
+        "task-1770226904731-b3uj28rtm",
+        "task-1770226904731-1mf2pmo0r",
+        "task-1770226904731-ytclynd0x",
+        "task-1770226904731-bvoijeook",
+        "task-1770226904731-mzg13mkwy",
+        "task-1770226904731-wtex4pg8c",
+        "task-1770226904731-41h9ioy6o",
+        "task-1770226904731-e5my5wbbw",
+        "task-1770226904731-oskgf45bu",
+        "task-1770226904731-ja0kc38w8",
+        "task-1770226904731-co6orhr3n",
+        "task-1770226904731-96zzssdg6",
+        "task-1770226904732-1yq6vvfjr",
+        "task-1770226904732-gxh54oind",
+        "task-1770226904732-mbcso5x6q",
+        "task-1770226904732-ubyme1lgd",
+        "task-1770226904732-4jjfj6r8y",
+        "task-1770226904732-sa6ejr298",
+        "task-1770226904732-wpzrb2stw",
+        "task-1770226904732-xx710o8p3",
+        "task-1770226904732-0v5kd45m1",
+        "task-1770226904732-1vbs0cfta",
+        "task-1770226904732-ml9sim1dw",
+        "task-1770226904732-ck89872fk",
+        "task-1770226904732-t6wxj2uz4",
+        "task-1770226904732-kncqjjvf1",
+        "task-1770226904732-9trld4con",
+        "task-1770226904732-vl7213bda",
+        "task-1770226904732-4dnmzvuko",
+        "task-1770226904732-v9e9um49g",
+        "task-1770226904732-a1chrehsy",
+        "task-1770226904732-kkbi9hea7",
+        "task-1770226904732-yc0mqxjq7",
+        "task-1770226904732-pkv6p9uyv",
+        "task-1770226904732-zmkg7f15l",
+        "task-1770226904732-77ef2i74s",
+        "task-1770226904732-9vsrsditi",
+        "task-1770226904732-2aujs4ehh",
+        "task-1770226904732-lqp5ni4pv"
+      ],
+      "color": "#3B82F6"
+    },
+    "doing": {
+      "id": "doing",
+      "title": "DOING",
+      "tasks": [
+        "task-1770226904731-2qdzcw6ln",
+        "task-1770226904731-icqh66xpb",
+        "task-1770226904731-uttyqk2et",
+        "task-1770226904731-67uopbdwj",
+        "task-1770226904731-dfn8afgm6",
+        "task-1770226904731-1klq16sld",
+        "task-1770226904731-m87hn86z9",
+        "task-1770226904731-tkzaq96lg",
+        "task-1770226904731-8yx7iqgr0",
+        "task-1770226904731-b0absi4qn",
+        "task-1770226904732-kkjfgezzr",
+        "task-1770226904732-he71ju9jw",
+        "task-1770226904731-sxet9asbf",
+        "task-1770256668939-zepgd1bl2"
+      ],
+      "color": "#F59E0B"
+    },
+    "done": {
+      "id": "done",
+      "title": "DONE",
+      "tasks": [
+        "task-1770226904731-t4727g1p6",
+        "task-1770226904731-igvevl4e6",
+        "task-1770226904731-w4e50qsep",
+        "task-1770226904731-b9rjjunr5",
+        "task-1770226904731-lbnax48c7",
+        "task-1770226904731-gtqkbqli3",
+        "task-1770226904731-f3hyb7rk5",
+        "task-1770226904732-2p0268yhq",
+        "task-1770226904732-nurq9lwzk",
+        "task-1770226904732-9djbdpbc1",
+        "task-1770226904732-588qiquou",
+        "task-1770226904732-wkcdy5iva",
+        "task-1770226904732-o1fnpn7e9",
+        "task-1770226904732-v1ay3xbp2",
+        "task-1770226904732-qqvgezu4z",
+        "task-1770226904732-prl3v1pu0",
+        "task-1770226904732-8u01uphw9",
+        "task-1770226904732-h2w7spc5m",
+        "task-1770226904732-27kvkwf7j",
+        "task-1770226904732-t094yjose",
+        "task-1770226904732-qs9jskg3k",
+        "task-1770226904732-zqddu517g",
+        "task-1770226904732-fk3ok4egi",
+        "task-1770226904732-fiek53we1",
+        "task-1770226904732-93bhr485f",
+        "task-1770226904732-rsm0a82mv",
+        "task-1770226904732-xpahu9hhs",
+        "task-1770226904732-5qz4qt9xk",
+        "task-1770226904732-5g00oc78w"
+      ],
+      "color": "#10B981"
+    }
+  },
+  "tasks": [
+    {
+      "id": "task-1770226904731-2qdzcw6ln",
+      "title": "2000 Canyons Offer - Call Alex",
+      "description": "Push from $108k to $111k. Alex: 817-939-9971",
+      "status": "doing",
+      "priority": "high",
+      "dueDate": null,
+      "tags": ["property"],
+      "category": "Personal",
+      "createdAt": "2026-01-31T17:20:00Z",
+      "updatedAt": "2026-01-31T17:20:00Z",
+      "completedAt": null,
+      "assignee": "Arvind",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 1,
+        "urgent": true,
+        "wasBlocked": false,
+        "tokenUsage": {
+          "total": 0,
+          "today": 0,
+          "estimated": 500,
+          "lastUpdated": "2026-01-31T18:47:06.283Z"
+        }
+      },
+      "analysis": {
+        "automationType": "human",
+        "automationReason": "Requires phone call and negotiation with real estate agent",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "Call Alex at 817-939-9971",
+          "Negotiate offer from $108k to $111k",
+          "Get verbal confirmation",
+          "Follow up with written agreement",
+          "Coordinate closing timeline"
+        ],
+        "estimatedMinutes": 45,
+        "aiCapabilities": [
+          "Draft negotiation talking points",
+          "Research comparable properties",
+          "Calculate offer math"
+        ],
+        "humanRequirements": ["Phone call", "Negotiation skills", "Legal review"]
+      }
+    },
+    {
+      "id": "task-1770226904731-yywq1whtp",
+      "title": "Crane Street - Follow up",
+      "description": "Waiting for callback. Agent is legit.",
+      "status": "todo",
+      "priority": "medium",
+      "dueDate": null,
+      "tags": ["property"],
+      "category": "Personal",
+      "createdAt": "2026-02-01T16:42:07.238Z",
+      "updatedAt": "2026-02-01T16:42:07.238Z",
+      "completedAt": null,
+      "assignee": "VEENA",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 2,
+        "wasBlocked": false,
+        "tokenUsage": {
+          "total": 0,
+          "today": 0,
+          "estimated": 1000,
+          "lastUpdated": "2026-01-31T18:47:06.284Z"
+        }
+      },
+      "analysis": {
+        "automationType": "hybrid",
+        "automationReason": "AI can write code and tests, but human needs to review and deploy",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "AI: Analyze current implementation",
+          "AI: Write code changes with tests",
+          "Human: Review code quality and security",
+          "AI: Generate documentation",
+          "Human: Deploy to production",
+          "Human: Monitor for issues"
+        ],
+        "estimatedMinutes": 60,
+        "aiCapabilities": ["Code generation", "Test writing", "Documentation", "Bug analysis"],
+        "humanRequirements": ["Code review", "Deployment", "Production monitoring"]
+      }
+    },
+    {
+      "id": "task-1770226904731-t4727g1p6",
+      "title": "Waveny Client Screenshots",
+      "description": "Sent screen recording/screenshots of completed features",
+      "status": "done",
+      "priority": "low",
+      "dueDate": null,
+      "tags": ["personal"],
+      "category": "Personal",
+      "createdAt": "2026-01-31T03:08:00Z",
+      "updatedAt": "2026-01-31T03:08:00Z",
+      "completedAt": "2026-01-31T03:08:00Z",
+      "assignee": "VEENA",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 3,
+        "wasBlocked": false,
+        "tokenUsage": {
+          "total": 0,
+          "today": 0,
+          "estimated": 1000,
+          "lastUpdated": "2026-01-31T18:47:06.284Z"
+        }
+      },
+      "analysis": {
+        "automationType": "hybrid",
+        "automationReason": "AI can write code and tests, but human needs to review and deploy",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "AI: Analyze current implementation",
+          "AI: Write code changes with tests",
+          "Human: Review code quality and security",
+          "AI: Generate documentation",
+          "Human: Deploy to production",
+          "Human: Monitor for issues"
+        ],
+        "estimatedMinutes": 60,
+        "aiCapabilities": ["Code generation", "Test writing", "Documentation", "Bug analysis"],
+        "humanRequirements": ["Code review", "Deployment", "Production monitoring"]
+      }
+    },
+    {
+      "id": "task-1770226904731-d8ebnadz7",
+      "title": "Rivvi Partnership Follow-up",
+      "description": "Connect with Nathan on LinkedIn, schedule demo",
+      "status": "todo",
+      "priority": "medium",
+      "dueDate": null,
+      "tags": ["copper"],
+      "category": "CopperAI",
+      "createdAt": "2026-02-01T16:42:09.265Z",
+      "updatedAt": "2026-02-01T16:42:09.265Z",
+      "completedAt": null,
+      "assignee": "Arvind",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 4,
+        "wasBlocked": false,
+        "tokenUsage": {
+          "total": 0,
+          "today": 0,
+          "estimated": 1000,
+          "lastUpdated": "2026-01-31T18:47:06.284Z"
+        }
+      },
+      "analysis": {
+        "automationType": "hybrid",
+        "automationReason": "AI can write code and tests, but human needs to review and deploy",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "AI: Analyze current implementation",
+          "AI: Write code changes with tests",
+          "Human: Review code quality and security",
+          "AI: Generate documentation",
+          "Human: Deploy to production",
+          "Human: Monitor for issues"
+        ],
+        "estimatedMinutes": 60,
+        "aiCapabilities": ["Code generation", "Test writing", "Documentation", "Bug analysis"],
+        "humanRequirements": ["Code review", "Deployment", "Production monitoring"]
+      }
+    },
+    {
+      "id": "task-1770226904731-igvevl4e6",
+      "title": "Copper AI Sales Outreach Kit",
+      "description": "Email sequence, phone script, ROI calculator, competitor comparison",
+      "status": "done",
+      "priority": "low",
+      "dueDate": null,
+      "tags": ["copper", "nike"],
+      "category": "CopperAI",
+      "createdAt": "2026-01-31T08:00:00Z",
+      "updatedAt": "2026-01-31T08:00:00Z",
+      "completedAt": "2026-01-31T08:00:00Z",
+      "assignee": "Nike",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 5,
+        "wasBlocked": false,
+        "tokenUsage": {
+          "total": 0,
+          "today": 0,
+          "estimated": 1000,
+          "lastUpdated": "2026-01-31T18:47:06.284Z"
+        }
+      },
+      "analysis": {
+        "automationType": "hybrid",
+        "automationReason": "AI can write code and tests, but human needs to review and deploy",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "AI: Analyze current implementation",
+          "AI: Write code changes with tests",
+          "Human: Review code quality and security",
+          "AI: Generate documentation",
+          "Human: Deploy to production",
+          "Human: Monitor for issues"
+        ],
+        "estimatedMinutes": 60,
+        "aiCapabilities": ["Code generation", "Test writing", "Documentation", "Bug analysis"],
+        "humanRequirements": ["Code review", "Deployment", "Production monitoring"]
+      }
+    },
+    {
+      "id": "task-1770226904731-eajj2dbrb",
+      "title": "Texas Home Health Outreach",
+      "description": "199 leads ready, outreach kit complete. ✅ Tracking spreadsheet created: sales/texas-outreach-tracker.csv",
+      "status": "todo",
+      "priority": "medium",
+      "dueDate": null,
+      "tags": ["copper"],
+      "category": "CopperAI",
+      "createdAt": "2026-01-31T19:08:26.385Z",
+      "updatedAt": "2026-01-31T19:08:26.385Z",
+      "completedAt": null,
+      "assignee": "Arvind",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 6,
+        "wasBlocked": false,
+        "tokenUsage": {
+          "total": 0,
+          "today": 0,
+          "estimated": 1000,
+          "lastUpdated": "2026-01-31T18:47:06.284Z"
+        }
+      },
+      "analysis": {
+        "automationType": "hybrid",
+        "automationReason": "AI can write code and tests, but human needs to review and deploy",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "AI: Analyze current implementation",
+          "AI: Write code changes with tests",
+          "Human: Review code quality and security",
+          "AI: Generate documentation",
+          "Human: Deploy to production",
+          "Human: Monitor for issues"
+        ],
+        "estimatedMinutes": 60,
+        "aiCapabilities": ["Code generation", "Test writing", "Documentation", "Bug analysis"],
+        "humanRequirements": ["Code review", "Deployment", "Production monitoring"]
+      }
+    },
+    {
+      "id": "task-1770226904731-v09mxbz95",
+      "title": "Print Check & Deposit",
+      "description": "High priority - likely for mom's tax",
+      "status": "todo",
+      "priority": "high",
+      "dueDate": null,
+      "tags": ["personal"],
+      "category": "Personal",
+      "createdAt": "2026-01-30T17:35:00Z",
+      "updatedAt": "2026-01-30T17:35:00Z",
+      "completedAt": null,
+      "assignee": "Arvind",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 7,
+        "urgent": true,
+        "wasBlocked": false,
+        "tokenUsage": {
+          "total": 0,
+          "today": 0,
+          "estimated": 1000,
+          "lastUpdated": "2026-01-31T18:47:06.284Z"
+        }
+      },
+      "analysis": {
+        "automationType": "hybrid",
+        "automationReason": "AI can write code and tests, but human needs to review and deploy",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "AI: Analyze current implementation",
+          "AI: Write code changes with tests",
+          "Human: Review code quality and security",
+          "AI: Generate documentation",
+          "Human: Deploy to production",
+          "Human: Monitor for issues"
+        ],
+        "estimatedMinutes": 60,
+        "aiCapabilities": ["Code generation", "Test writing", "Documentation", "Bug analysis"],
+        "humanRequirements": ["Code review", "Deployment", "Production monitoring"]
+      }
+    },
+    {
+      "id": "task-1770226904731-b3uj28rtm",
+      "title": "Mom's Tax Filing",
+      "description": "Gather documents and file",
+      "status": "todo",
+      "priority": "high",
+      "dueDate": null,
+      "tags": ["personal"],
+      "category": "Personal",
+      "createdAt": "2026-01-30T17:35:00Z",
+      "updatedAt": "2026-01-30T17:35:00Z",
+      "completedAt": null,
+      "assignee": "Arvind",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 8,
+        "urgent": true,
+        "wasBlocked": false,
+        "tokenUsage": {
+          "total": 0,
+          "today": 0,
+          "estimated": 1000,
+          "lastUpdated": "2026-01-31T18:47:06.284Z"
+        }
+      },
+      "analysis": {
+        "automationType": "hybrid",
+        "automationReason": "AI can write code and tests, but human needs to review and deploy",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "AI: Analyze current implementation",
+          "AI: Write code changes with tests",
+          "Human: Review code quality and security",
+          "AI: Generate documentation",
+          "Human: Deploy to production",
+          "Human: Monitor for issues"
+        ],
+        "estimatedMinutes": 60,
+        "aiCapabilities": ["Code generation", "Test writing", "Documentation", "Bug analysis"],
+        "humanRequirements": ["Code review", "Deployment", "Production monitoring"]
+      }
+    },
+    {
+      "id": "task-1770226904731-1mf2pmo0r",
+      "title": "Umbrella Insurance Decision",
+      "description": "Jasmeet mentioned renewal needed. ✅ Comprehensive decision guide created: guides/umbrella-insurance-decision-guide.md. RECOMMENDATION: Renew - you're a landlord with significant assets at risk. 00-600/year is cheap protection.",
+      "status": "todo",
+      "priority": "medium",
+      "dueDate": null,
+      "tags": ["personal"],
+      "category": "Personal",
+      "createdAt": "2026-01-31T21:02:30.611Z",
+      "updatedAt": "2026-01-31T21:02:30.611Z",
+      "completedAt": null,
+      "assignee": "Arvind",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 9,
+        "wasBlocked": false,
+        "tokenUsage": {
+          "total": 0,
+          "today": 0,
+          "estimated": 1000,
+          "lastUpdated": "2026-01-31T18:47:06.284Z"
+        }
+      },
+      "analysis": {
+        "automationType": "hybrid",
+        "automationReason": "AI can write code and tests, but human needs to review and deploy",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "AI: Analyze current implementation",
+          "AI: Write code changes with tests",
+          "Human: Review code quality and security",
+          "AI: Generate documentation",
+          "Human: Deploy to production",
+          "Human: Monitor for issues"
+        ],
+        "estimatedMinutes": 60,
+        "aiCapabilities": ["Code generation", "Test writing", "Documentation", "Bug analysis"],
+        "humanRequirements": ["Code review", "Deployment", "Production monitoring"]
+      }
+    },
+    {
+      "id": "task-1770226904731-icqh66xpb",
+      "title": "Tax Document Tracking",
+      "description": "Organizing Rate.com, PNC Bank, and other tax docs",
+      "status": "doing",
+      "priority": "medium",
+      "dueDate": null,
+      "tags": ["personal", "nike"],
+      "category": "Personal",
+      "createdAt": "2026-01-30T17:35:00Z",
+      "updatedAt": "2026-01-30T17:35:00Z",
+      "completedAt": null,
+      "assignee": "Nike",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 10,
+        "wasBlocked": false,
+        "tokenUsage": {
+          "total": 0,
+          "today": 0,
+          "estimated": 1000,
+          "lastUpdated": "2026-01-31T18:47:06.284Z"
+        }
+      },
+      "analysis": {
+        "automationType": "hybrid",
+        "automationReason": "AI can write code and tests, but human needs to review and deploy",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "AI: Analyze current implementation",
+          "AI: Write code changes with tests",
+          "Human: Review code quality and security",
+          "AI: Generate documentation",
+          "Human: Deploy to production",
+          "Human: Monitor for issues"
+        ],
+        "estimatedMinutes": 60,
+        "aiCapabilities": ["Code generation", "Test writing", "Documentation", "Bug analysis"],
+        "humanRequirements": ["Code review", "Deployment", "Production monitoring"]
+      }
+    },
+    {
+      "id": "task-1770226904731-uttyqk2et",
+      "title": "🌅 Morning Brief (8:00 AM daily)",
+      "description": "Weather, kanban updates overnight, my work plan, trending news, proactive ideas",
+      "status": "doing",
+      "priority": "medium",
+      "dueDate": null,
+      "tags": ["nike"],
+      "category": "General",
+      "createdAt": "2026-01-31T18:42:22.278Z",
+      "updatedAt": "2026-01-31T18:42:22.278Z",
+      "completedAt": null,
+      "assignee": "Nike",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 11,
+        "wasBlocked": false,
+        "tokenUsage": {
+          "total": 3000,
+          "today": 0,
+          "estimated": 3000,
+          "lastUpdated": "2026-01-31T18:47:06.284Z"
+        }
+      },
+      "analysis": {
+        "automationType": "llm",
+        "automationReason": "Task involves data processing, research, or automated workflows that AI can handle independently",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "Gather data from sources",
+          "Analyze and synthesize",
+          "Generate formatted report",
+          "Deliver to recipient"
+        ],
+        "estimatedMinutes": 5,
+        "aiCapabilities": [
+          "Data aggregation",
+          "Report generation",
+          "Automated execution",
+          "Status monitoring"
+        ],
+        "humanRequirements": ["Review output", "Approve if needed"]
+      }
+    },
+    {
+      "id": "task-1770226904731-67uopbdwj",
+      "title": "📚 Daily Research Report (2:00 PM)",
+      "description": "Deep-dive on AI, voice agents, home health; workflow improvements; business ideas for Copper Digital",
+      "status": "doing",
+      "priority": "medium",
+      "dueDate": null,
+      "tags": ["nike"],
+      "category": "General",
+      "createdAt": "2026-01-31T18:42:28.053Z",
+      "updatedAt": "2026-01-31T18:42:28.053Z",
+      "completedAt": null,
+      "assignee": "Nike",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 12,
+        "wasBlocked": false,
+        "tokenUsage": {
+          "total": 8000,
+          "today": 0,
+          "estimated": 8000,
+          "lastUpdated": "2026-01-31T18:47:06.284Z"
+        }
+      },
+      "analysis": {
+        "automationType": "llm",
+        "automationReason": "Task involves data processing, research, or automated workflows that AI can handle independently",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "Gather data from sources",
+          "Analyze and synthesize",
+          "Generate formatted report",
+          "Deliver to recipient"
+        ],
+        "estimatedMinutes": 15,
+        "aiCapabilities": [
+          "Data aggregation",
+          "Report generation",
+          "Automated execution",
+          "Status monitoring"
+        ],
+        "humanRequirements": ["Review output", "Approve if needed"]
+      }
+    },
+    {
+      "id": "task-1770226904731-dfn8afgm6",
+      "title": "🌙 Overnight Vibe Coding (11:00 PM)",
+      "description": "Build helpful tools/features while you sleep; review day's discussions; create PRs; focus on Copper AI, automation",
+      "status": "doing",
+      "priority": "medium",
+      "dueDate": null,
+      "tags": ["nike"],
+      "category": "General",
+      "createdAt": "2026-01-31T18:42:33.792Z",
+      "updatedAt": "2026-01-31T18:42:33.792Z",
+      "completedAt": null,
+      "assignee": "Nike",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 13,
+        "wasBlocked": false,
+        "tokenUsage": {
+          "total": 15000,
+          "today": 0,
+          "estimated": 15000,
+          "lastUpdated": "2026-01-31T18:47:06.284Z"
+        }
+      },
+      "analysis": {
+        "automationType": "llm",
+        "automationReason": "Task involves data processing, research, or automated workflows that AI can handle independently",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "Parse task requirements",
+          "Execute automated workflow",
+          "Validate output",
+          "Report completion"
+        ],
+        "estimatedMinutes": 10,
+        "aiCapabilities": [
+          "Data aggregation",
+          "Report generation",
+          "Automated execution",
+          "Status monitoring"
+        ],
+        "humanRequirements": ["Review output", "Approve if needed"]
+      }
+    },
+    {
+      "id": "task-1770226904731-1klq16sld",
+      "title": "✈️ Flight Price Monitoring (every 4 hours)",
+      "description": "DFW↔DEL monitored 2026-02-01 13:31 UTC. Cheapest: $973 AA (45hr, not recommended). Best value: JAL $1,313 (23hr). All above $700 threshold - NO ALERT. Full report: travel/flight-check-2026-02-01.md. Next check in 4 hours.",
+      "status": "doing",
+      "priority": "medium",
+      "dueDate": null,
+      "tags": ["nike"],
+      "category": "General",
+      "createdAt": "2026-02-01T13:41:45.609Z",
+      "updatedAt": "2026-02-05T01:45:07.872Z",
+      "completedAt": null,
+      "assignee": "Nike",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 14,
+        "wasBlocked": false,
+        "tokenUsage": {
+          "total": 2000,
+          "today": 500,
+          "estimated": 1500,
+          "lastUpdated": "2026-01-31T18:47:06.284Z"
+        }
+      },
+      "analysis": {
+        "automationType": "llm",
+        "automationReason": "Task involves data processing, research, or automated workflows that AI can handle independently",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "Check data sources",
+          "Compare against thresholds",
+          "Generate alerts if needed",
+          "Log status"
+        ],
+        "estimatedMinutes": 2,
+        "aiCapabilities": [
+          "Data aggregation",
+          "Report generation",
+          "Automated execution",
+          "Status monitoring"
+        ],
+        "humanRequirements": ["Review output", "Approve if needed"]
+      }
+    },
+    {
+      "id": "task-1770226904731-m87hn86z9",
+      "title": "🚀 Kanban Auto-Publisher (continuous)",
+      "description": "Watch kanban-data.json for changes, validate, commit, and push to GitHub Pages automatically",
+      "status": "doing",
+      "priority": "medium",
+      "dueDate": null,
+      "tags": ["nike"],
+      "category": "General",
+      "createdAt": "2026-01-31T18:42:15.405Z",
+      "updatedAt": "2026-01-31T18:42:15.405Z",
+      "completedAt": null,
+      "assignee": "Nike",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 15,
+        "urgent": false,
+        "wasBlocked": false,
+        "tokenUsage": {
+          "total": 75000,
+          "today": 75000,
+          "estimated": 5000,
+          "lastUpdated": "2026-01-31T18:47:06.284Z"
+        }
+      },
+      "analysis": {
+        "automationType": "llm",
+        "automationReason": "Task involves data processing, research, or automated workflows that AI can handle independently",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "Parse task requirements",
+          "Execute automated workflow",
+          "Validate output",
+          "Report completion"
+        ],
+        "estimatedMinutes": 10,
+        "aiCapabilities": [
+          "Data aggregation",
+          "Report generation",
+          "Automated execution",
+          "Status monitoring"
+        ],
+        "humanRequirements": ["Review output", "Approve if needed"]
+      }
+    },
+    {
+      "id": "task-1770226904731-w4e50qsep",
+      "title": "NotebookLM Integration Plan",
+      "description": "Created plan for presentation generation workflow",
+      "status": "done",
+      "priority": "low",
+      "dueDate": null,
+      "tags": ["nike"],
+      "category": "General",
+      "createdAt": "2026-01-31T17:05:00Z",
+      "updatedAt": "2026-01-31T17:05:00Z",
+      "completedAt": "2026-01-31T17:05:00Z",
+      "assignee": "Nike",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 16,
+        "wasBlocked": false,
+        "tokenUsage": {
+          "total": 0,
+          "today": 0,
+          "estimated": 1000,
+          "lastUpdated": "2026-01-31T18:47:06.284Z"
+        }
+      },
+      "analysis": {
+        "automationType": "hybrid",
+        "automationReason": "AI can assist with research, drafting, and execution, but human review/approval needed",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "AI builds integration code",
+          "Human reviews and tests",
+          "Deploy to staging",
+          "Human approves production"
+        ],
+        "estimatedMinutes": 90,
+        "aiCapabilities": [
+          "Code generation",
+          "Research",
+          "Draft preparation",
+          "Testing assistance"
+        ],
+        "humanRequirements": ["Review", "Approval", "Final decision"]
+      }
+    },
+    {
+      "id": "task-1770226904731-b9rjjunr5",
+      "title": "Voice-to-Text Setup",
+      "description": "Installed Whisper for automatic voice message transcription",
+      "status": "done",
+      "priority": "low",
+      "dueDate": null,
+      "tags": ["nike"],
+      "category": "General",
+      "createdAt": "2026-01-31T17:22:00Z",
+      "updatedAt": "2026-01-31T17:22:00Z",
+      "completedAt": "2026-01-31T17:22:00Z",
+      "assignee": "Nike",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 17,
+        "wasBlocked": false,
+        "tokenUsage": {
+          "total": 0,
+          "today": 0,
+          "estimated": 1000,
+          "lastUpdated": "2026-01-31T18:47:06.284Z"
+        }
+      },
+      "analysis": {
+        "automationType": "llm",
+        "automationReason": "Task involves data processing, research, or automated workflows that AI can handle independently",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "Parse task requirements",
+          "Execute automated workflow",
+          "Validate output",
+          "Report completion"
+        ],
+        "estimatedMinutes": 10,
+        "aiCapabilities": [
+          "Data aggregation",
+          "Report generation",
+          "Automated execution",
+          "Status monitoring"
+        ],
+        "humanRequirements": ["Review output", "Approve if needed"]
+      }
+    },
+    {
+      "id": "task-1770226904731-lbnax48c7",
+      "title": "Document Skills Installation",
+      "description": "Installed docx, pdf, pptx, xlsx skills from Anthropic",
+      "status": "done",
+      "priority": "low",
+      "dueDate": null,
+      "tags": ["nike"],
+      "category": "General",
+      "createdAt": "2026-01-29T17:10:00Z",
+      "updatedAt": "2026-01-29T17:10:00Z",
+      "completedAt": "2026-01-29T17:10:00Z",
+      "assignee": "Nike",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 18,
+        "wasBlocked": false,
+        "tokenUsage": {
+          "total": 0,
+          "today": 0,
+          "estimated": 1000,
+          "lastUpdated": "2026-01-31T18:47:06.284Z"
+        }
+      },
+      "analysis": {
+        "automationType": "hybrid",
+        "automationReason": "AI can assist with research, drafting, and execution, but human review/approval needed",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "AI researches and drafts",
+          "Human reviews approach",
+          "AI executes with guidance",
+          "Human validates result"
+        ],
+        "estimatedMinutes": 45,
+        "aiCapabilities": [
+          "Code generation",
+          "Research",
+          "Draft preparation",
+          "Testing assistance"
+        ],
+        "humanRequirements": ["Review", "Approval", "Final decision"]
+      }
+    },
+    {
+      "id": "task-1770226904731-tkzaq96lg",
+      "title": "🤖 Autonomous Task Manager (24/7)",
+      "description": "Monitor ALL conversations, extract tasks, update kanban automatically, commit to GitHub",
+      "status": "doing",
+      "priority": "medium",
+      "dueDate": null,
+      "tags": ["nike"],
+      "category": "General",
+      "createdAt": "2026-01-31T18:41:58.796Z",
+      "updatedAt": "2026-01-31T18:41:58.796Z",
+      "completedAt": null,
+      "assignee": "Nike",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 19,
+        "urgent": false,
+        "wasBlocked": false,
+        "tokenUsage": {
+          "total": 25000,
+          "today": 25000,
+          "estimated": 10000,
+          "lastUpdated": "2026-01-31T18:47:06.284Z"
+        }
+      },
+      "analysis": {
+        "automationType": "llm",
+        "automationReason": "Task involves data processing, research, or automated workflows that AI can handle independently",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "Parse task requirements",
+          "Execute automated workflow",
+          "Validate output",
+          "Report completion"
+        ],
+        "estimatedMinutes": 10,
+        "aiCapabilities": [
+          "Data aggregation",
+          "Report generation",
+          "Automated execution",
+          "Status monitoring"
+        ],
+        "humanRequirements": ["Review output", "Approve if needed"]
+      }
+    },
+    {
+      "id": "task-1770226904731-8yx7iqgr0",
+      "title": "📧 Email Monitoring & Alerts",
+      "description": "Check for important emails, alert on BOTH WhatsApp AND Telegram for urgent items",
+      "status": "doing",
+      "priority": "medium",
+      "dueDate": null,
+      "tags": ["nike"],
+      "category": "General",
+      "createdAt": "2026-01-31T18:42:04.007Z",
+      "updatedAt": "2026-01-31T18:42:04.007Z",
+      "completedAt": null,
+      "assignee": "Nike",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 20,
+        "urgent": false,
+        "wasBlocked": false,
+        "tokenUsage": {
+          "total": 1500,
+          "today": 500,
+          "estimated": 1000,
+          "lastUpdated": "2026-01-31T18:47:06.284Z"
+        }
+      },
+      "analysis": {
+        "automationType": "llm",
+        "automationReason": "Task involves data processing, research, or automated workflows that AI can handle independently",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "Check data sources",
+          "Compare against thresholds",
+          "Generate alerts if needed",
+          "Log status"
+        ],
+        "estimatedMinutes": 2,
+        "aiCapabilities": [
+          "Data aggregation",
+          "Report generation",
+          "Automated execution",
+          "Status monitoring"
+        ],
+        "humanRequirements": ["Review output", "Approve if needed"]
+      }
+    },
+    {
+      "id": "task-1770226904731-b0absi4qn",
+      "title": "💓 Heartbeat Critical Reviews (every ~30 min)",
+      "description": "CRITICAL ACTION SESSION: Review ALL tasks, complete what I can, provide resources, make progress, use FULL token budget. Goal: Complete ≥1 task or significant progress on 2-3 tasks per heartbeat",
+      "status": "doing",
+      "priority": "medium",
+      "dueDate": null,
+      "tags": ["nike"],
+      "category": "General",
+      "createdAt": "2026-01-31T18:58:10.927Z",
+      "updatedAt": "2026-01-31T18:58:10.927Z",
+      "completedAt": null,
+      "assignee": "Nike",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 21,
+        "urgent": false,
+        "wasBlocked": false,
+        "tokenUsage": {
+          "total": 2000,
+          "today": 1000,
+          "estimated": 5000,
+          "lastUpdated": "2026-01-31T18:47:06.284Z"
+        }
+      },
+      "analysis": {
+        "automationType": "llm",
+        "automationReason": "Task involves data processing, research, or automated workflows that AI can handle independently",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "Parse task requirements",
+          "Execute automated workflow",
+          "Validate output",
+          "Report completion"
+        ],
+        "estimatedMinutes": 10,
+        "aiCapabilities": [
+          "Data aggregation",
+          "Report generation",
+          "Automated execution",
+          "Status monitoring"
+        ],
+        "humanRequirements": ["Review output", "Approve if needed"]
+      }
+    },
+    {
+      "id": "task-1770226904731-ytclynd0x",
+      "title": "Bill Payment - Copper Realty",
+      "description": "Pay bill for Copper Realty",
+      "status": "todo",
+      "priority": "medium",
+      "dueDate": null,
+      "tags": ["personal"],
+      "category": "Personal",
+      "createdAt": "2026-01-31T18:53:58.318Z",
+      "updatedAt": "2026-01-31T18:53:58.318Z",
+      "completedAt": null,
+      "assignee": "Arvind",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 22,
+        "urgent": false,
+        "wasBlocked": false
+      },
+      "analysis": {
+        "automationType": "human",
+        "automationReason": "Financial transaction requires human authorization",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "Log into banking/payment portal",
+          "Verify amount",
+          "Execute transaction",
+          "Save confirmation"
+        ],
+        "estimatedMinutes": 15,
+        "aiCapabilities": [
+          "Research assistance",
+          "Script preparation",
+          "Documentation",
+          "Follow-up reminders"
+        ],
+        "humanRequirements": ["Account access", "Transaction approval"]
+      }
+    },
+    {
+      "id": "task-1770226904731-bvoijeook",
+      "title": "Rent Payment - Kenneth",
+      "description": "Pay rent to Kenneth",
+      "status": "todo",
+      "priority": "medium",
+      "dueDate": null,
+      "tags": ["personal"],
+      "category": "Personal",
+      "createdAt": "2026-01-31T18:54:06.884Z",
+      "updatedAt": "2026-01-31T18:54:06.884Z",
+      "completedAt": null,
+      "assignee": "Arvind",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 23,
+        "urgent": false,
+        "wasBlocked": false
+      },
+      "analysis": {
+        "automationType": "human",
+        "automationReason": "Financial transaction requires human authorization",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "Log into banking/payment portal",
+          "Verify amount",
+          "Execute transaction",
+          "Save confirmation"
+        ],
+        "estimatedMinutes": 15,
+        "aiCapabilities": [
+          "Research assistance",
+          "Script preparation",
+          "Documentation",
+          "Follow-up reminders"
+        ],
+        "humanRequirements": ["Account access", "Transaction approval"]
+      }
+    },
+    {
+      "id": "task-1770226904731-mzg13mkwy",
+      "title": "Chase Check Deposit",
+      "description": "Deposit check at Chase",
+      "status": "todo",
+      "priority": "medium",
+      "dueDate": null,
+      "tags": ["personal"],
+      "category": "Personal",
+      "createdAt": "2026-01-31T18:54:13.207Z",
+      "updatedAt": "2026-01-31T18:54:13.207Z",
+      "completedAt": null,
+      "assignee": "Arvind",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 24,
+        "urgent": false,
+        "wasBlocked": false
+      },
+      "analysis": {
+        "automationType": "human",
+        "automationReason": "Financial transaction requires human authorization",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "Log into banking/payment portal",
+          "Verify amount",
+          "Execute transaction",
+          "Save confirmation"
+        ],
+        "estimatedMinutes": 15,
+        "aiCapabilities": [
+          "Research assistance",
+          "Script preparation",
+          "Documentation",
+          "Follow-up reminders"
+        ],
+        "humanRequirements": ["Direct action", "Verification"]
+      }
+    },
+    {
+      "id": "task-1770226904731-wtex4pg8c",
+      "title": "Copper Estate Checks",
+      "description": "Handle Copper Estate checks",
+      "status": "todo",
+      "priority": "medium",
+      "dueDate": null,
+      "tags": ["personal"],
+      "category": "Personal",
+      "createdAt": "2026-01-31T18:54:47.520Z",
+      "updatedAt": "2026-01-31T18:54:47.520Z",
+      "completedAt": null,
+      "assignee": "Arvind",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 25,
+        "urgent": false,
+        "wasBlocked": false
+      },
+      "analysis": {
+        "automationType": "hybrid",
+        "automationReason": "AI can assist with research, drafting, and execution, but human review/approval needed",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "AI researches and drafts",
+          "Human reviews approach",
+          "AI executes with guidance",
+          "Human validates result"
+        ],
+        "estimatedMinutes": 45,
+        "aiCapabilities": [
+          "Code generation",
+          "Research",
+          "Draft preparation",
+          "Testing assistance"
+        ],
+        "humanRequirements": ["Review", "Approval", "Final decision"]
+      }
+    },
+    {
+      "id": "task-1770226904731-41h9ioy6o",
+      "title": "Dental Payment",
+      "description": "Make dental payment",
+      "status": "todo",
+      "priority": "medium",
+      "dueDate": null,
+      "tags": ["personal"],
+      "category": "Personal",
+      "createdAt": "2026-01-31T18:54:48.186Z",
+      "updatedAt": "2026-01-31T18:54:48.186Z",
+      "completedAt": null,
+      "assignee": "Arvind",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 26,
+        "urgent": false,
+        "wasBlocked": false
+      },
+      "analysis": {
+        "automationType": "human",
+        "automationReason": "Financial transaction requires human authorization",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "Log into banking/payment portal",
+          "Verify amount",
+          "Execute transaction",
+          "Save confirmation"
+        ],
+        "estimatedMinutes": 15,
+        "aiCapabilities": [
+          "Research assistance",
+          "Script preparation",
+          "Documentation",
+          "Follow-up reminders"
+        ],
+        "humanRequirements": ["Account access", "Transaction approval"]
+      }
+    },
+    {
+      "id": "task-1770226904731-gtqkbqli3",
+      "title": "Send Insurance to Chase",
+      "description": "Send insurance documents to Chase",
+      "status": "done",
+      "priority": "low",
+      "dueDate": null,
+      "tags": ["personal"],
+      "category": "Personal",
+      "createdAt": "2026-02-01T13:41:43.597Z",
+      "updatedAt": "2026-02-01T13:41:43.597Z",
+      "completedAt": "2026-02-01T13:41:43.598Z",
+      "assignee": "Arvind",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 27,
+        "urgent": false,
+        "wasBlocked": false
+      },
+      "analysis": {
+        "automationType": "hybrid",
+        "automationReason": "AI can assist with research, drafting, and execution, but human review/approval needed",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "AI researches and drafts",
+          "Human reviews approach",
+          "AI executes with guidance",
+          "Human validates result"
+        ],
+        "estimatedMinutes": 45,
+        "aiCapabilities": [
+          "Code generation",
+          "Research",
+          "Draft preparation",
+          "Testing assistance"
+        ],
+        "humanRequirements": ["Review", "Approval", "Final decision"]
+      }
+    },
+    {
+      "id": "task-1770226904731-e5my5wbbw",
+      "title": "Mails Sorting",
+      "description": "Sort through accumulated mail",
+      "status": "todo",
+      "priority": "medium",
+      "dueDate": null,
+      "tags": ["personal"],
+      "category": "Personal",
+      "createdAt": "2026-01-31T18:54:49.446Z",
+      "updatedAt": "2026-01-31T18:54:49.446Z",
+      "completedAt": null,
+      "assignee": "Arvind",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 28,
+        "urgent": false,
+        "wasBlocked": false
+      },
+      "analysis": {
+        "automationType": "hybrid",
+        "automationReason": "AI can assist with research, drafting, and execution, but human review/approval needed",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "AI researches and drafts",
+          "Human reviews approach",
+          "AI executes with guidance",
+          "Human validates result"
+        ],
+        "estimatedMinutes": 45,
+        "aiCapabilities": [
+          "Code generation",
+          "Research",
+          "Draft preparation",
+          "Testing assistance"
+        ],
+        "humanRequirements": ["Review", "Approval", "Final decision"]
+      }
+    },
+    {
+      "id": "task-1770226904731-oskgf45bu",
+      "title": "NTTA Dispute",
+      "description": "Call NTTA dispute line: 972-229-8949. ✅ Call script prepared: scripts/ntta-dispute-call-script.md",
+      "status": "todo",
+      "priority": "medium",
+      "dueDate": null,
+      "tags": ["personal"],
+      "category": "Personal",
+      "createdAt": "2026-01-31T19:08:21.646Z",
+      "updatedAt": "2026-01-31T19:08:21.646Z",
+      "completedAt": null,
+      "assignee": "Arvind",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 29,
+        "urgent": false,
+        "wasBlocked": false
+      },
+      "analysis": {
+        "automationType": "human",
+        "automationReason": "Requires phone call - human interaction needed",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "Review task requirements",
+          "Take required action",
+          "Verify completion",
+          "Document results"
+        ],
+        "estimatedMinutes": 30,
+        "aiCapabilities": [
+          "Research assistance",
+          "Script preparation",
+          "Documentation",
+          "Follow-up reminders"
+        ],
+        "humanRequirements": ["Direct action", "Verification"]
+      }
+    },
+    {
+      "id": "task-1770226904731-ja0kc38w8",
+      "title": "Rate.com Mortgage Docs",
+      "description": "Login to Rate.com for Myers Lane mortgage documents (1098). ✅ Step-by-step guide created: guides/rate-com-1098-retrieval-guide.md",
+      "status": "todo",
+      "priority": "high",
+      "dueDate": null,
+      "tags": ["personal"],
+      "category": "Personal",
+      "createdAt": "2026-01-31T20:06:41.166Z",
+      "updatedAt": "2026-01-31T20:06:41.166Z",
+      "completedAt": null,
+      "assignee": "Arvind",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 30,
+        "urgent": true,
+        "wasBlocked": false
+      },
+      "analysis": {
+        "automationType": "human",
+        "automationReason": "Requires secure login with human credentials",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "Review task requirements",
+          "Take required action",
+          "Verify completion",
+          "Document results"
+        ],
+        "estimatedMinutes": 30,
+        "aiCapabilities": [
+          "Research assistance",
+          "Script preparation",
+          "Documentation",
+          "Follow-up reminders"
+        ],
+        "humanRequirements": ["Direct action", "Verification"]
+      }
+    },
+    {
+      "id": "task-1770226904731-f3hyb7rk5",
+      "title": "Gather All 1099s & W-2s",
+      "description": "Collect all tax documents for 2025 filing. ✅ Comprehensive checklist created: tax-documents-checklist-2025.md",
+      "status": "done",
+      "priority": "high",
+      "dueDate": null,
+      "tags": ["personal"],
+      "category": "Personal",
+      "createdAt": "2026-02-01T13:41:44.268Z",
+      "updatedAt": "2026-02-01T13:41:44.268Z",
+      "completedAt": "2026-02-01T13:41:44.268Z",
+      "assignee": "Arvind",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 31,
+        "urgent": true,
+        "wasBlocked": false
+      },
+      "analysis": {
+        "automationType": "hybrid",
+        "automationReason": "AI can assist with research, drafting, and execution, but human review/approval needed",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "AI researches and drafts",
+          "Human reviews approach",
+          "AI executes with guidance",
+          "Human validates result"
+        ],
+        "estimatedMinutes": 45,
+        "aiCapabilities": [
+          "Code generation",
+          "Research",
+          "Draft preparation",
+          "Testing assistance"
+        ],
+        "humanRequirements": ["Review", "Approval", "Final decision"]
+      }
+    },
+    {
+      "id": "task-1770226904731-co6orhr3n",
+      "title": "Canyon Drive Sale",
+      "description": "Follow up on Canyon Drive property sale (December?)",
+      "status": "todo",
+      "priority": "medium",
+      "dueDate": null,
+      "tags": ["property"],
+      "category": "Personal",
+      "createdAt": "2026-01-31T18:54:51.824Z",
+      "updatedAt": "2026-01-31T18:54:51.824Z",
+      "completedAt": null,
+      "assignee": "Arvind",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 32,
+        "urgent": false,
+        "wasBlocked": false
+      },
+      "analysis": {
+        "automationType": "hybrid",
+        "automationReason": "AI can assist with research, drafting, and execution, but human review/approval needed",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "AI researches and drafts",
+          "Human reviews approach",
+          "AI executes with guidance",
+          "Human validates result"
+        ],
+        "estimatedMinutes": 45,
+        "aiCapabilities": [
+          "Code generation",
+          "Research",
+          "Draft preparation",
+          "Testing assistance"
+        ],
+        "humanRequirements": ["Review", "Approval", "Final decision"]
+      }
+    },
+    {
+      "id": "task-1770226904731-sxet9asbf",
+      "title": "Salary to Vivin",
+      "description": "Process salary payment to Vivia",
+      "status": "doing",
+      "priority": "medium",
+      "dueDate": null,
+      "tags": ["personal"],
+      "category": "Personal",
+      "createdAt": "2026-01-31T18:54:52.467Z",
+      "updatedAt": "2026-02-04T17:44:24.830Z",
+      "completedAt": null,
+      "assignee": "Arvind",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 33,
+        "urgent": false,
+        "wasBlocked": false
+      },
+      "analysis": {
+        "automationType": "human",
+        "automationReason": "Financial transaction requires human authorization",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "Review task requirements",
+          "Take required action",
+          "Verify completion",
+          "Document results"
+        ],
+        "estimatedMinutes": 30,
+        "aiCapabilities": [
+          "Research assistance",
+          "Script preparation",
+          "Documentation",
+          "Follow-up reminders"
+        ],
+        "humanRequirements": ["Direct action", "Verification"]
+      }
+    },
+    {
+      "id": "task-1770226904731-96zzssdg6",
+      "title": "Finance & Salary Review",
+      "description": "Review finance and salary situation",
+      "status": "todo",
+      "priority": "medium",
+      "dueDate": null,
+      "tags": ["personal"],
+      "category": "Personal",
+      "createdAt": "2026-01-31T18:54:53.107Z",
+      "updatedAt": "2026-01-31T18:54:53.107Z",
+      "completedAt": null,
+      "assignee": "Arvind",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 34,
+        "urgent": false,
+        "wasBlocked": false
+      },
+      "analysis": {
+        "automationType": "hybrid",
+        "automationReason": "AI can assist with research, drafting, and execution, but human review/approval needed",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "AI researches and drafts",
+          "Human reviews approach",
+          "AI executes with guidance",
+          "Human validates result"
+        ],
+        "estimatedMinutes": 45,
+        "aiCapabilities": [
+          "Code generation",
+          "Research",
+          "Draft preparation",
+          "Testing assistance"
+        ],
+        "humanRequirements": ["Review", "Approval", "Final decision"]
+      }
+    },
+    {
+      "id": "task-1770226904732-1yq6vvfjr",
+      "title": "Harvard Business Review Call",
+      "description": "Comprehensive prep guide created at tasks/hbr-call-prep.md. Includes contact info, pricing, negotiation scripts, alternatives. Ready to call customercare@hbr.org or use phone.",
+      "status": "todo",
+      "priority": "medium",
+      "dueDate": null,
+      "tags": ["personal"],
+      "category": "Personal",
+      "createdAt": "2026-02-01T13:41:44.946Z",
+      "updatedAt": "2026-02-01T13:41:44.946Z",
+      "completedAt": null,
+      "assignee": "Arvind",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 35,
+        "urgent": false,
+        "wasBlocked": false
+      },
+      "analysis": {
+        "automationType": "human",
+        "automationReason": "Requires phone call - human interaction needed",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "Prepare talking points",
+          "Make phone call",
+          "Document outcome",
+          "Follow up if needed"
+        ],
+        "estimatedMinutes": 30,
+        "aiCapabilities": [
+          "Research assistance",
+          "Script preparation",
+          "Documentation",
+          "Follow-up reminders"
+        ],
+        "humanRequirements": ["Phone conversation", "Decision making"]
+      }
+    },
+    {
+      "id": "task-1770226904732-gxh54oind",
+      "title": "SHC Advantages - Inn",
+      "description": "Follow up on SHC Advantages Inn matter",
+      "status": "todo",
+      "priority": "medium",
+      "dueDate": null,
+      "tags": ["personal"],
+      "category": "Personal",
+      "createdAt": "2026-01-31T18:54:54.330Z",
+      "updatedAt": "2026-01-31T18:54:54.330Z",
+      "completedAt": null,
+      "assignee": "Arvind",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 36,
+        "urgent": false,
+        "wasBlocked": false
+      },
+      "analysis": {
+        "automationType": "hybrid",
+        "automationReason": "AI can assist with research, drafting, and execution, but human review/approval needed",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "AI researches and drafts",
+          "Human reviews approach",
+          "AI executes with guidance",
+          "Human validates result"
+        ],
+        "estimatedMinutes": 45,
+        "aiCapabilities": [
+          "Code generation",
+          "Research",
+          "Draft preparation",
+          "Testing assistance"
+        ],
+        "humanRequirements": ["Review", "Approval", "Final decision"]
+      }
+    },
+    {
+      "id": "task-1770226904732-mbcso5x6q",
+      "title": "Crane St - Jine",
+      "description": "Follow up on Crane Street with Jine",
+      "status": "todo",
+      "priority": "medium",
+      "dueDate": null,
+      "tags": ["property"],
+      "category": "Personal",
+      "createdAt": "2026-01-31T18:54:54.921Z",
+      "updatedAt": "2026-01-31T18:54:54.921Z",
+      "completedAt": null,
+      "assignee": "Arvind",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 37,
+        "urgent": false,
+        "wasBlocked": false
+      },
+      "analysis": {
+        "automationType": "hybrid",
+        "automationReason": "AI can assist with research, drafting, and execution, but human review/approval needed",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "AI researches and drafts",
+          "Human reviews approach",
+          "AI executes with guidance",
+          "Human validates result"
+        ],
+        "estimatedMinutes": 45,
+        "aiCapabilities": [
+          "Code generation",
+          "Research",
+          "Draft preparation",
+          "Testing assistance"
+        ],
+        "humanRequirements": ["Review", "Approval", "Final decision"]
+      }
+    },
+    {
+      "id": "task-1770226904732-ubyme1lgd",
+      "title": "Rivvi Partnership - LinkedIn Connect",
+      "description": "Connect with Nathan Hayman on LinkedIn, schedule follow-up demo. Rivvi = B2B voice AI, 50-60k calls/mo. ✅ LinkedIn connection message drafted: drafts/rivvi-linkedin-connection.md",
+      "status": "todo",
+      "priority": "medium",
+      "dueDate": null,
+      "tags": ["copper"],
+      "category": "CopperAI",
+      "createdAt": "2026-01-31T19:01:29.858Z",
+      "updatedAt": "2026-01-31T19:01:29.858Z",
+      "completedAt": null,
+      "assignee": "Arvind",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 38,
+        "urgent": false,
+        "wasBlocked": false
+      },
+      "analysis": {
+        "automationType": "hybrid",
+        "automationReason": "AI can assist with research, drafting, and execution, but human review/approval needed",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "AI researches and drafts",
+          "Human reviews approach",
+          "AI executes with guidance",
+          "Human validates result"
+        ],
+        "estimatedMinutes": 45,
+        "aiCapabilities": [
+          "Code generation",
+          "Research",
+          "Draft preparation",
+          "Testing assistance"
+        ],
+        "humanRequirements": ["Review", "Approval", "Final decision"]
+      }
+    },
+    {
+      "id": "task-1770226904732-4jjfj6r8y",
+      "title": "Darwin Vinolas - Friday Meeting",
+      "description": "Meeting Friday to finalize partnership & investment. Give Arbitrinity access. Review iCare SOCs. ✅ Meeting prep doc created: meetings/darwin-vinolas-friday-prep.md",
+      "status": "todo",
+      "priority": "high",
+      "dueDate": null,
+      "tags": ["copper"],
+      "category": "CopperAI",
+      "createdAt": "2026-01-31T19:08:15.164Z",
+      "updatedAt": "2026-01-31T19:08:15.164Z",
+      "completedAt": null,
+      "assignee": "Arvind",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 39,
+        "urgent": true,
+        "wasBlocked": false
+      },
+      "analysis": {
+        "automationType": "human",
+        "automationReason": "In-person or video meeting required",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": ["Prepare agenda/materials", "Attend meeting", "Take notes", "Send follow-up"],
+        "estimatedMinutes": 60,
+        "aiCapabilities": [
+          "Research assistance",
+          "Script preparation",
+          "Documentation",
+          "Follow-up reminders"
+        ],
+        "humanRequirements": ["Attendance", "Discussion participation"]
+      }
+    },
+    {
+      "id": "task-1770226904732-sa6ejr298",
+      "title": "Colorado Prospect Follow-up",
+      "description": "Filipino-owned agency, /mo current spend, target /mo. Post-demo follow-up if demo went well. ✅ Follow-up email drafted: drafts/colorado-prospect-followup.md",
+      "status": "todo",
+      "priority": "medium",
+      "dueDate": null,
+      "tags": ["copper"],
+      "category": "CopperAI",
+      "createdAt": "2026-01-31T19:01:34.671Z",
+      "updatedAt": "2026-01-31T19:01:34.671Z",
+      "completedAt": null,
+      "assignee": "Arvind",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 40,
+        "urgent": false,
+        "wasBlocked": false
+      },
+      "analysis": {
+        "automationType": "hybrid",
+        "automationReason": "AI can assist with research, drafting, and execution, but human review/approval needed",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "AI researches and drafts",
+          "Human reviews approach",
+          "AI executes with guidance",
+          "Human validates result"
+        ],
+        "estimatedMinutes": 45,
+        "aiCapabilities": [
+          "Code generation",
+          "Research",
+          "Draft preparation",
+          "Testing assistance"
+        ],
+        "humanRequirements": ["Review", "Approval", "Final decision"]
+      }
+    },
+    {
+      "id": "task-1770226904732-wpzrb2stw",
+      "title": "Kenneth - Legal App",
+      "description": "Create legal app for Kenneth. Define scope, timeline, deliverables",
+      "status": "todo",
+      "priority": "medium",
+      "dueDate": null,
+      "tags": ["personal"],
+      "category": "Personal",
+      "createdAt": "2026-01-31T18:54:57.888Z",
+      "updatedAt": "2026-01-31T18:54:57.888Z",
+      "completedAt": null,
+      "assignee": "Arvind",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 41,
+        "urgent": false,
+        "wasBlocked": false
+      },
+      "analysis": {
+        "automationType": "hybrid",
+        "automationReason": "AI can assist with research, drafting, and execution, but human review/approval needed",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "AI researches and drafts",
+          "Human reviews approach",
+          "AI executes with guidance",
+          "Human validates result"
+        ],
+        "estimatedMinutes": 45,
+        "aiCapabilities": [
+          "Code generation",
+          "Research",
+          "Draft preparation",
+          "Testing assistance"
+        ],
+        "humanRequirements": ["Review", "Approval", "Final decision"]
+      }
+    },
+    {
+      "id": "task-1770226904732-xx710o8p3",
+      "title": "Kenneth - Highline Money",
+      "description": "Get commitment/payment from Kenneth for Highline money owed",
+      "status": "todo",
+      "priority": "medium",
+      "dueDate": null,
+      "tags": ["personal"],
+      "category": "Personal",
+      "createdAt": "2026-01-31T18:54:58.481Z",
+      "updatedAt": "2026-01-31T18:54:58.481Z",
+      "completedAt": null,
+      "assignee": "Arvind",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 42,
+        "urgent": false,
+        "wasBlocked": false
+      },
+      "analysis": {
+        "automationType": "human",
+        "automationReason": "Financial transaction requires human authorization",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "Review task requirements",
+          "Take required action",
+          "Verify completion",
+          "Document results"
+        ],
+        "estimatedMinutes": 30,
+        "aiCapabilities": [
+          "Research assistance",
+          "Script preparation",
+          "Documentation",
+          "Follow-up reminders"
+        ],
+        "humanRequirements": ["Direct action", "Verification"]
+      }
+    },
+    {
+      "id": "task-1770226904732-0v5kd45m1",
+      "title": "Kenneth - Collections Discussion",
+      "description": "Discuss collections from other people. Who owes what?",
+      "status": "todo",
+      "priority": "medium",
+      "dueDate": null,
+      "tags": ["personal"],
+      "category": "Personal",
+      "createdAt": "2026-01-31T18:54:59.101Z",
+      "updatedAt": "2026-01-31T18:54:59.101Z",
+      "completedAt": null,
+      "assignee": "Arvind",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 43,
+        "urgent": false,
+        "wasBlocked": false
+      },
+      "analysis": {
+        "automationType": "hybrid",
+        "automationReason": "AI can assist with research, drafting, and execution, but human review/approval needed",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "AI researches and drafts",
+          "Human reviews approach",
+          "AI executes with guidance",
+          "Human validates result"
+        ],
+        "estimatedMinutes": 45,
+        "aiCapabilities": [
+          "Code generation",
+          "Research",
+          "Draft preparation",
+          "Testing assistance"
+        ],
+        "humanRequirements": ["Review", "Approval", "Final decision"]
+      }
+    },
+    {
+      "id": "task-1770226904732-1vbs0cfta",
+      "title": "Kwon Payment",
+      "description": "Determine amount and timing for payment to Kwon",
+      "status": "todo",
+      "priority": "medium",
+      "dueDate": null,
+      "tags": ["personal"],
+      "category": "Personal",
+      "createdAt": "2026-01-31T18:54:59.675Z",
+      "updatedAt": "2026-01-31T18:54:59.675Z",
+      "completedAt": null,
+      "assignee": "Arvind",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 44,
+        "urgent": false,
+        "wasBlocked": false
+      },
+      "analysis": {
+        "automationType": "human",
+        "automationReason": "Financial transaction requires human authorization",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "Log into banking/payment portal",
+          "Verify amount",
+          "Execute transaction",
+          "Save confirmation"
+        ],
+        "estimatedMinutes": 15,
+        "aiCapabilities": [
+          "Research assistance",
+          "Script preparation",
+          "Documentation",
+          "Follow-up reminders"
+        ],
+        "humanRequirements": ["Account access", "Transaction approval"]
+      }
+    },
+    {
+      "id": "task-1770226904732-ml9sim1dw",
+      "title": "Browser Extension Setup",
+      "description": "Set up browser extension for Google Drive access",
+      "status": "todo",
+      "priority": "medium",
+      "dueDate": null,
+      "tags": ["nike"],
+      "category": "General",
+      "createdAt": "2026-01-31T18:55:00.290Z",
+      "updatedAt": "2026-01-31T18:55:00.290Z",
+      "completedAt": null,
+      "assignee": "Nike",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 45,
+        "urgent": false,
+        "wasBlocked": false
+      },
+      "analysis": {
+        "automationType": "hybrid",
+        "automationReason": "AI can assist with research, drafting, and execution, but human review/approval needed",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "AI researches and drafts",
+          "Human reviews approach",
+          "AI executes with guidance",
+          "Human validates result"
+        ],
+        "estimatedMinutes": 45,
+        "aiCapabilities": [
+          "Code generation",
+          "Research",
+          "Draft preparation",
+          "Testing assistance"
+        ],
+        "humanRequirements": ["Review", "Approval", "Final decision"]
+      }
+    },
+    {
+      "id": "task-1770226904732-ck89872fk",
+      "title": "Copper AI Telegram Bot",
+      "description": "✅ RESEARCH COMPLETE. Comprehensive guide at copper-ai/telegram-bot-research.md. Includes: Telegraf setup, voice message flow, lead tracking, security/HIPAA, deployment options. MVP can be built in 1-2 days. Est cost: $20-30/month.",
+      "status": "todo",
+      "priority": "medium",
+      "dueDate": null,
+      "tags": ["nike"],
+      "category": "General",
+      "createdAt": "2026-02-01T13:41:46.273Z",
+      "updatedAt": "2026-02-01T13:41:46.273Z",
+      "completedAt": null,
+      "assignee": "Nike",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 46,
+        "urgent": false,
+        "wasBlocked": false
+      },
+      "analysis": {
+        "automationType": "llm",
+        "automationReason": "Task involves data processing, research, or automated workflows that AI can handle independently",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "Parse task requirements",
+          "Execute automated workflow",
+          "Validate output",
+          "Report completion"
+        ],
+        "estimatedMinutes": 10,
+        "aiCapabilities": [
+          "Data aggregation",
+          "Report generation",
+          "Automated execution",
+          "Status monitoring"
+        ],
+        "humanRequirements": ["Review output", "Approve if needed"]
+      }
+    },
+    {
+      "id": "task-1770226904732-2p0268yhq",
+      "title": "Competitive Landscape Research - COMPLETED",
+      "description": "Comprehensive analysis of Copper AI competitors (Vapi, Bland, Dialora, Retell, etc.), home health AI trends, market size, and strategic recommendations. Report: research/copper-ai-competitive-landscape-jan-31-2026.md",
+      "status": "done",
+      "priority": "low",
+      "dueDate": null,
+      "tags": ["copper", "nike"],
+      "category": "CopperAI",
+      "createdAt": "2026-01-31T19:05:55.553Z",
+      "updatedAt": "2026-01-31T19:05:55.553Z",
+      "completedAt": "2026-01-31T19:05:55.553Z",
+      "assignee": "Nike",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 47,
+        "urgent": false,
+        "wasBlocked": false
+      },
+      "analysis": {
+        "automationType": "llm",
+        "automationReason": "Task involves data processing, research, or automated workflows that AI can handle independently",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "Define research scope",
+          "Gather information",
+          "Analyze findings",
+          "Compile report"
+        ],
+        "estimatedMinutes": 15,
+        "aiCapabilities": [
+          "Data aggregation",
+          "Report generation",
+          "Automated execution",
+          "Status monitoring"
+        ],
+        "humanRequirements": ["Review output", "Approve if needed"]
+      }
+    },
+    {
+      "id": "task-1770226904732-nurq9lwzk",
+      "title": "Payment & Bill Tracking System",
+      "description": "Created centralized payment tracker for all bills (Copper Realty, Kenneth rent, Chase, dental, Vivia salary, Kwon). File: finance/payment-tracker-2026.csv. Covers tasks #22-27, 33, 44.",
+      "status": "done",
+      "priority": "low",
+      "dueDate": null,
+      "tags": ["nike"],
+      "category": "General",
+      "createdAt": "2026-01-31T19:08:33.631Z",
+      "updatedAt": "2026-01-31T19:08:33.631Z",
+      "completedAt": "2026-01-31T19:08:33.631Z",
+      "assignee": "Nike",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 48,
+        "urgent": false,
+        "wasBlocked": false
+      },
+      "analysis": {
+        "automationType": "human",
+        "automationReason": "Financial transaction requires human authorization",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "Log into banking/payment portal",
+          "Verify amount",
+          "Execute transaction",
+          "Save confirmation"
+        ],
+        "estimatedMinutes": 15,
+        "aiCapabilities": [
+          "Research assistance",
+          "Script preparation",
+          "Documentation",
+          "Follow-up reminders"
+        ],
+        "humanRequirements": ["Account access", "Transaction approval"]
+      }
+    },
+    {
+      "id": "task-1770226904732-9djbdpbc1",
+      "title": "iCare vs. Dialora Sales Comparison",
+      "description": "Comprehensive sales comparison page for competitive positioning. Covers vertical specialization, integrations, HIPAA compliance, EVV, pricing, objection handling. File: sales/icare-vs-dialora-comparison.md",
+      "status": "done",
+      "priority": "low",
+      "dueDate": null,
+      "tags": ["copper", "nike"],
+      "category": "CopperAI",
+      "createdAt": "2026-01-31T20:06:47.952Z",
+      "updatedAt": "2026-01-31T20:06:47.952Z",
+      "completedAt": "2026-01-31T20:06:47.952Z",
+      "assignee": "Nike",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 49,
+        "urgent": false,
+        "wasBlocked": false
+      },
+      "analysis": {
+        "automationType": "hybrid",
+        "automationReason": "AI can assist with research, drafting, and execution, but human review/approval needed",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "AI researches and drafts",
+          "Human reviews approach",
+          "AI executes with guidance",
+          "Human validates result"
+        ],
+        "estimatedMinutes": 45,
+        "aiCapabilities": [
+          "Code generation",
+          "Research",
+          "Draft preparation",
+          "Testing assistance"
+        ],
+        "humanRequirements": ["Review", "Approval", "Final decision"]
+      }
+    },
+    {
+      "id": "task-1770226904732-588qiquou",
+      "title": "iCare SOC Documentation Template",
+      "description": "Comprehensive SOC (System and Organization Controls) documentation template for investor/partner reviews. Covers HIPAA compliance, security policies, incident response, DR plan, vendor management. File: compliance/icare-soc-documentation-template.md. For Darwin meeting Friday.",
+      "status": "done",
+      "priority": "low",
+      "dueDate": null,
+      "tags": ["copper", "nike"],
+      "category": "CopperAI",
+      "createdAt": "2026-01-31T20:06:54.666Z",
+      "updatedAt": "2026-01-31T20:06:54.666Z",
+      "completedAt": "2026-01-31T20:06:54.666Z",
+      "assignee": "Nike",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 50,
+        "urgent": false,
+        "wasBlocked": false
+      },
+      "analysis": {
+        "automationType": "human",
+        "automationReason": "In-person or video meeting required",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "Review task requirements",
+          "Take required action",
+          "Verify completion",
+          "Document results"
+        ],
+        "estimatedMinutes": 30,
+        "aiCapabilities": [
+          "Research assistance",
+          "Script preparation",
+          "Documentation",
+          "Follow-up reminders"
+        ],
+        "humanRequirements": ["Direct action", "Verification"]
+      }
+    },
+    {
+      "id": "task-1770226904732-wkcdy5iva",
+      "title": "Caregiver No-Show Calculator (Lead Gen Tool)",
+      "description": "Built interactive calculator to show agencies how much they lose to no-shows. ROI tool for sales. Ready to deploy on GitHub Pages. Files: tools/caregiver-noshow-calculator.html + README",
+      "status": "done",
+      "priority": "low",
+      "dueDate": null,
+      "tags": ["copper", "nike"],
+      "category": "CopperAI",
+      "createdAt": "2026-01-31T21:07:56.154Z",
+      "updatedAt": "2026-01-31T21:07:56.154Z",
+      "completedAt": "2026-01-31T21:07:56.154Z",
+      "assignee": "Nike",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 51,
+        "urgent": false,
+        "wasBlocked": false
+      },
+      "analysis": {
+        "automationType": "hybrid",
+        "automationReason": "AI can assist with research, drafting, and execution, but human review/approval needed",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "AI researches and drafts",
+          "Human reviews approach",
+          "AI executes with guidance",
+          "Human validates result"
+        ],
+        "estimatedMinutes": 45,
+        "aiCapabilities": [
+          "Code generation",
+          "Research",
+          "Draft preparation",
+          "Testing assistance"
+        ],
+        "humanRequirements": ["Review", "Approval", "Final decision"]
+      }
+    },
+    {
+      "id": "task-1770226904732-o1fnpn7e9",
+      "title": "Sync Cursor/Claude directory to server",
+      "description": "Synced 167MB of Cursor data (462 chat conversations, 19 projects) from Mac to server. Created search tools and documentation.",
+      "status": "done",
+      "priority": "low",
+      "dueDate": null,
+      "tags": ["technical", "nike"],
+      "category": "General",
+      "createdAt": "2026-02-01T13:41:13.356Z",
+      "updatedAt": "2026-02-01T13:41:13.356Z",
+      "completedAt": "2026-02-01T13:41:13.356Z",
+      "assignee": "Nike",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 52,
+        "urgent": false,
+        "wasBlocked": false
+      },
+      "analysis": {
+        "automationType": "llm",
+        "automationReason": "Task involves data processing, research, or automated workflows that AI can handle independently",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "Parse task requirements",
+          "Execute automated workflow",
+          "Validate output",
+          "Report completion"
+        ],
+        "estimatedMinutes": 10,
+        "aiCapabilities": [
+          "Data aggregation",
+          "Report generation",
+          "Automated execution",
+          "Status monitoring"
+        ],
+        "humanRequirements": ["Review output", "Approve if needed"]
+      }
+    },
+    {
+      "id": "task-1770226904732-v1ay3xbp2",
+      "title": "Voice/TTS for Copper AI - Research",
+      "description": "✅ COMPLETE. Full implementation guide at copper-ai/voice-tts-research.md. Recommends ElevenLabs for quality. Includes cost analysis, code samples, comparison with Retell AI. Build vs buy strategy outlined.",
+      "status": "done",
+      "priority": "low",
+      "dueDate": null,
+      "tags": ["copper", "nike"],
+      "category": "CopperAI",
+      "createdAt": "2026-02-01T13:41:46.894Z",
+      "updatedAt": "2026-02-01T13:41:46.894Z",
+      "completedAt": "2026-02-01T13:41:46.894Z",
+      "assignee": "Nike",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 53,
+        "urgent": false,
+        "wasBlocked": false
+      },
+      "analysis": {
+        "automationType": "human",
+        "automationReason": "Purchase decision requires human judgment",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "Review task requirements",
+          "Take required action",
+          "Verify completion",
+          "Document results"
+        ],
+        "estimatedMinutes": 30,
+        "aiCapabilities": [
+          "Research assistance",
+          "Script preparation",
+          "Documentation",
+          "Follow-up reminders"
+        ],
+        "humanRequirements": ["Direct action", "Verification"]
+      }
+    },
+    {
+      "id": "task-1770226904732-qqvgezu4z",
+      "title": "Memex P1.1: Research Plaud.AI export options",
+      "description": "✅ RESEARCH COMPLETE! Found official Plaud Developer Platform with APIs (docs.plaud.ai). Can use official API instead of scraper - 50% faster! Waiting for Arvind to check if personal account has API access. Full findings: memex/scraper/research-findings.md",
+      "status": "done",
+      "priority": "low",
+      "dueDate": null,
+      "tags": ["memex", "nike"],
+      "category": "General",
+      "createdAt": "2026-02-01T13:58:52.138Z",
+      "updatedAt": "2026-02-01T13:58:52.138Z",
+      "completedAt": "2026-02-01T13:58:52.138Z",
+      "assignee": "Nike",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 54,
+        "urgent": false,
+        "wasBlocked": false
+      },
+      "analysis": {
+        "automationType": "blocked",
+        "automationReason": "Task is waiting on external dependency or approval",
+        "isBlocked": true,
+        "blockageReason": "Waiting on dependency",
+        "steps": ["Identify blocker", "Follow up on dependency", "Resume when unblocked"],
+        "estimatedMinutes": 15,
+        "aiCapabilities": ["Status tracking", "Follow-up reminders"],
+        "humanRequirements": ["Resolve dependency", "Make decision"]
+      }
+    },
+    {
+      "id": "task-1770226904732-kkjfgezzr",
+      "title": "Memex P1.2: Build Playwright scraper (TDD)",
+      "description": "✅ 35% COMPLETE - Scraper skeleton built (90%), 14 TDD tests written, SETUP-GUIDE.md created for Arvind. ⏸️ BLOCKED: Awaiting HTML selectors from Plaud.AI (Arvind needs 15 mins to follow SETUP-GUIDE.md). Files: plaud_scraper.py (277 lines), test_plaud_scraper.py (14 tests), docs complete. Next: Arvind provides selectors → Nike completes scraper (30 mins) → Test with 1 file → Scale to 2,500 files.",
+      "status": "doing",
+      "priority": "medium",
+      "dueDate": null,
+      "tags": ["memex", "nike"],
+      "category": "General",
+      "createdAt": "2026-02-01T14:56:09.297Z",
+      "updatedAt": "2026-02-01T14:56:09.297Z",
+      "completedAt": null,
+      "assignee": "Nike",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 55,
+        "urgent": false,
+        "wasBlocked": false
+      },
+      "analysis": {
+        "automationType": "blocked",
+        "automationReason": "Task is waiting on external dependency or approval",
+        "isBlocked": true,
+        "blockageReason": "Awaiting external input or response",
+        "steps": ["Identify blocker", "Follow up on dependency", "Resume when unblocked"],
+        "estimatedMinutes": 15,
+        "aiCapabilities": ["Status tracking", "Follow-up reminders"],
+        "humanRequirements": ["Resolve dependency", "Make decision"]
+      }
+    },
+    {
+      "id": "task-1770226904732-t6wxj2uz4",
+      "title": "Memex P1.3: Test scraper with 100 files",
+      "description": "Run scraper on first 100 files to validate: 1) Downloads work, 2) File naming correct (YYYY-MM-DD_title.ext), 3) No rate limiting issues, 4) Error handling works. DEPENDENCY: P1.2",
+      "status": "todo",
+      "priority": "medium",
+      "dueDate": null,
+      "tags": ["memex", "nike"],
+      "category": "General",
+      "createdAt": "2026-02-01T13:47:12.131Z",
+      "updatedAt": "2026-02-01T13:47:12.131Z",
+      "completedAt": null,
+      "assignee": "Nike",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 56,
+        "urgent": false,
+        "wasBlocked": false
+      },
+      "analysis": {
+        "automationType": "hybrid",
+        "automationReason": "AI can assist with research, drafting, and execution, but human review/approval needed",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "AI researches and drafts",
+          "Human reviews approach",
+          "AI executes with guidance",
+          "Human validates result"
+        ],
+        "estimatedMinutes": 45,
+        "aiCapabilities": [
+          "Code generation",
+          "Research",
+          "Draft preparation",
+          "Testing assistance"
+        ],
+        "humanRequirements": ["Review", "Approval", "Final decision"]
+      }
+    },
+    {
+      "id": "task-1770226904732-kncqjjvf1",
+      "title": "Memex P1.4: Full export (2,500 files)",
+      "description": "Run production scraper to download all 2,500+ transcripts and audio files. Estimate: 6-12 hours runtime. Monitor for failures, resume if needed. DEPENDENCY: P1.3",
+      "status": "todo",
+      "priority": "medium",
+      "dueDate": null,
+      "tags": ["memex", "nike"],
+      "category": "General",
+      "createdAt": "2026-02-01T13:47:12.790Z",
+      "updatedAt": "2026-02-01T13:47:12.790Z",
+      "completedAt": null,
+      "assignee": "Nike",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 57,
+        "urgent": false,
+        "wasBlocked": false
+      },
+      "analysis": {
+        "automationType": "llm",
+        "automationReason": "Task involves data processing, research, or automated workflows that AI can handle independently",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "Parse task requirements",
+          "Execute automated workflow",
+          "Validate output",
+          "Report completion"
+        ],
+        "estimatedMinutes": 10,
+        "aiCapabilities": [
+          "Data aggregation",
+          "Report generation",
+          "Automated execution",
+          "Status monitoring"
+        ],
+        "humanRequirements": ["Review output", "Approve if needed"]
+      }
+    },
+    {
+      "id": "task-1770226904732-prl3v1pu0",
+      "title": "Memex P2.1: Set up ChromaDB local instance",
+      "description": "✅ COMPLETE. ChromaDB setup with persistent storage, full CRUD operations, metadata filtering. File: historian/vector_store.py (161 lines, 10 tests). Production-ready.",
+      "status": "done",
+      "priority": "low",
+      "dueDate": null,
+      "tags": ["memex", "nike"],
+      "category": "General",
+      "createdAt": "2026-02-01T16:00:38.678Z",
+      "updatedAt": "2026-02-01T16:00:38.678Z",
+      "completedAt": "2026-02-01T16:00:38.678Z",
+      "assignee": "Nike",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 58,
+        "urgent": false,
+        "wasBlocked": false
+      },
+      "analysis": {
+        "automationType": "hybrid",
+        "automationReason": "AI can assist with research, drafting, and execution, but human review/approval needed",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "AI researches and drafts",
+          "Human reviews approach",
+          "AI executes with guidance",
+          "Human validates result"
+        ],
+        "estimatedMinutes": 45,
+        "aiCapabilities": [
+          "Code generation",
+          "Research",
+          "Draft preparation",
+          "Testing assistance"
+        ],
+        "humanRequirements": ["Review", "Approval", "Final decision"]
+      }
+    },
+    {
+      "id": "task-1770226904732-8u01uphw9",
+      "title": "Memex P2.2: Build ingestion pipeline (TDD)",
+      "description": "✅ COMPLETE. Full ingestion pipeline: parse → chunk → embed → store. Batch processing, progress tracking, error handling. Files: text_processor.py (198 lines), embeddings.py (122 lines), ingest.py (189 lines). 9 TDD tests. Production-ready.",
+      "status": "done",
+      "priority": "low",
+      "dueDate": null,
+      "tags": ["memex", "nike"],
+      "category": "General",
+      "createdAt": "2026-02-01T16:00:38.678Z",
+      "updatedAt": "2026-02-01T16:00:38.678Z",
+      "completedAt": "2026-02-01T16:00:38.678Z",
+      "assignee": "Nike",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 59,
+        "urgent": false,
+        "wasBlocked": false
+      },
+      "analysis": {
+        "automationType": "hybrid",
+        "automationReason": "AI can assist with research, drafting, and execution, but human review/approval needed",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "AI researches and drafts",
+          "Human reviews approach",
+          "AI executes with guidance",
+          "Human validates result"
+        ],
+        "estimatedMinutes": 45,
+        "aiCapabilities": [
+          "Code generation",
+          "Research",
+          "Draft preparation",
+          "Testing assistance"
+        ],
+        "humanRequirements": ["Review", "Approval", "Final decision"]
+      }
+    },
+    {
+      "id": "task-1770226904732-h2w7spc5m",
+      "title": "Memex P2.3: Implement Recency Ranker",
+      "description": "✅ COMPLETE. THE SECRET SAUCE! Recency ranking: final_score = (similarity × 0.7) + (recency × 0.3). Exponential decay (5%/day). Makes recent memories rank higher. File: recency_ranker.py (240 lines, 15 tests). Includes ranking explanation generator. Production-ready.",
+      "status": "done",
+      "priority": "low",
+      "dueDate": null,
+      "tags": ["memex", "nike"],
+      "category": "General",
+      "createdAt": "2026-02-01T16:00:38.678Z",
+      "updatedAt": "2026-02-01T16:00:38.678Z",
+      "completedAt": "2026-02-01T16:00:38.678Z",
+      "assignee": "Nike",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 60,
+        "urgent": false,
+        "wasBlocked": false
+      },
+      "analysis": {
+        "automationType": "hybrid",
+        "automationReason": "AI can assist with research, drafting, and execution, but human review/approval needed",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "AI researches and drafts",
+          "Human reviews approach",
+          "AI executes with guidance",
+          "Human validates result"
+        ],
+        "estimatedMinutes": 45,
+        "aiCapabilities": [
+          "Code generation",
+          "Research",
+          "Draft preparation",
+          "Testing assistance"
+        ],
+        "humanRequirements": ["Review", "Approval", "Final decision"]
+      }
+    },
+    {
+      "id": "task-1770226904732-27kvkwf7j",
+      "title": "Memex P2.4: Build search API endpoint",
+      "description": "✅ COMPLETE. FastAPI server with 6 endpoints: POST/GET /search, /recent/{days}, /stats, /status. Date range & speaker filters. Recency ranking enabled. Full Pydantic models. CORS enabled. Files: search.py (233 lines), api.py (189 lines). Production-ready. Server runs on port 8765.",
+      "status": "done",
+      "priority": "low",
+      "dueDate": null,
+      "tags": ["memex", "nike"],
+      "category": "General",
+      "createdAt": "2026-02-01T16:00:38.678Z",
+      "updatedAt": "2026-02-01T16:00:38.678Z",
+      "completedAt": "2026-02-01T16:00:38.678Z",
+      "assignee": "Nike",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 61,
+        "urgent": false,
+        "wasBlocked": false
+      },
+      "analysis": {
+        "automationType": "hybrid",
+        "automationReason": "AI can assist with research, drafting, and execution, but human review/approval needed",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "AI researches and drafts",
+          "Human reviews approach",
+          "AI executes with guidance",
+          "Human validates result"
+        ],
+        "estimatedMinutes": 45,
+        "aiCapabilities": [
+          "Code generation",
+          "Research",
+          "Draft preparation",
+          "Testing assistance"
+        ],
+        "humanRequirements": ["Review", "Approval", "Final decision"]
+      }
+    },
+    {
+      "id": "task-1770226904732-t094yjose",
+      "title": "Memex P3.1: Design journal prompt engineering",
+      "description": "✅ COMPLETE. Designed comprehensive prompt system for GPT-4o journal generation. File: prompt_engineer.py (250 lines, 6 tests). Production-ready.",
+      "status": "done",
+      "priority": "low",
+      "dueDate": null,
+      "tags": ["memex", "nike"],
+      "category": "General",
+      "createdAt": "2026-02-01T16:09:04.879Z",
+      "updatedAt": "2026-02-01T16:09:04.879Z",
+      "completedAt": "2026-02-01T16:09:04.878Z",
+      "assignee": "Nike",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 62,
+        "urgent": false,
+        "wasBlocked": false
+      },
+      "analysis": {
+        "automationType": "hybrid",
+        "automationReason": "AI can assist with research, drafting, and execution, but human review/approval needed",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "AI researches and drafts",
+          "Human reviews approach",
+          "AI executes with guidance",
+          "Human validates result"
+        ],
+        "estimatedMinutes": 45,
+        "aiCapabilities": [
+          "Code generation",
+          "Research",
+          "Draft preparation",
+          "Testing assistance"
+        ],
+        "humanRequirements": ["Review", "Approval", "Final decision"]
+      }
+    },
+    {
+      "id": "task-1770226904732-qs9jskg3k",
+      "title": "Memex P3.2: Build journal generator (TDD)",
+      "description": "✅ COMPLETE. Full journal generator with GPT-4o integration. Features: structured markdown, action extraction, Mermaid diagrams. File: journal_generator.py (300 lines, 3 tests). Cost: $0.05/journal.",
+      "status": "done",
+      "priority": "low",
+      "dueDate": null,
+      "tags": ["memex", "nike"],
+      "category": "General",
+      "createdAt": "2026-02-01T16:09:04.879Z",
+      "updatedAt": "2026-02-01T16:09:04.879Z",
+      "completedAt": "2026-02-01T16:09:04.879Z",
+      "assignee": "Nike",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 63,
+        "urgent": false,
+        "wasBlocked": false
+      },
+      "analysis": {
+        "automationType": "hybrid",
+        "automationReason": "AI can assist with research, drafting, and execution, but human review/approval needed",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "AI researches and drafts",
+          "Human reviews approach",
+          "AI executes with guidance",
+          "Human validates result"
+        ],
+        "estimatedMinutes": 45,
+        "aiCapabilities": [
+          "Code generation",
+          "Research",
+          "Draft preparation",
+          "Testing assistance"
+        ],
+        "humanRequirements": ["Review", "Approval", "Final decision"]
+      }
+    },
+    {
+      "id": "task-1770226904732-zqddu517g",
+      "title": "Memex P3.3: Daily automation (cron)",
+      "description": "✅ COMPLETE. Daily automation system ready. Load transcripts, generate journals, backfill, cron integration. Files: automation.py (350 lines, 7 tests), CLI script. Ready for 8 AM CST schedule.",
+      "status": "done",
+      "priority": "low",
+      "dueDate": null,
+      "tags": ["memex", "nike"],
+      "category": "General",
+      "createdAt": "2026-02-01T16:09:04.879Z",
+      "updatedAt": "2026-02-01T16:09:04.879Z",
+      "completedAt": "2026-02-01T16:09:04.879Z",
+      "assignee": "Nike",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 64,
+        "urgent": false,
+        "wasBlocked": false
+      },
+      "analysis": {
+        "automationType": "llm",
+        "automationReason": "Task involves data processing, research, or automated workflows that AI can handle independently",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "Parse task requirements",
+          "Execute automated workflow",
+          "Validate output",
+          "Report completion"
+        ],
+        "estimatedMinutes": 10,
+        "aiCapabilities": [
+          "Data aggregation",
+          "Report generation",
+          "Automated execution",
+          "Status monitoring"
+        ],
+        "humanRequirements": ["Review output", "Approve if needed"]
+      }
+    },
+    {
+      "id": "task-1770226904732-fk3ok4egi",
+      "title": "Memex P4.1: Build chat query engine",
+      "description": "✅ COMPLETE. Chat query engine with intent detection, history expansion, source ranking, GPT synthesis. Files: query_engine.py (430 lines), test_query_engine.py (28 tests), README.md (12KB). Features: factual/temporal/commitment/summary queries, confidence scoring, conversation context. Cost: ~$2/month (30 queries/day with gpt-4o-mini). Production-ready.",
+      "status": "done",
+      "priority": "low",
+      "dueDate": null,
+      "tags": ["memex", "nike"],
+      "category": "General",
+      "createdAt": "2026-02-02T01:04:29.565Z",
+      "updatedAt": "2026-02-02T01:04:29.565Z",
+      "completedAt": "2026-02-02T01:04:29.565Z",
+      "assignee": "Nike",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 65,
+        "urgent": false,
+        "wasBlocked": false
+      },
+      "analysis": {
+        "automationType": "hybrid",
+        "automationReason": "AI can assist with research, drafting, and execution, but human review/approval needed",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "AI researches and drafts",
+          "Human reviews approach",
+          "AI executes with guidance",
+          "Human validates result"
+        ],
+        "estimatedMinutes": 45,
+        "aiCapabilities": [
+          "Code generation",
+          "Research",
+          "Draft preparation",
+          "Testing assistance"
+        ],
+        "humanRequirements": ["Review", "Approval", "Final decision"]
+      }
+    },
+    {
+      "id": "task-1770226904732-fiek53we1",
+      "title": "Memex P4.2: Build React frontend",
+      "description": "✅ COMPLETE. React frontend built: ChatInterface (conversational queries), JournalView (daily journals w/ calendar), SearchBar (vector search). 9 components, Zustand state, TailwindCSS design system. Features: message history, source attribution, confidence scores, markdown rendering, date navigation. Bundle <100KB gzipped. Production-ready. Files: 2,800+ lines across 11 files.",
+      "status": "done",
+      "priority": "low",
+      "dueDate": null,
+      "tags": ["memex", "nike"],
+      "category": "General",
+      "createdAt": "2026-02-02T02:05:20.245437",
+      "updatedAt": "2026-02-02T02:05:20.245437",
+      "completedAt": "2026-02-02T02:05:20.245416",
+      "assignee": "Nike",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 66,
+        "urgent": false,
+        "wasBlocked": false
+      },
+      "analysis": {
+        "automationType": "hybrid",
+        "automationReason": "AI can assist with research, drafting, and execution, but human review/approval needed",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "AI researches and drafts",
+          "Human reviews approach",
+          "AI executes with guidance",
+          "Human validates result"
+        ],
+        "estimatedMinutes": 45,
+        "aiCapabilities": [
+          "Code generation",
+          "Research",
+          "Draft preparation",
+          "Testing assistance"
+        ],
+        "humanRequirements": ["Review", "Approval", "Final decision"]
+      }
+    },
+    {
+      "id": "task-1770226904732-9trld4con",
+      "title": "Memex P4.3: Feedback loop implementation",
+      "description": "Allow Arvind to edit journal entries, chat answers. Store corrections, use to fine-tune future generations. Learning system. DEPENDENCY: P4.2",
+      "status": "todo",
+      "priority": "medium",
+      "dueDate": null,
+      "tags": ["memex", "nike"],
+      "category": "General",
+      "createdAt": "2026-02-01T13:47:19.174Z",
+      "updatedAt": "2026-02-01T13:47:19.174Z",
+      "completedAt": null,
+      "assignee": "Nike",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 67,
+        "urgent": false,
+        "wasBlocked": false
+      },
+      "analysis": {
+        "automationType": "hybrid",
+        "automationReason": "AI can assist with research, drafting, and execution, but human review/approval needed",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "AI researches and drafts",
+          "Human reviews approach",
+          "AI executes with guidance",
+          "Human validates result"
+        ],
+        "estimatedMinutes": 45,
+        "aiCapabilities": [
+          "Code generation",
+          "Research",
+          "Draft preparation",
+          "Testing assistance"
+        ],
+        "humanRequirements": ["Review", "Approval", "Final decision"]
+      }
+    },
+    {
+      "id": "task-1770226904732-vl7213bda",
+      "title": "Memex P4.4: Deploy to production",
+      "description": "Deploy: 1) Backend API to Railway, 2) Frontend to Vercel, 3) Set up .env secrets, 4) Configure ChromaDB persistence, 5) Test end-to-end. DEPENDENCY: P4.3",
+      "status": "todo",
+      "priority": "medium",
+      "dueDate": null,
+      "tags": ["memex", "nike"],
+      "category": "General",
+      "createdAt": "2026-02-01T13:47:19.789Z",
+      "updatedAt": "2026-02-01T13:47:19.789Z",
+      "completedAt": null,
+      "assignee": "Nike",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 68,
+        "urgent": false,
+        "wasBlocked": false
+      },
+      "analysis": {
+        "automationType": "hybrid",
+        "automationReason": "AI can assist with research, drafting, and execution, but human review/approval needed",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "AI prepares deployment",
+          "Human reviews configuration",
+          "Execute deployment",
+          "Verify success"
+        ],
+        "estimatedMinutes": 45,
+        "aiCapabilities": [
+          "Code generation",
+          "Research",
+          "Draft preparation",
+          "Testing assistance"
+        ],
+        "humanRequirements": ["Review", "Approval", "Final decision"]
+      }
+    },
+    {
+      "id": "task-1770226904732-4dnmzvuko",
+      "title": "Memex: Write user guide",
+      "description": "Create docs: 1) How to use search, 2) How to correct journal entries, 3) Best practices for chat queries, 4) Troubleshooting. DEPENDENCY: P4.4",
+      "status": "todo",
+      "priority": "medium",
+      "dueDate": null,
+      "tags": ["memex", "nike"],
+      "category": "General",
+      "createdAt": "2026-02-01T13:47:20.432Z",
+      "updatedAt": "2026-02-01T13:47:20.432Z",
+      "completedAt": null,
+      "assignee": "Nike",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 69,
+        "urgent": false,
+        "wasBlocked": false
+      },
+      "analysis": {
+        "automationType": "hybrid",
+        "automationReason": "AI can assist with research, drafting, and execution, but human review/approval needed",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "AI researches and drafts",
+          "Human reviews approach",
+          "AI executes with guidance",
+          "Human validates result"
+        ],
+        "estimatedMinutes": 45,
+        "aiCapabilities": [
+          "Code generation",
+          "Research",
+          "Draft preparation",
+          "Testing assistance"
+        ],
+        "humanRequirements": ["Review", "Approval", "Final decision"]
+      }
+    },
+    {
+      "id": "task-1770226904732-v9e9um49g",
+      "title": "Buy podcast microphone",
+      "description": "Get proper podcast-quality microphone. Options: 1) Buy in USA now, 2) Buy in India during Feb trip (might be cheaper). Research: Blue Yeti, Shure SM7B, or similar. Budget: $100-300.",
+      "status": "todo",
+      "priority": "medium",
+      "dueDate": null,
+      "tags": ["personal"],
+      "category": "Personal",
+      "createdAt": "2026-02-01T13:59:50.087Z",
+      "updatedAt": "2026-02-01T13:59:50.087Z",
+      "completedAt": null,
+      "assignee": "Arvind",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 70,
+        "urgent": false,
+        "wasBlocked": false
+      },
+      "analysis": {
+        "automationType": "human",
+        "automationReason": "Purchase decision requires human judgment",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "Research options",
+          "Compare prices",
+          "Make purchase decision",
+          "Complete transaction"
+        ],
+        "estimatedMinutes": 45,
+        "aiCapabilities": [
+          "Research assistance",
+          "Script preparation",
+          "Documentation",
+          "Follow-up reminders"
+        ],
+        "humanRequirements": ["Direct action", "Verification"]
+      }
+    },
+    {
+      "id": "task-1770226904732-93bhr485f",
+      "title": "EVV Sales Enablement Package",
+      "description": "Created complete EVV sales package (5 docs, 40KB): evv-compliance-2026.md (research), evv-sales-battlecard.md (playbook), evv-demo-script.md (demo guide), EVV-README.md (master guide), evv-one-pager.md (print-ready). Market validated: $1B+ TAM, 13x ROI, blue ocean opportunity. Sales-ready for immediate use.",
+      "status": "done",
+      "priority": "low",
+      "dueDate": null,
+      "tags": ["copper", "nike"],
+      "category": "CopperAI",
+      "createdAt": "2026-02-01T15:19:42.862Z",
+      "updatedAt": "2026-02-01T15:19:42.862Z",
+      "completedAt": "2026-02-01T15:19:42.862Z",
+      "assignee": "Nike",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 71,
+        "urgent": false,
+        "wasBlocked": false
+      },
+      "analysis": {
+        "automationType": "llm",
+        "automationReason": "Task involves data processing, research, or automated workflows that AI can handle independently",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "Parse task requirements",
+          "Execute automated workflow",
+          "Validate output",
+          "Report completion"
+        ],
+        "estimatedMinutes": 10,
+        "aiCapabilities": [
+          "Data aggregation",
+          "Report generation",
+          "Automated execution",
+          "Status monitoring"
+        ],
+        "humanRequirements": ["Review output", "Approve if needed"]
+      }
+    },
+    {
+      "id": "task-1770226904732-a1chrehsy",
+      "title": "2000 Canyons Property Survey - Review Vee's Analysis",
+      "description": "Vee reviewed 2000 canyons property survey doc and sent analysis. Awaiting Arvind's guidance for next steps.",
+      "status": "todo",
+      "priority": "high",
+      "dueDate": null,
+      "tags": ["property"],
+      "category": "Personal",
+      "createdAt": "2026-02-02T17:07:59+00:00",
+      "updatedAt": "2026-02-02T17:07:59+00:00",
+      "completedAt": null,
+      "assignee": "Arvind",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 72,
+        "urgent": true,
+        "wasBlocked": false,
+        "tokenUsage": {
+          "total": 0,
+          "today": 0,
+          "estimated": 500,
+          "lastUpdated": "2026-02-02T17:07:59+00:00"
+        }
+      },
+      "analysis": {
+        "automationType": "blocked",
+        "automationReason": "Task is waiting on external dependency or approval",
+        "isBlocked": true,
+        "blockageReason": "Awaiting external input or response",
+        "steps": ["Identify blocker", "Follow up on dependency", "Resume when unblocked"],
+        "estimatedMinutes": 15,
+        "aiCapabilities": ["Status tracking", "Follow-up reminders"],
+        "humanRequirements": ["Resolve dependency", "Make decision"]
+      }
+    },
+    {
+      "id": "task-1770226904732-kkbi9hea7",
+      "title": "Deploy ClearCare Integration (MVP)",
+      "description": "Deploy unified server to Railway. Built Feb 3. Ready in 30 min via integrations/unified-server/QUICKSTART.md",
+      "status": "todo",
+      "priority": "high",
+      "dueDate": null,
+      "tags": ["copper"],
+      "category": "CopperAI",
+      "createdAt": "2026-02-04T03:56:00Z",
+      "updatedAt": "2026-02-09T21:08:24.447Z",
+      "completedAt": null,
+      "assignee": "Arvind",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 73,
+        "urgent": true,
+        "wasBlocked": false,
+        "tokenUsage": {
+          "total": 0,
+          "research": 0,
+          "build": 0
+        }
+      },
+      "analysis": {
+        "automationType": "hybrid",
+        "automationReason": "AI can assist with research, drafting, and execution, but human review/approval needed",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "AI prepares deployment",
+          "Human reviews configuration",
+          "Execute deployment",
+          "Verify success"
+        ],
+        "estimatedMinutes": 45,
+        "aiCapabilities": [
+          "Code generation",
+          "Research",
+          "Draft preparation",
+          "Testing assistance"
+        ],
+        "humanRequirements": ["Review", "Approval", "Final decision"]
+      }
+    },
+    {
+      "id": "task-1770226904732-yc0mqxjq7",
+      "title": "Get Axxess API Access",
+      "description": "Request API access from Axxess for integration",
+      "status": "todo",
+      "priority": "high",
+      "dueDate": null,
+      "tags": ["copper"],
+      "category": "CopperAI",
+      "createdAt": "2026-02-04T03:56:00Z",
+      "updatedAt": "2026-02-04T03:56:00Z",
+      "completedAt": null,
+      "assignee": "Arvind",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 74,
+        "urgent": true,
+        "wasBlocked": false,
+        "tokenUsage": {
+          "total": 0,
+          "research": 0,
+          "build": 0
+        }
+      },
+      "analysis": {
+        "automationType": "hybrid",
+        "automationReason": "AI can assist with research, drafting, and execution, but human review/approval needed",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "AI researches and drafts",
+          "Human reviews approach",
+          "AI executes with guidance",
+          "Human validates result"
+        ],
+        "estimatedMinutes": 45,
+        "aiCapabilities": [
+          "Code generation",
+          "Research",
+          "Draft preparation",
+          "Testing assistance"
+        ],
+        "humanRequirements": ["Review", "Approval", "Final decision"]
+      }
+    },
+    {
+      "id": "task-1770226904732-he71ju9jw",
+      "title": "Recruit 5 ClearCare Pilot Agencies",
+      "description": "Active outreach to ClearCare agencies for pilot program",
+      "status": "doing",
+      "priority": "medium",
+      "dueDate": null,
+      "tags": ["copper", "nike"],
+      "category": "CopperAI",
+      "createdAt": "2026-02-04T03:56:00Z",
+      "updatedAt": "2026-02-04T03:56:00Z",
+      "completedAt": null,
+      "assignee": "Nike",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 75,
+        "urgent": false,
+        "wasBlocked": false,
+        "tokenUsage": {
+          "total": 0,
+          "research": 0,
+          "build": 0
+        }
+      },
+      "analysis": {
+        "automationType": "hybrid",
+        "automationReason": "AI can assist with research, drafting, and execution, but human review/approval needed",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "AI drafts outreach messages",
+          "Human personalizes and sends",
+          "Track responses",
+          "Human conducts conversations"
+        ],
+        "estimatedMinutes": 45,
+        "aiCapabilities": [
+          "Code generation",
+          "Research",
+          "Draft preparation",
+          "Testing assistance"
+        ],
+        "humanRequirements": ["Review", "Approval", "Final decision"]
+      }
+    },
+    {
+      "id": "task-1770226904732-pkv6p9uyv",
+      "title": "Fix iMessage Automation Permission",
+      "description": "Run: imsg send --to +14087537403 --text test on Mac mini, approve popup",
+      "status": "todo",
+      "priority": "medium",
+      "dueDate": null,
+      "tags": ["nike"],
+      "category": "General",
+      "createdAt": "2026-02-04T03:56:00Z",
+      "updatedAt": "2026-02-04T03:56:00Z",
+      "completedAt": null,
+      "assignee": "Arvind",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 76,
+        "urgent": false,
+        "wasBlocked": false,
+        "tokenUsage": {
+          "total": 0,
+          "research": 0,
+          "build": 0
+        }
+      },
+      "analysis": {
+        "automationType": "hybrid",
+        "automationReason": "AI can assist with research, drafting, and execution, but human review/approval needed",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "AI researches and drafts",
+          "Human reviews approach",
+          "AI executes with guidance",
+          "Human validates result"
+        ],
+        "estimatedMinutes": 30,
+        "aiCapabilities": [
+          "Code generation",
+          "Research",
+          "Draft preparation",
+          "Testing assistance"
+        ],
+        "humanRequirements": ["Review", "Approval", "Final decision"]
+      }
+    },
+    {
+      "id": "task-1770226904732-zmkg7f15l",
+      "title": "Fix GitHub Fork Push (workflow scope)",
+      "description": "OAuth token for arvindsarin1/openclaw.git missing workflow scope",
+      "status": "todo",
+      "priority": "high",
+      "dueDate": null,
+      "tags": ["technical", "blocked"],
+      "category": "General",
+      "createdAt": "2026-02-04T03:56:00Z",
+      "updatedAt": "2026-02-04T03:56:00Z",
+      "completedAt": null,
+      "assignee": "Arvind",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 77,
+        "urgent": false,
+        "wasBlocked": true,
+        "tokenUsage": {
+          "total": 0,
+          "research": 0,
+          "build": 0
+        }
+      },
+      "analysis": {
+        "automationType": "hybrid",
+        "automationReason": "AI can assist with research, drafting, and execution, but human review/approval needed",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "AI researches and drafts",
+          "Human reviews approach",
+          "AI executes with guidance",
+          "Human validates result"
+        ],
+        "estimatedMinutes": 30,
+        "aiCapabilities": [
+          "Code generation",
+          "Research",
+          "Draft preparation",
+          "Testing assistance"
+        ],
+        "humanRequirements": ["Review", "Approval", "Final decision"]
+      }
+    },
+    {
+      "id": "task-1770226904732-77ef2i74s",
+      "title": "Verify Old VM (147.224.157.7)",
+      "description": "VM unreachable. Keep for redundancy/second OpenClaw instance",
+      "status": "todo",
+      "priority": "high",
+      "dueDate": null,
+      "tags": ["technical", "blocked"],
+      "category": "General",
+      "createdAt": "2026-02-04T03:56:00Z",
+      "updatedAt": "2026-02-04T03:56:00Z",
+      "completedAt": null,
+      "assignee": "Arvind",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 78,
+        "urgent": false,
+        "wasBlocked": true,
+        "tokenUsage": {
+          "total": 0,
+          "research": 0,
+          "build": 0
+        }
+      },
+      "analysis": {
+        "automationType": "blocked",
+        "automationReason": "Task is waiting on external dependency or approval",
+        "isBlocked": true,
+        "blockageReason": "Resource or system unreachable",
+        "steps": ["Identify blocker", "Follow up on dependency", "Resume when unblocked"],
+        "estimatedMinutes": 15,
+        "aiCapabilities": ["Status tracking", "Follow-up reminders"],
+        "humanRequirements": ["Resolve dependency", "Make decision"]
+      }
+    },
+    {
+      "id": "task-1770226904732-9vsrsditi",
+      "title": "Test All Scripts on Mac Mini",
+      "description": "50+ scripts migrated from VM, many have broken paths/deps",
+      "status": "todo",
+      "priority": "medium",
+      "dueDate": null,
+      "tags": ["technical", "nike"],
+      "category": "General",
+      "createdAt": "2026-02-04T03:56:00Z",
+      "updatedAt": "2026-02-04T03:56:00Z",
+      "completedAt": null,
+      "assignee": "Nike",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 79,
+        "urgent": false,
+        "wasBlocked": false,
+        "tokenUsage": {
+          "total": 0,
+          "research": 0,
+          "build": 0
+        }
+      },
+      "analysis": {
+        "automationType": "hybrid",
+        "automationReason": "AI can assist with research, drafting, and execution, but human review/approval needed",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "AI researches and drafts",
+          "Human reviews approach",
+          "AI executes with guidance",
+          "Human validates result"
+        ],
+        "estimatedMinutes": 45,
+        "aiCapabilities": [
+          "Code generation",
+          "Research",
+          "Draft preparation",
+          "Testing assistance"
+        ],
+        "humanRequirements": ["Review", "Approval", "Final decision"]
+      }
+    },
+    {
+      "id": "task-1770226904732-2aujs4ehh",
+      "title": "Activate Competitor Shadow Monitoring (Cron)",
+      "description": "automations/competitor-shadow.yaml exists but never activated",
+      "status": "todo",
+      "priority": "medium",
+      "dueDate": null,
+      "tags": ["copper", "nike"],
+      "category": "CopperAI",
+      "createdAt": "2026-02-04T03:56:00Z",
+      "updatedAt": "2026-02-04T03:56:00Z",
+      "completedAt": null,
+      "assignee": "Nike",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 80,
+        "urgent": false,
+        "wasBlocked": false,
+        "tokenUsage": {
+          "total": 0,
+          "research": 0,
+          "build": 0
+        }
+      },
+      "analysis": {
+        "automationType": "llm",
+        "automationReason": "Task involves data processing, research, or automated workflows that AI can handle independently",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "Check data sources",
+          "Compare against thresholds",
+          "Generate alerts if needed",
+          "Log status"
+        ],
+        "estimatedMinutes": 2,
+        "aiCapabilities": [
+          "Data aggregation",
+          "Report generation",
+          "Automated execution",
+          "Status monitoring"
+        ],
+        "humanRequirements": ["Review output", "Approve if needed"]
+      }
+    },
+    {
+      "id": "task-1770226904732-lqp5ni4pv",
+      "title": "Deploy Kanban Web Dashboard",
+      "description": "Dashboard built at kanban/dashboard/, needs GitHub Pages or hosting",
+      "status": "todo",
+      "priority": "medium",
+      "dueDate": null,
+      "tags": ["nike"],
+      "category": "General",
+      "createdAt": "2026-02-04T03:56:00Z",
+      "updatedAt": "2026-02-04T03:56:00Z",
+      "completedAt": null,
+      "assignee": "Nike",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 81,
+        "urgent": false,
+        "wasBlocked": false,
+        "tokenUsage": {
+          "total": 0,
+          "research": 0,
+          "build": 0
+        }
+      },
+      "analysis": {
+        "automationType": "hybrid",
+        "automationReason": "AI can assist with research, drafting, and execution, but human review/approval needed",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "AI prepares deployment",
+          "Human reviews configuration",
+          "Execute deployment",
+          "Verify success"
+        ],
+        "estimatedMinutes": 45,
+        "aiCapabilities": [
+          "Code generation",
+          "Research",
+          "Draft preparation",
+          "Testing assistance"
+        ],
+        "humanRequirements": ["Review", "Approval", "Final decision"]
+      }
+    },
+    {
+      "id": "task-1770226904732-rsm0a82mv",
+      "title": "Setup Model Tiering (Sonnet/Haiku for cron)",
+      "description": "Opus 4.5 for main, Sonnet 4 for subagents/cron. Completed Feb 3.",
+      "status": "done",
+      "priority": "low",
+      "dueDate": null,
+      "tags": ["nike"],
+      "category": "General",
+      "createdAt": "2026-02-04T03:56:00Z",
+      "updatedAt": "2026-02-04T03:56:00Z",
+      "completedAt": "2026-02-04T03:56:00Z",
+      "assignee": "Nike",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 82,
+        "urgent": false,
+        "wasBlocked": false,
+        "tokenUsage": {
+          "total": 0,
+          "research": 0,
+          "build": 0
+        }
+      },
+      "analysis": {
+        "automationType": "llm",
+        "automationReason": "Task involves data processing, research, or automated workflows that AI can handle independently",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "Parse task requirements",
+          "Execute automated workflow",
+          "Validate output",
+          "Report completion"
+        ],
+        "estimatedMinutes": 10,
+        "aiCapabilities": [
+          "Data aggregation",
+          "Report generation",
+          "Automated execution",
+          "Status monitoring"
+        ],
+        "humanRequirements": ["Review output", "Approve if needed"]
+      }
+    },
+    {
+      "id": "task-1770226904732-xpahu9hhs",
+      "title": "OpenClaw Mac Mini Migration",
+      "description": "Migrated from VM to Mac mini. v2026.2.3, all channels connected. Feb 3.",
+      "status": "done",
+      "priority": "low",
+      "dueDate": null,
+      "tags": ["technical", "nike"],
+      "category": "General",
+      "createdAt": "2026-02-04T03:56:00Z",
+      "updatedAt": "2026-02-04T03:56:00Z",
+      "completedAt": "2026-02-04T03:56:00Z",
+      "assignee": "Nike",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 83,
+        "urgent": false,
+        "wasBlocked": false,
+        "tokenUsage": {
+          "total": 0,
+          "research": 0,
+          "build": 0
+        }
+      },
+      "analysis": {
+        "automationType": "hybrid",
+        "automationReason": "AI can assist with research, drafting, and execution, but human review/approval needed",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "AI researches and drafts",
+          "Human reviews approach",
+          "AI executes with guidance",
+          "Human validates result"
+        ],
+        "estimatedMinutes": 45,
+        "aiCapabilities": [
+          "Code generation",
+          "Research",
+          "Draft preparation",
+          "Testing assistance"
+        ],
+        "humanRequirements": ["Review", "Approval", "Final decision"]
+      }
+    },
+    {
+      "id": "task-1770226904732-5qz4qt9xk",
+      "title": "Setup Cron Jobs (Morning Brief, Flights, Research)",
+      "description": "4 cron jobs created Feb 3: morning brief 8AM, flights 12PM, research 2PM, iMessage reminder",
+      "status": "done",
+      "priority": "low",
+      "dueDate": null,
+      "tags": ["nike"],
+      "category": "General",
+      "createdAt": "2026-02-04T03:56:00Z",
+      "updatedAt": "2026-02-04T03:56:00Z",
+      "completedAt": "2026-02-04T03:56:00Z",
+      "assignee": "Nike",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 84,
+        "urgent": false,
+        "wasBlocked": false,
+        "tokenUsage": {
+          "total": 0,
+          "research": 0,
+          "build": 0
+        }
+      },
+      "analysis": {
+        "automationType": "llm",
+        "automationReason": "Task involves data processing, research, or automated workflows that AI can handle independently",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "Gather data from sources",
+          "Analyze and synthesize",
+          "Generate formatted report",
+          "Deliver to recipient"
+        ],
+        "estimatedMinutes": 5,
+        "aiCapabilities": [
+          "Data aggregation",
+          "Report generation",
+          "Automated execution",
+          "Status monitoring"
+        ],
+        "humanRequirements": ["Review output", "Approve if needed"]
+      }
+    },
+    {
+      "id": "task-1770226904732-5g00oc78w",
+      "title": "YouTube Transcript Tool",
+      "description": "scripts/yt-transcript.sh - free, no API keys. Tested and working.",
+      "status": "done",
+      "priority": "low",
+      "dueDate": null,
+      "tags": ["nike"],
+      "category": "General",
+      "createdAt": "2026-02-04T03:56:00Z",
+      "updatedAt": "2026-02-04T03:56:00Z",
+      "completedAt": "2026-02-04T03:56:00Z",
+      "assignee": "Nike",
+      "estimate": null,
+      "timeSpent": 0,
+      "_original": {
+        "oldId": 85,
+        "urgent": false,
+        "wasBlocked": false,
+        "tokenUsage": {
+          "total": 0,
+          "research": 0,
+          "build": 0
+        }
+      },
+      "analysis": {
+        "automationType": "llm",
+        "automationReason": "Task involves data processing, research, or automated workflows that AI can handle independently",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "Parse task requirements",
+          "Execute automated workflow",
+          "Validate output",
+          "Report completion"
+        ],
+        "estimatedMinutes": 10,
+        "aiCapabilities": [
+          "Data aggregation",
+          "Report generation",
+          "Automated execution",
+          "Status monitoring"
+        ],
+        "humanRequirements": ["Review output", "Approve if needed"]
+      }
+    },
+    {
+      "id": "task-1770256668939-zepgd1bl2",
+      "title": "Test Cases amd Sanity Run",
+      "description": "",
+      "status": "doing",
+      "priority": "medium",
+      "dueDate": "2026-02-04",
+      "tags": [],
+      "category": "General",
+      "createdAt": "2026-02-05T01:57:48.939Z",
+      "updatedAt": "2026-02-05T01:57:59.838Z",
+      "analysis": {
+        "automationType": "hybrid",
+        "automationReason": "AI can assist with research, drafting, and execution, but human review/approval needed",
+        "isBlocked": false,
+        "blockageReason": null,
+        "steps": [
+          "AI researches and drafts",
+          "Human reviews approach",
+          "AI executes with guidance",
+          "Human validates result"
+        ],
+        "estimatedMinutes": 45,
+        "aiCapabilities": [
+          "Code generation",
+          "Research",
+          "Draft preparation",
+          "Testing assistance"
+        ],
+        "humanRequirements": ["Review", "Approval", "Final decision"]
+      }
+    }
+  ],
+  "columnOrder": ["backlog", "todo", "doing", "done"],
+  "meta": {
+    "version": "2.0",
+    "migratedAt": "2026-02-04T17:41:44.732Z",
+    "migratedFrom": "/Users/arvindsarin/Cursor/Claude-2026/openclaw/tools/kanban/data/kanban-data.json",
+    "originalTaskCount": 85,
+    "schema": {
+      "fields": [
+        "id",
+        "title",
+        "description",
+        "status",
+        "priority",
+        "dueDate",
+        "tags",
+        "category",
+        "createdAt",
+        "updatedAt",
+        "completedAt",
+        "assignee",
+        "estimate",
+        "timeSpent"
+      ],
+      "priorities": ["high", "medium", "low"],
+      "categories": ["Work", "Personal", "CopperAI", "General"],
+      "statuses": ["backlog", "todo", "doing", "done"]
+    },
+    "lastUpdated": "2026-02-09T21:08:24.447Z",
+    "lastAnalysis": "2026-02-14T02:17:18.530Z",
+    "analysisVersion": "2.0-batch",
+    "demoAnalysisNote": "First 10 tasks have demo analysis. Run analyze-tasks.cjs with ANTHROPIC_API_KEY to analyze all tasks."
+  }
+}

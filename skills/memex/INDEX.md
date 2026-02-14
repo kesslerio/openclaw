@@ -45,7 +45,7 @@ Complete reference for all files created for the background service setup.
 
 ## Scripts
 
-All scripts located in `/Users/arvindsarin/clawd/memex/scripts/`
+All scripts located in `/Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex/scripts/`
 
 ### Service Management
 
@@ -77,7 +77,7 @@ All scripts located in `/Users/arvindsarin/clawd/memex/scripts/`
 
 ## Source Code
 
-Located in `/Users/arvindsarin/clawd/memex/historian/`
+Located in `/Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex/historian/`
 
 ### Core API
 
@@ -235,7 +235,7 @@ Managed via Poetry (`pyproject.toml`):
 Install:
 
 ```bash
-cd ~/clawd/memex
+cd ~/Cursor/Claude-2026/openclaw/skills/memex
 poetry install
 ```
 
@@ -245,7 +245,7 @@ Optional environment variables:
 
 ```bash
 export MEMEX_API_URL="http://localhost:8765"
-export PYTHONPATH="/Users/arvindsarin/clawd/memex"
+export PYTHONPATH="/Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex"
 ```
 
 ## Backup Files

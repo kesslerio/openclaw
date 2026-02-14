@@ -4,7 +4,7 @@
 
 set -euo pipefail
 
-REPORT_FILE="$HOME/clawd/memory/flight-prices-$(date +%Y-%m-%d).md"
+REPORT_FILE="$HOME/Cursor/Claude-2026/openclaw/memory/flight-prices-$(date +%Y-%m-%d).md"
 THRESHOLD=750
 
 echo "✈️ Flight Price Monitor - $(date)" | tee "$REPORT_FILE"

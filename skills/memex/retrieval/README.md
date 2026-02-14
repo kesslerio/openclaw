@@ -39,7 +39,7 @@ for source in response.sources:
 ### Command Line
 
 ```bash
-cd /home/ubuntu/clawd/memex/retrieval
+cd /home/ubuntu/openclaw/skills/memex/retrieval
 python query_engine.py "What did I discuss this week?"
 ```
 
@@ -302,7 +302,7 @@ response = engine.query("What action items did I capture this week?")
 ### Run Tests
 
 ```bash
-cd /home/ubuntu/clawd/memex
+cd /home/ubuntu/openclaw/skills/memex
 pytest tests/test_query_engine.py -v
 ```
 
@@ -512,7 +512,7 @@ pip install openai
 Make sure you're in the memex directory:
 
 ```bash
-cd /home/ubuntu/clawd/memex
+cd /home/ubuntu/openclaw/skills/memex
 python retrieval/query_engine.py "test query"
 ```
 

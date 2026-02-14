@@ -6,7 +6,7 @@
 
 set -e
 
-MEMEX_DIR="/Users/arvindsarin/Cursor/Claude-2026/clawd/memex"
+MEMEX_DIR="/Users/arvindsarin/Cursor/Claude-2026/openclaw/skills/memex"
 cd "$MEMEX_DIR"
 
 echo "🎯 Memex Setup Verification"

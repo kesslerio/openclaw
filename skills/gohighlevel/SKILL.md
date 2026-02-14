@@ -33,27 +33,27 @@ Get your API key from GoHighLevel Settings → API Keys.
 ### List Contacts
 
 ```bash
-node ~/clawd/skills/gohighlevel/scripts/ghl.js contacts list
-node ~/clawd/skills/gohighlevel/scripts/ghl.js contacts search "John Doe"
+node ~/Cursor/Claude-2026/openclaw/skills/gohighlevel/scripts/ghl.js contacts list
+node ~/Cursor/Claude-2026/openclaw/skills/gohighlevel/scripts/ghl.js contacts search "John Doe"
 ```
 
 ### Get Contact Details
 
 ```bash
-node ~/clawd/skills/gohighlevel/scripts/ghl.js contacts get <contact_id>
+node ~/Cursor/Claude-2026/openclaw/skills/gohighlevel/scripts/ghl.js contacts get <contact_id>
 ```
 
 ### List Opportunities (Pipeline)
 
 ```bash
-node ~/clawd/skills/gohighlevel/scripts/ghl.js opportunities list
-node ~/clawd/skills/gohighlevel/scripts/ghl.js opportunities list --pipeline "Sales Pipeline"
+node ~/Cursor/Claude-2026/openclaw/skills/gohighlevel/scripts/ghl.js opportunities list
+node ~/Cursor/Claude-2026/openclaw/skills/gohighlevel/scripts/ghl.js opportunities list --pipeline "Sales Pipeline"
 ```
 
 ### Create Contact
 
 ```bash
-node ~/clawd/skills/gohighlevel/scripts/ghl.js contacts create --name "Jane Doe" --email "jane@example.com" --phone "+15551234567"
+node ~/Cursor/Claude-2026/openclaw/skills/gohighlevel/scripts/ghl.js contacts create --name "Jane Doe" --email "jane@example.com" --phone "+15551234567"
 ```
 
 ## Use Cases
