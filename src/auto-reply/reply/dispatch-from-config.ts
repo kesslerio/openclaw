@@ -480,7 +480,7 @@ export async function dispatchReplyFromConfig(params: {
       return { queuedFinal: false, counts };
     }
 
-    const shouldSendToolSummaries = ctx.ChatType !== "group" && ctx.CommandSource !== "native";
+    const shouldSendToolSummaries = ctx.CommandSource !== "native";
     const acpDispatch = await tryDispatchAcpReply({
       ctx,
       cfg,
