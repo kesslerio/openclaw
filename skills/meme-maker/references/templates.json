@@ -17,6 +17,23 @@
     ]
   },
   {
+    "id": "success-kid",
+    "name": "Success Kid",
+    "imgflipId": "61544",
+    "imageUrl": "https://i.imgflip.com/1bhk.jpg",
+    "kymUrl": "https://knowyourmeme.com/memes/success-kid-i-hate-sandcastles",
+    "width": 500,
+    "height": 500,
+    "aliases": ["success", "success kid", "i hate sandcastles"],
+    "tags": ["win", "victory", "success", "relief", "small win", "good news"],
+    "use": "Celebrate a small win, relief, or successful outcome.",
+    "fields": ["setup", "win"],
+    "boxes": [
+      { "x": 0.06, "y": 0.05, "w": 0.88, "h": 0.18 },
+      { "x": 0.06, "y": 0.75, "w": 0.88, "h": 0.18 }
+    ]
+  },
+  {
     "id": "two-buttons",
     "name": "Two Buttons",
     "imgflipId": "87743020",
