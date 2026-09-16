@@ -12,9 +12,9 @@ Send SMS and make voice calls via the Dialpad API.
 
 | Number         | Purpose          | Format                    |
 | -------------- | ---------------- | ------------------------- |
-| (415) 520-1316 | Sales Team       | Default for sales context |
-| (415) 360-2954 | Work/Personal    | Default for work context  |
-| (415) 991-7155 | Support SMS Only | SMS only (no voice)       |
+| (415) 555-0140 | Sales Team       | Default for sales context |
+| (415) 555-0100 | Work/Personal    | Default for work context  |
+| (415) 555-0141 | Support SMS Only | SMS only (no voice)       |
 
 Use `--from <number>` to specify which number appears as caller ID.
 
@@ -43,7 +43,7 @@ Get your Dialpad API key from [Dialpad API Settings](https://dialpad.com/api/set
 python3 send_sms.py --to "+14155551234" --message "Hello from Clawdbot!"
 
 # From specific number (e.g., work phone)
-python3 send_sms.py --to "+14155551234" --message "Hello!" --from "+14153602954"
+python3 send_sms.py --to "+14155551234" --message "Hello!" --from "+14155550100"
 
 # Batch SMS (up to 10 recipients)
 python3 send_sms.py --to "+14155551234" "+14155555678" --message "Group update"
@@ -59,7 +59,7 @@ python3 make_call.py --to "+14155551234"
 python3 make_call.py --to "+14155551234" --text "Hello! This is a call from ShapeScale."
 
 # Call from specific number with TTS
-python3 make_call.py --to "+14155551234" --from "+14153602954" --text "Meeting reminder"
+python3 make_call.py --to "+14155551234" --from "+14155550100" --text "Meeting reminder"
 
 # With custom voice (requires ELEVENLABS_API_KEY)
 python3 make_call.py --to "+14155551234" --voice "Adam" --text "Premium voice test"
@@ -123,7 +123,7 @@ To use a specific voice, add `--voice "VoiceName"`.
 
 | Name   | Phone          | User ID            |
 | ------ | -------------- | ------------------ |
-| Martin | (415) 360-2954 | `5765607478525952` |
+| Martin | (415) 555-0100 | `5765607478525952` |
 | Lilla  | (415) 870-1945 | `5625110025338880` |
 | Scott  | (415) 223-0323 | `5964143916400640` |
 
@@ -137,7 +137,7 @@ To use a specific voice, add `--voice "VoiceName"`.
   "status": "pending",
   "message_delivery_result": "pending",
   "to_numbers": ["+14158235304"],
-  "from_number": "+14155201316",
+  "from_number": "+14155550140",
   "direction": "outbound"
 }
 ```
